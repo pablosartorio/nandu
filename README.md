@@ -29,11 +29,30 @@ python3 build_html.py          # crea mision_nandu.html
 > distinto. Por eso `problemas_nandu.json` y `mision_nandu.html` se versionan,
 > para fijar una versión estable.
 
-## Uso
+## Jugar online
+
+🎮 **https://pablosartorio.github.io/nandu/**
+
+Abre la landing y, con el botón "Jugar", entra al juego. No hay que descargar ni
+instalar nada — ideal para compartir con quien quiera practicar.
+
+(También se puede ir directo al juego: `…/nandu/mision_nandu.html`.)
+
+## Uso local
 
 Abrir `mision_nandu.html` en el navegador. No necesita servidor ni dependencias.
 
 ## Flujo de trabajo
 
-- `main`: versión estable.
+- `main`: versión estable. **Es lo que sirve GitHub Pages** (rama `main`, raíz).
 - `develop`: rama de trabajo.
+
+> ⚠️ El sitio online se publica desde `main`. Los cambios hechos en `develop`
+> **no se ven en la web** hasta llevarlos a `main`:
+>
+> ```bash
+> git switch main
+> git merge develop
+> git push origin main      # GitHub Pages re-despliega solo en ~1-2 min
+> git switch develop        # volver a trabajar
+> ```
