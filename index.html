@@ -3,163 +3,360 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Misión Ñandú — Entrenamiento para la Olimpíada Ñandú</title>
-<meta name="description" content="Juego de práctica matemática para la Olimpíada Ñandú: patrones, lógica, geometría, conteo, divisibilidad y desafíos olímpicos, con niveles progresivos y modo competencia.">
+<title>Misión Ñandú — Entrenamiento Olímpico</title>
+<meta name="description" content="Simulador de entrenamiento matemático para la Olimpíada Ñandú. Lógica, geometría y desafíos avanzados.">
 <style>
   :root {
-    --bg-primary: #0f172a;
-    --bg-secondary: #1e293b;
-    --accent-primary: #3b82f6;
-    --accent-secondary: #8b5cf6;
-    --accent-success: #10b981;
-    --accent-warning: #f59e0b;
-    --text-main: #f8fafc;
-    --text-muted: #cbd5e1;
+    --bg-primary: #ffffff;
+    --bg-secondary: #f9fafb;
+    --text-main: #111827;
+    --text-muted: #4b5563;
+    --border-light: #e5e7eb;
+    --border-dark: #111827;
+    --accent: #000000;
   }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  * { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+  }
+
   body {
-    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-    background: radial-gradient(circle at top right, #1e1b4b, var(--bg-primary));
+    font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-primary);
     color: var(--text-main);
     line-height: 1.6;
-    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
-  .wrap { max-width: 1000px; margin: 0 auto; padding: 0 1.5rem; }
 
-  /* HERO */
-  .hero { text-align: center; padding: 4rem 1.5rem 3rem; }
+  .wrap { 
+    max-width: 900px; 
+    margin: 0 auto; 
+    padding: 0 2rem; 
+  }
+
+  /* HEADER & HERO */
+  .hero { 
+    padding: 6rem 0 4rem; 
+    border-bottom: 1px solid var(--border-light);
+  }
+  
   .mascot {
-    width: 150px; height: 150px; margin: 0 auto 1.5rem;
-    filter: drop-shadow(0 10px 25px rgba(245, 158, 11, 0.35));
-    animation: float 3.5s ease-in-out infinite;
+    width: 72px; 
+    height: 72px; 
+    margin-bottom: 2rem;
+    color: var(--accent);
   }
-  @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+
+  .hero .sub { 
+    color: var(--text-muted); 
+    font-weight: 600; 
+    font-size: 0.85rem; 
+    letter-spacing: 0.05em; 
+    text-transform: uppercase; 
+    margin-bottom: 1rem;
+  }
+
   .hero h1 {
-    font-size: clamp(2.4rem, 7vw, 4rem); font-weight: 800; letter-spacing: -1px;
-    background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
-    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    font-size: clamp(2rem, 5vw, 3.5rem); 
+    font-weight: 800; 
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    color: var(--text-main);
+    margin-bottom: 1.5rem;
   }
-  .hero .tagline { color: var(--text-muted); font-size: 1.2rem; margin: 0.75rem auto 0.4rem; max-width: 640px; }
-  .hero .sub { color: var(--accent-warning); font-weight: 600; font-size: 0.95rem; letter-spacing: 1px; text-transform: uppercase; }
 
-  .cta { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem; }
+  .hero .tagline { 
+    color: var(--text-muted); 
+    font-size: 1.125rem; 
+    max-width: 600px; 
+    line-height: 1.6;
+  }
+
+  .cta { 
+    display: flex; 
+    gap: 1rem; 
+    margin-top: 2.5rem; 
+  }
+
   .btn {
-    display: inline-flex; align-items: center; gap: 0.5rem;
-    padding: 0.9rem 2rem; border-radius: 12px; font-size: 1.1rem; font-weight: 700;
-    text-decoration: none; transition: transform 0.15s, box-shadow 0.2s; border: 2px solid transparent;
+    display: inline-flex; 
+    align-items: center; 
+    justify-content: center;
+    padding: 0.75rem 1.5rem; 
+    font-size: 0.95rem; 
+    font-weight: 600;
+    text-decoration: none; 
+    transition: all 0.2s ease;
+    border-radius: 4px;
   }
+
   .btn-primary {
-    background: linear-gradient(90deg, var(--accent-warning), #f97316); color: #1e1b14;
-    box-shadow: 0 8px 24px rgba(245, 158, 11, 0.35);
+    background-color: var(--accent); 
+    color: #ffffff;
+    border: 1px solid var(--accent);
   }
-  .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(245, 158, 11, 0.5); }
-  .btn-ghost { background: transparent; border-color: rgba(255,255,255,0.25); color: var(--text-main); }
-  .btn-ghost:hover { border-color: var(--accent-primary); background: rgba(59,130,246,0.12); }
 
-  /* SECCIONES */
-  section.block { padding: 2.5rem 0; }
-  h2 { font-size: 1.8rem; text-align: center; margin-bottom: 0.5rem; }
-  .lead { text-align: center; color: var(--text-muted); max-width: 700px; margin: 0 auto 2rem; }
+  .btn-primary:hover { 
+    background-color: #333333; 
+    border-color: #333333;
+  }
 
-  /* GRID DE MÓDULOS */
-  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+  .btn-ghost { 
+    background-color: transparent; 
+    color: var(--text-main);
+    border: 1px solid var(--border-light);
+  }
+
+  .btn-ghost:hover { 
+    border-color: var(--border-dark); 
+    background-color: var(--bg-secondary);
+  }
+
+  /* SECTIONS */
+  section.block { 
+    padding: 4rem 0; 
+    border-bottom: 1px solid var(--border-light);
+  }
+  
+  section.block:last-of-type {
+    border-bottom: none;
+  }
+
+  h2 { 
+    font-size: 1.5rem; 
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem; 
+  }
+
+  .lead { 
+    color: var(--text-muted); 
+    max-width: 650px; 
+    margin-bottom: 3rem; 
+    font-size: 1.05rem;
+  }
+
+  /* GRID */
+  .grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 1.5rem; 
+  }
+
   .card {
-    background: var(--bg-secondary); border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 14px; padding: 1.4rem; transition: transform 0.15s, border-color 0.2s;
+    background: var(--bg-primary); 
+    border: 1px solid var(--border-light);
+    padding: 1.75rem; 
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    border-radius: 4px;
   }
-  .card:hover { transform: translateY(-4px); border-color: var(--accent-secondary); }
-  .card .icon { font-size: 1.8rem; }
-  .card h3 { font-size: 1.15rem; margin: 0.4rem 0; }
-  .card p { color: var(--text-muted); font-size: 0.92rem; }
 
-  /* CÓMO PROGRESÁS */
-  .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.2rem; }
-  .step { text-align: center; padding: 1rem; }
+  .card:hover { 
+    border-color: var(--border-dark); 
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+  }
+
+  .card .icon { 
+    width: 24px; 
+    height: 24px; 
+    margin-bottom: 1.25rem;
+    color: var(--text-main);
+  }
+
+  .card h3 { 
+    font-size: 1rem; 
+    font-weight: 600;
+    margin-bottom: 0.5rem; 
+  }
+
+  .card p { 
+    color: var(--text-muted); 
+    font-size: 0.9rem; 
+    line-height: 1.5;
+  }
+
+  /* PROGRESS STEPS */
+  .steps { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    gap: 2rem; 
+  }
+
+  .step { 
+    border-left: 2px solid var(--border-light);
+    padding-left: 1.5rem;
+  }
+
   .step .num {
-    display: inline-flex; align-items: center; justify-content: center;
-    width: 48px; height: 48px; border-radius: 50%; font-weight: 800; font-size: 1.3rem;
-    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary)); margin-bottom: 0.6rem;
+    font-family: monospace;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin-bottom: 0.75rem;
+    display: block;
   }
-  .stages { text-align: center; color: var(--text-muted); margin-top: 1.5rem; font-size: 0.95rem; }
-  .stages b { color: var(--accent-warning); }
 
-  footer { text-align: center; padding: 2.5rem 1.5rem; color: var(--text-muted); border-top: 1px solid rgba(255,255,255,0.08); margin-top: 2rem; }
-  footer a { color: var(--accent-primary); text-decoration: none; }
-  footer a:hover { text-decoration: underline; }
+  .step h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .step p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+  }
+
+  .stages { 
+    color: var(--text-muted); 
+    margin-top: 3rem; 
+    font-size: 0.85rem; 
+    padding: 1rem;
+    background: var(--bg-secondary);
+    border-radius: 4px;
+    border: 1px solid var(--border-light);
+    display: inline-block;
+  }
+
+  .stages b { 
+    color: var(--text-main); 
+    font-weight: 600;
+  }
+
+  /* FOOTER */
+  footer { 
+    padding: 3rem 2rem; 
+    color: var(--text-muted); 
+    border-top: 1px solid var(--border-light); 
+    font-size: 0.85rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  footer a { 
+    color: var(--text-main); 
+    text-decoration: none; 
+    font-weight: 500;
+  }
+
+  footer a:hover { 
+    text-decoration: underline; 
+  }
+
+  @media (max-width: 600px) {
+    .cta { flex-direction: column; }
+    footer { flex-direction: column; gap: 1rem; text-align: center; }
+  }
 </style>
 </head>
 <body>
 
-  <header class="hero">
+  <header class="hero wrap">
     <div class="mascot">
-      <svg viewBox="0 0 100 100" width="150" height="150">
-        <ellipse cx="50" cy="60" rx="30" ry="20" fill="#b45309"/>
-        <circle cx="70" cy="30" r="15" fill="#b45309"/>
-        <path d="M 60 40 Q 50 50 50 60" stroke="#b45309" stroke-width="10" fill="none"/>
-        <circle cx="75" cy="25" r="2.5" fill="#fff"/>
-        <polygon points="85,30 96,35 85,40" fill="#f59e0b"/>
-        <line x1="40" y1="80" x2="40" y2="96" stroke="#b45309" stroke-width="5"/>
-        <line x1="60" y1="80" x2="60" y2="96" stroke="#b45309" stroke-width="5"/>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="bevel">
+        <polygon points="50,15 25,45 45,45" />
+        <polygon points="50,15 45,45 80,35" />
+        <polygon points="45,45 25,45 35,85" />
+        <polygon points="45,45 35,85 65,95" />
+        <polygon points="45,45 65,95 80,35" />
+        <circle cx="55" cy="30" r="2" fill="currentColor" stroke="none" />
       </svg>
     </div>
-    <p class="sub">Olimpíada Ñandú · Matemática para primaria</p>
+    <p class="sub">Olimpíada Matemática Argentina</p>
     <h1>Misión Ñandú</h1>
-    <p class="tagline">Entrená para la Olimpíada Ñandú resolviendo desafíos, ganá experiencia y hacé evolucionar a tu ñandú matemático. 🪶</p>
+    <p class="tagline">Plataforma de entrenamiento avanzado. Resolvé problemas, aplicá lógica matemática y preparate para las distintas instancias del certamen.</p>
     <div class="cta">
-      <a class="btn btn-primary" href="mision_nandu.html">🎮 Jugar ahora</a>
-      <a class="btn btn-ghost" href="https://github.com/pablosartorio/nandu">Ver el proyecto</a>
+      <a class="btn btn-primary" href="mision_nandu.html">Iniciar Entrenamiento</a>
+      <a class="btn btn-ghost" href="https://github.com/pablosartorio/nandu">Repositorio del Proyecto</a>
     </div>
   </header>
 
   <main class="wrap">
 
     <section class="block">
-      <h2>¿Qué es?</h2>
+      <h2>Enfoque del sistema</h2>
       <p class="lead">
-        Un juego para practicar para la <strong>Olimpíada Ñandú</strong>, el certamen
-        argentino de matemática de nivel primario. Resolvés problemas de distintos temas
-        organizados por <strong>nivel de dificultad</strong>, así cada chico practica donde está.
-        Funciona en cualquier navegador, sin instalar nada, y guarda tu progreso.
+        Herramienta de simulación diseñada para la <strong>Olimpíada Ñandú</strong>. 
+        Los problemas se estructuran en módulos temáticos con dificultad escalonada, permitiendo 
+        un progreso analítico y enfocado, sin fricciones visuales.
       </p>
     </section>
 
     <section class="block">
-      <h2>Módulos de entrenamiento</h2>
-      <p class="lead">Siete áreas para dominar, de lo más simple al desafío olímpico.</p>
+      <h2>Módulos de Práctica</h2>
       <div class="grid">
-        <div class="card"><div class="icon">🔢</div><h3>Patrones</h3><p>Descubrí las secuencias numéricas ocultas.</p></div>
-        <div class="card"><div class="icon">🧠</div><h3>Lógica</h3><p>Razonamiento deductivo y estrategias.</p></div>
-        <div class="card"><div class="icon">📐</div><h3>Geometría</h3><p>Perímetros y áreas, con figuras dibujadas.</p></div>
-        <div class="card"><div class="icon">🎲</div><h3>Conteo</h3><p>Combinatoria y conteo de posibilidades.</p></div>
-        <div class="card"><div class="icon">➗</div><h3>Divisibilidad</h3><p>Los secretos de múltiplos y divisores.</p></div>
-        <div class="card"><div class="icon">🔍</div><h3>Encuentra el Error</h3><p>Analizá resoluciones falsas y corregilas.</p></div>
-        <div class="card"><div class="icon">🏆</div><h3>Olímpico</h3><p>El desafío final de campeones.</p></div>
+        <div class="card">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 12h4m4 0h8m-12 8h4m4 0h8M4 4h4m4 0h8"/></svg>
+          <h3>Patrones</h3>
+          <p>Análisis y descubrimiento de secuencias ocultas.</p>
+        </div>
+        <div class="card">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><path d="M3 9h18M9 21V9"/></svg>
+          <h3>Lógica</h3>
+          <p>Razonamiento deductivo y estrategias de resolución.</p>
+        </div>
+        <div class="card">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          <h3>Geometría</h3>
+          <p>Cálculo de perímetros, áreas y propiedades espaciales.</p>
+        </div>
+        <div class="card">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          <h3>Conteo</h3>
+          <p>Combinatoria y estructuración de posibilidades.</p>
+        </div>
+        <div class="card">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+          <h3>Divisibilidad</h3>
+          <p>Propiedades de múltiplos, divisores y números primos.</p>
+        </div>
+        <div class="card">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+          <h3>Encuentra el Error</h3>
+          <p>Auditoría de resoluciones y corrección metodológica.</p>
+        </div>
+        <div class="card">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <h3>Olímpico</h3>
+          <p>Problemas integrales de alta complejidad.</p>
+        </div>
       </div>
     </section>
 
     <section class="block">
-      <h2>Cómo progresás</h2>
-      <p class="lead">Mientras más resolvés, más crece tu ñandú.</p>
+      <h2>Metodología de Progreso</h2>
       <div class="steps">
-        <div class="step"><div class="num">1</div><h3>Entrená por módulo</h3><p>Elegí un tema y resolvé a tu ritmo, con pistas y explicaciones.</p></div>
-        <div class="step"><div class="num">2</div><h3>Ganá XP y subí de nivel</h3><p>Tu ñandú evoluciona: de huevo a Ñandú Ninja Olímpico.</p></div>
-        <div class="step"><div class="num">3</div><h3>Competí</h3><p>Simulá el certamen oficial con dificultad creciente.</p></div>
+        <div class="step">
+          <span class="num">01.</span>
+          <h3>Módulos de Entrenamiento</h3>
+          <p>Resolución por eje temático con soporte analítico y despiece de pistas lógicas.</p>
+        </div>
+        <div class="step">
+          <span class="num">02.</span>
+          <h3>Métricas de Avance</h3>
+          <p>Seguimiento de rendimiento continuo y aumento de la dificultad algorítmica.</p>
+        </div>
+        <div class="step">
+          <span class="num">03.</span>
+          <h3>Simulación Competitiva</h3>
+          <p>Evaluaciones cronometradas simulando las exigencias de los certámenes reales.</p>
+        </div>
       </div>
-      <p class="stages">
-        Modo Competencia · 5 instancias:
-        <b>Escolar</b> → <b>Interescolar</b> → <b>Zonal</b> → <b>Regional</b> → <b>Nacional</b>
-      </p>
-    </section>
-
-    <section class="block" style="text-align:center;">
-      <a class="btn btn-primary" href="mision_nandu.html">🎮 Empezar a jugar</a>
+      <div class="stages">
+        Trayecto Oficial:
+        <b>Escolar</b> &rarr; <b>Interescolar</b> &rarr; <b>Zonal</b> &rarr; <b>Regional</b> &rarr; <b>Nacional</b>
+      </div>
     </section>
 
   </main>
 
   <footer>
-    <p>Misión Ñandú · Hecho con 🪶 para los que entrenan para la Olimpíada Ñandú.</p>
-    <p style="margin-top:0.4rem;"><a href="https://github.com/pablosartorio/nandu">Código en GitHub</a></p>
+    <p>Misión Ñandú &copy; 2026. Entorno de práctica matemática.</p>
+    <a href="https://github.com/pablosartorio/nandu" target="_blank" rel="noopener">Ver código fuente</a>
   </footer>
 
 </body>
