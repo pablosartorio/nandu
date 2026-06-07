@@ -1,0 +1,2558 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Misión Ñandú: Camino al Nacional</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --accent-primary: #3b82f6;
+            --accent-secondary: #8b5cf6;
+            --accent-success: #10b981;
+            --accent-warning: #f59e0b;
+            --accent-error: #ef4444;
+            --text-main: #f8fafc;
+            --text-muted: #cbd5e1;
+            --font-main: 'Outfit', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background: radial-gradient(circle at top right, #1e1b4b, var(--bg-primary));
+            color: var(--text-main);
+            min-height: 100vh;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Top Bar */
+        header {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .user-stats {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .stat-badge {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 700;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .xp-bar-container {
+            width: 150px;
+            height: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            overflow: hidden;
+            margin-left: 10px;
+        }
+
+        .xp-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+            width: 0%;
+            transition: width 0.5s ease-out;
+        }
+
+        .title-logo {
+            font-size: 1.8rem;
+            font-weight: 900;
+            background: linear-gradient(to right, #60a5fa, #a78bfa);
+            -webkit-background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+        }
+
+        /* Main Container */
+        main {
+            flex: 1;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* Screens */
+        .screen {
+            display: none;
+            animation: fadeIn 0.4s ease-out forwards;
+        }
+        .screen.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Home Dashboard */
+        .dashboard {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 2rem;
+        }
+
+        .modules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .module-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .module-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.1), transparent);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .module-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border-color: var(--accent-secondary);
+        }
+
+        .module-card:hover::before { opacity: 1; }
+
+        .module-progress {
+            height: 4px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 2px;
+            margin-top: 0.8rem;
+            overflow: hidden;
+        }
+        .module-progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+            width: 0%;
+            transition: width 0.5s ease-out;
+        }
+        .module-progress-label {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+        }
+
+        .module-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .module-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Sidebar Mascot */
+        .mascot-container {
+            background: rgba(30, 41, 59, 0.8);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            box-shadow: 0 0 30px rgba(139, 92, 246, 0.1);
+        }
+
+        .mascot-svg {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 1rem;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .competencia-btn {
+            background: linear-gradient(135deg, #f59e0b, #ef4444);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            font-size: 1.2rem;
+            font-weight: 900;
+            width: 100%;
+            cursor: pointer;
+            margin-top: 1rem;
+            box-shadow: 0 4px 15px rgba(239, 68, 68, 0.4);
+            transition: transform 0.2s;
+        }
+        .competencia-btn:hover {
+            transform: scale(1.05);
+        }
+
+        /* Gameplay Area */
+        .play-area {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(30, 41, 59, 0.9);
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .problem-statement {
+            font-size: 1.5rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+
+        .answer-section {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .answer-input {
+            flex: 1;
+            background: rgba(15, 23, 42, 0.8);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 1rem;
+            font-size: 1.2rem;
+            border-radius: 10px;
+            outline: none;
+            font-family: var(--font-main);
+            transition: border-color 0.3s;
+        }
+
+        .answer-input:focus {
+            border-color: var(--accent-primary);
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s;
+            font-family: var(--font-main);
+        }
+
+        .btn-primary {
+            background: var(--accent-primary);
+            color: white;
+        }
+        .btn-primary:hover {
+            background: #2563eb;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: rgba(255,255,255,0.1);
+            color: white;
+        }
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .feedback {
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-top: 1.5rem;
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .feedback.success {
+            display: block;
+            background: rgba(16, 185, 129, 0.2);
+            border: 1px solid var(--accent-success);
+        }
+
+        .feedback.error {
+            display: block;
+            background: rgba(239, 68, 68, 0.2);
+            border: 1px solid var(--accent-error);
+        }
+
+        /* Geometria SVG Canvas */
+        #svg-workspace {
+            width: 100%;
+            height: 300px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+            display: none;
+            cursor: crosshair;
+            border: 1px dashed rgba(255,255,255,0.2);
+        }
+
+        .interactive-polygon {
+            fill: rgba(59, 130, 246, 0.3);
+            stroke: var(--accent-primary);
+            stroke-width: 3;
+            transition: fill 0.3s;
+        }
+        .interactive-polygon:hover {
+            fill: rgba(59, 130, 246, 0.5);
+        }
+        .interactive-vertex {
+            fill: white;
+            r: 6;
+            cursor: pointer;
+            transition: r 0.2s, fill 0.2s;
+        }
+        .interactive-vertex:hover {
+            r: 8;
+            fill: var(--accent-warning);
+        }
+
+        @media (max-width: 768px) {
+            .dashboard { grid-template-columns: 1fr; }
+            .user-stats { gap: 1rem; }
+            .title-logo { font-size: 1.2rem; }
+            .xp-bar-container { width: 100px; }
+        }
+
+        /* Competencia Mode Tracker */
+        .stage-tracker {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        .stage-tracker::before {
+            content: '';
+            position: absolute;
+            top: 50%; left: 0; right: 0;
+            height: 2px;
+            background: rgba(255,255,255,0.2);
+            z-index: 0;
+        }
+        .stage-node {
+            width: 30px; height: 30px;
+            border-radius: 50%;
+            background: var(--bg-secondary);
+            border: 2px solid rgba(255,255,255,0.5);
+            z-index: 1;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        .stage-node.active { border-color: var(--accent-primary); background: var(--accent-primary); box-shadow: 0 0 15px var(--accent-primary); }
+        .stage-node.passed { border-color: var(--accent-success); background: var(--accent-success); }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="title-logo" style="cursor: pointer" onclick="showScreen('home')">Misión Ñandú</div>
+        <div class="user-stats">
+            <div class="stat-badge">
+                🏆 <span id="level-display">Nivel 1</span>
+                <div class="xp-bar-container"><div class="xp-bar-fill" id="xp-bar"></div></div>
+            </div>
+            <div class="stat-badge">
+                🏅 <span id="achievements-display">0</span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Home Dashboard Screen -->
+        <div id="home" class="screen active">
+            <div class="dashboard">
+                <div class="modules-grid">
+                    <div class="module-card" onclick="startModule('patrones')">
+                        <div class="module-icon">🕵️‍♂️</div>
+                        <div class="module-title">Detective de Patrones</div>
+                        <div style="color: var(--text-muted); font-size: 0.9rem;">Descubre secuencias numéricas ocultas.</div>
+                        <div class="module-progress"><div class="module-progress-bar" id="prog-patrones"></div></div>
+                        <div class="module-progress-label" id="prog-patrones-label">0 resueltos</div>
+                    </div>
+                    <div class="module-card" onclick="startModule('logica')">
+                        <div class="module-icon">🧪</div>
+                        <div class="module-title">Laboratorio de Estrategias</div>
+                        <div style="color: var(--text-muted); font-size: 0.9rem;">Lógica y razonamiento deductivo.</div>
+                        <div class="module-progress"><div class="module-progress-bar" id="prog-logica"></div></div>
+                        <div class="module-progress-label" id="prog-logica-label">0 resueltos</div>
+                    </div>
+                    <div class="module-card" onclick="startModule('geometria')">
+                        <div class="module-icon">🥷</div>
+                        <div class="module-title">Geometría Ninja</div>
+                        <div style="color: var(--text-muted); font-size: 0.9rem;">Domina perímetros y áreas con precisión.</div>
+                        <div class="module-progress"><div class="module-progress-bar" id="prog-geometria"></div></div>
+                        <div class="module-progress-label" id="prog-geometria-label">0 resueltos</div>
+                    </div>
+                    <div class="module-card" onclick="startModule('conteo')">
+                        <div class="module-icon">🛣️</div>
+                        <div class="module-title">Cuenta Caminos</div>
+                        <div style="color: var(--text-muted); font-size: 0.9rem;">Combinatoria y conteo de posibilidades.</div>
+                        <div class="module-progress"><div class="module-progress-bar" id="prog-conteo"></div></div>
+                        <div class="module-progress-label" id="prog-conteo-label">0 resueltos</div>
+                    </div>
+                    <div class="module-card" onclick="startModule('divisibilidad')">
+                        <div class="module-icon">🏴‍☠️</div>
+                        <div class="module-title">Cofre de Divisibilidad</div>
+                        <div style="color: var(--text-muted); font-size: 0.9rem;">Secretos de múltiplos y divisores.</div>
+                        <div class="module-progress"><div class="module-progress-bar" id="prog-divisibilidad"></div></div>
+                        <div class="module-progress-label" id="prog-divisibilidad-label">0 resueltos</div>
+                    </div>
+                    <div class="module-card" onclick="startModule('error')">
+                        <div class="module-icon">🔍</div>
+                        <div class="module-title">Encuentra el Error</div>
+                        <div style="color: var(--text-muted); font-size: 0.9rem;">Analiza resoluciones falsas.</div>
+                        <div class="module-progress"><div class="module-progress-bar" id="prog-error"></div></div>
+                        <div class="module-progress-label" id="prog-error-label">0 resueltos</div>
+                    </div>
+                    <div class="module-card" onclick="startModule('olimpico')">
+                        <div class="module-icon">👑</div>
+                        <div class="module-title">Problema Olímpico</div>
+                        <div style="color: var(--text-muted); font-size: 0.9rem;">El desafío final de campeones.</div>
+                        <div class="module-progress"><div class="module-progress-bar" id="prog-olimpico"></div></div>
+                        <div class="module-progress-label" id="prog-olimpico-label">0 resueltos</div>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="mascot-container">
+                        <div id="mascot-svg-wrapper">
+                            <!-- SVG Mascot injected here based on level -->
+                        </div>
+                        <h3 style="margin-bottom: 0.5rem;" id="mascot-name">Huevo Matemático</h3>
+                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem;" id="mascot-desc">Resuelve problemas para evolucionar tu Ñandú.</p>
+                        
+                        <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1)">
+                            <h3>Modo Competencia</h3>
+                            <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 1rem;">Simula las 5 etapas oficiales.</p>
+                            <button class="competencia-btn" onclick="startCompetencia()">¡Inscribirse!</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Problem Playing Screen -->
+        <div id="play" class="screen">
+            <div class="play-area">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
+                    <button class="btn btn-secondary" style="padding: 0.5rem 1rem" onclick="showScreen('home')">← Volver</button>
+                    <div id="mode-indicator" style="color: var(--accent-warning); font-weight: bold; align-self: center;">Entrenamiento</div>
+                </div>
+                
+                <div id="competencia-tracker" class="stage-tracker" style="display: none;">
+                    <div class="stage-node" id="stage-0" title="Escolar">1</div>
+                    <div class="stage-node" id="stage-1" title="Interescolar">2</div>
+                    <div class="stage-node" id="stage-2" title="Zonal">3</div>
+                    <div class="stage-node" id="stage-3" title="Regional">4</div>
+                    <div class="stage-node" id="stage-4" title="Nacional">5</div>
+                </div>
+
+                <div id="problem-category" style="text-transform: uppercase; letter-spacing: 2px; color: var(--accent-secondary); font-size: 0.9rem; font-weight: 700; margin-bottom: 1rem;">CATEGORIA</div>
+                
+                <!-- Interactive SVG Canvas for Geometry -->
+                <svg id="svg-workspace"></svg>
+
+                <div class="problem-statement" id="problem-statement">
+                    Cargando problema...
+                </div>
+
+                <div class="answer-section">
+                    <input type="text" id="answer-input" class="answer-input" placeholder="Tu respuesta final..." onkeypress="if(event.key === 'Enter') checkAnswer()">
+                    <button class="btn btn-primary" onclick="checkAnswer()">Responder</button>
+                    <button class="btn btn-secondary" onclick="showHint()" id="hint-btn">💡 Pista</button>
+                </div>
+
+                <div id="feedback" class="feedback">
+                    <h3 id="feedback-title" style="margin-bottom: 0.5rem;"></h3>
+                    <p id="feedback-desc"></p>
+                    <div style="margin-top: 1rem; display: flex; gap: 1rem;">
+                        <button class="btn btn-primary" id="next-problem-btn" onclick="nextProblem()">Siguiente Problema →</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </main>
+
+    <script>
+        // Data
+        const problemBank = [
+  {
+    "id": 1,
+    "categoria": "patrones",
+    "dificultad": 1,
+    "enunciado": "Observa la secuencia: 20, 31, 42, 53, 64, ... ¿Qué número sigue?",
+    "respuesta": "75",
+    "explicacion": "La secuencia aumenta sumando 11 en cada paso. 64 + 11 = 75",
+    "pista": "Calcula la diferencia entre números consecutivos."
+  },
+  {
+    "id": 2,
+    "categoria": "patrones",
+    "dificultad": 1,
+    "enunciado": "Observa la secuencia: 5, 13, 21, 29, 37, ... ¿Qué número sigue?",
+    "respuesta": "45",
+    "explicacion": "La secuencia aumenta sumando 8 en cada paso. 37 + 8 = 45",
+    "pista": "Calcula la diferencia entre números consecutivos."
+  },
+  {
+    "id": 3,
+    "categoria": "patrones",
+    "dificultad": 1,
+    "enunciado": "Observa la secuencia: 9, 18, 27, 36, 45, ... ¿Qué número sigue?",
+    "respuesta": "54",
+    "explicacion": "La secuencia aumenta sumando 9 en cada paso. 45 + 9 = 54",
+    "pista": "Calcula la diferencia entre números consecutivos."
+  },
+  {
+    "id": 4,
+    "categoria": "patrones",
+    "dificultad": 1,
+    "enunciado": "Observa la secuencia: 16, 19, 22, 25, 28, ... ¿Qué número sigue?",
+    "respuesta": "31",
+    "explicacion": "La secuencia aumenta sumando 3 en cada paso. 28 + 3 = 31",
+    "pista": "Calcula la diferencia entre números consecutivos."
+  },
+  {
+    "id": 5,
+    "categoria": "patrones",
+    "dificultad": 1,
+    "enunciado": "Observa la secuencia: 11, 20, 29, 38, 47, ... ¿Qué número sigue?",
+    "respuesta": "56",
+    "explicacion": "La secuencia aumenta sumando 9 en cada paso. 47 + 9 = 56",
+    "pista": "Calcula la diferencia entre números consecutivos."
+  },
+  {
+    "id": 6,
+    "categoria": "patrones",
+    "dificultad": 1,
+    "enunciado": "Observa la secuencia: 13, 25, 37, 49, 61, ... ¿Qué número sigue?",
+    "respuesta": "73",
+    "explicacion": "La secuencia aumenta sumando 12 en cada paso. 61 + 12 = 73",
+    "pista": "Calcula la diferencia entre números consecutivos."
+  },
+  {
+    "id": 7,
+    "categoria": "patrones",
+    "dificultad": 1,
+    "enunciado": "Observa la secuencia: 11, 16, 21, 26, 31, ... ¿Qué número sigue?",
+    "respuesta": "36",
+    "explicacion": "La secuencia aumenta sumando 5 en cada paso. 31 + 5 = 36",
+    "pista": "Calcula la diferencia entre números consecutivos."
+  },
+  {
+    "id": 8,
+    "categoria": "patrones",
+    "dificultad": 1,
+    "enunciado": "Observa la secuencia: 12, 21, 30, 39, 48, ... ¿Qué número sigue?",
+    "respuesta": "57",
+    "explicacion": "La secuencia aumenta sumando 9 en cada paso. 48 + 9 = 57",
+    "pista": "Calcula la diferencia entre números consecutivos."
+  },
+  {
+    "id": 9,
+    "categoria": "patrones",
+    "dificultad": 1,
+    "enunciado": "Observa la secuencia: 4, 15, 26, 37, 48, ... ¿Qué número sigue?",
+    "respuesta": "59",
+    "explicacion": "La secuencia aumenta sumando 11 en cada paso. 48 + 11 = 59",
+    "pista": "Calcula la diferencia entre números consecutivos."
+  },
+  {
+    "id": 10,
+    "categoria": "patrones",
+    "dificultad": 1,
+    "enunciado": "Observa la secuencia: 9, 12, 15, 18, 21, ... ¿Qué número sigue?",
+    "respuesta": "24",
+    "explicacion": "La secuencia aumenta sumando 3 en cada paso. 21 + 3 = 24",
+    "pista": "Calcula la diferencia entre números consecutivos."
+  },
+  {
+    "id": 11,
+    "categoria": "patrones",
+    "dificultad": 1,
+    "enunciado": "Observa la secuencia: 10, 21, 32, 43, 54, ... ¿Qué número sigue?",
+    "respuesta": "65",
+    "explicacion": "La secuencia aumenta sumando 11 en cada paso. 54 + 11 = 65",
+    "pista": "Calcula la diferencia entre números consecutivos."
+  },
+  {
+    "id": 12,
+    "categoria": "patrones",
+    "dificultad": 1,
+    "enunciado": "Observa la secuencia: 8, 13, 18, 23, 28, ... ¿Qué número sigue?",
+    "respuesta": "33",
+    "explicacion": "La secuencia aumenta sumando 5 en cada paso. 28 + 5 = 33",
+    "pista": "Calcula la diferencia entre números consecutivos."
+  },
+  {
+    "id": 13,
+    "categoria": "patrones",
+    "dificultad": 1,
+    "enunciado": "Observa la secuencia: 3, 12, 21, 30, 39, ... ¿Qué número sigue?",
+    "respuesta": "48",
+    "explicacion": "La secuencia aumenta sumando 9 en cada paso. 39 + 9 = 48",
+    "pista": "Calcula la diferencia entre números consecutivos."
+  },
+  {
+    "id": 14,
+    "categoria": "patrones",
+    "dificultad": 1,
+    "enunciado": "Observa la secuencia: 17, 28, 39, 50, 61, ... ¿Qué número sigue?",
+    "respuesta": "72",
+    "explicacion": "La secuencia aumenta sumando 11 en cada paso. 61 + 11 = 72",
+    "pista": "Calcula la diferencia entre números consecutivos."
+  },
+  {
+    "id": 15,
+    "categoria": "patrones",
+    "dificultad": 2,
+    "enunciado": "Descifra el patrón: 4, 12, 36, 108, ... ¿Cuál es el próximo número?",
+    "respuesta": "324",
+    "explicacion": "Cada número se multiplica por 3 para obtener el siguiente. 108 x 3 = 324",
+    "pista": "Fíjate si en lugar de sumar, los números se multiplican."
+  },
+  {
+    "id": 16,
+    "categoria": "patrones",
+    "dificultad": 2,
+    "enunciado": "Descifra el patrón: 3, 9, 27, 81, ... ¿Cuál es el próximo número?",
+    "respuesta": "243",
+    "explicacion": "Cada número se multiplica por 3 para obtener el siguiente. 81 x 3 = 243",
+    "pista": "Fíjate si en lugar de sumar, los números se multiplican."
+  },
+  {
+    "id": 17,
+    "categoria": "patrones",
+    "dificultad": 2,
+    "enunciado": "Descifra el patrón: 2, 4, 8, 16, ... ¿Cuál es el próximo número?",
+    "respuesta": "32",
+    "explicacion": "Cada número se multiplica por 2 para obtener el siguiente. 16 x 2 = 32",
+    "pista": "Fíjate si en lugar de sumar, los números se multiplican."
+  },
+  {
+    "id": 18,
+    "categoria": "patrones",
+    "dificultad": 2,
+    "enunciado": "Descifra el patrón: 2, 6, 18, 54, ... ¿Cuál es el próximo número?",
+    "respuesta": "162",
+    "explicacion": "Cada número se multiplica por 3 para obtener el siguiente. 54 x 3 = 162",
+    "pista": "Fíjate si en lugar de sumar, los números se multiplican."
+  },
+  {
+    "id": 19,
+    "categoria": "patrones",
+    "dificultad": 2,
+    "enunciado": "Descifra el patrón: 4, 8, 16, 32, ... ¿Cuál es el próximo número?",
+    "respuesta": "64",
+    "explicacion": "Cada número se multiplica por 2 para obtener el siguiente. 32 x 2 = 64",
+    "pista": "Fíjate si en lugar de sumar, los números se multiplican."
+  },
+  {
+    "id": 20,
+    "categoria": "patrones",
+    "dificultad": 2,
+    "enunciado": "Descifra el patrón: 4, 16, 64, 256, ... ¿Cuál es el próximo número?",
+    "respuesta": "1024",
+    "explicacion": "Cada número se multiplica por 4 para obtener el siguiente. 256 x 4 = 1024",
+    "pista": "Fíjate si en lugar de sumar, los números se multiplican."
+  },
+  {
+    "id": 21,
+    "categoria": "patrones",
+    "dificultad": 2,
+    "enunciado": "Descifra el patrón: 3, 6, 12, 24, ... ¿Cuál es el próximo número?",
+    "respuesta": "48",
+    "explicacion": "Cada número se multiplica por 2 para obtener el siguiente. 24 x 2 = 48",
+    "pista": "Fíjate si en lugar de sumar, los números se multiplican."
+  },
+  {
+    "id": 22,
+    "categoria": "patrones",
+    "dificultad": 2,
+    "enunciado": "Descifra el patrón: 3, 12, 48, 192, ... ¿Cuál es el próximo número?",
+    "respuesta": "768",
+    "explicacion": "Cada número se multiplica por 4 para obtener el siguiente. 192 x 4 = 768",
+    "pista": "Fíjate si en lugar de sumar, los números se multiplican."
+  },
+  {
+    "id": 23,
+    "categoria": "patrones",
+    "dificultad": 3,
+    "enunciado": "Encuentra el siguiente término: 1, 5, 10, 16, 23, ...",
+    "respuesta": "31",
+    "explicacion": "La diferencia entre los números no es fija. Primero se suma 4, luego 5, y así sucesivamente. Al último se le suma 8.",
+    "pista": "Observa las diferencias entre los números consecutivos, ¿qué patrón forman esas diferencias?"
+  },
+  {
+    "id": 24,
+    "categoria": "patrones",
+    "dificultad": 3,
+    "enunciado": "Encuentra el siguiente término: 8, 11, 15, 20, 26, ...",
+    "respuesta": "33",
+    "explicacion": "La diferencia entre los números no es fija. Primero se suma 3, luego 4, y así sucesivamente. Al último se le suma 7.",
+    "pista": "Observa las diferencias entre los números consecutivos, ¿qué patrón forman esas diferencias?"
+  },
+  {
+    "id": 25,
+    "categoria": "patrones",
+    "dificultad": 3,
+    "enunciado": "Encuentra el siguiente término: 8, 13, 19, 26, 34, ...",
+    "respuesta": "43",
+    "explicacion": "La diferencia entre los números no es fija. Primero se suma 5, luego 6, y así sucesivamente. Al último se le suma 9.",
+    "pista": "Observa las diferencias entre los números consecutivos, ¿qué patrón forman esas diferencias?"
+  },
+  {
+    "id": 26,
+    "categoria": "patrones",
+    "dificultad": 3,
+    "enunciado": "Encuentra el siguiente término: 10, 13, 17, 22, 28, ...",
+    "respuesta": "35",
+    "explicacion": "La diferencia entre los números no es fija. Primero se suma 3, luego 4, y así sucesivamente. Al último se le suma 7.",
+    "pista": "Observa las diferencias entre los números consecutivos, ¿qué patrón forman esas diferencias?"
+  },
+  {
+    "id": 27,
+    "categoria": "patrones",
+    "dificultad": 3,
+    "enunciado": "Encuentra el siguiente término: 1, 6, 12, 19, 27, ...",
+    "respuesta": "36",
+    "explicacion": "La diferencia entre los números no es fija. Primero se suma 5, luego 6, y así sucesivamente. Al último se le suma 9.",
+    "pista": "Observa las diferencias entre los números consecutivos, ¿qué patrón forman esas diferencias?"
+  },
+  {
+    "id": 28,
+    "categoria": "patrones",
+    "dificultad": 3,
+    "enunciado": "Encuentra el siguiente término: 10, 12, 15, 19, 24, ...",
+    "respuesta": "30",
+    "explicacion": "La diferencia entre los números no es fija. Primero se suma 2, luego 3, y así sucesivamente. Al último se le suma 6.",
+    "pista": "Observa las diferencias entre los números consecutivos, ¿qué patrón forman esas diferencias?"
+  },
+  {
+    "id": 29,
+    "categoria": "patrones",
+    "dificultad": 3,
+    "enunciado": "Encuentra el siguiente término: 2, 5, 9, 14, 20, ...",
+    "respuesta": "27",
+    "explicacion": "La diferencia entre los números no es fija. Primero se suma 3, luego 4, y así sucesivamente. Al último se le suma 7.",
+    "pista": "Observa las diferencias entre los números consecutivos, ¿qué patrón forman esas diferencias?"
+  },
+  {
+    "id": 30,
+    "categoria": "patrones",
+    "dificultad": 3,
+    "enunciado": "Encuentra el siguiente término: 3, 8, 14, 21, 29, ...",
+    "respuesta": "38",
+    "explicacion": "La diferencia entre los números no es fija. Primero se suma 5, luego 6, y así sucesivamente. Al último se le suma 9.",
+    "pista": "Observa las diferencias entre los números consecutivos, ¿qué patrón forman esas diferencias?"
+  },
+  {
+    "id": 31,
+    "categoria": "patrones",
+    "dificultad": 3,
+    "enunciado": "Encuentra el siguiente término: 3, 7, 12, 18, 25, ...",
+    "respuesta": "33",
+    "explicacion": "La diferencia entre los números no es fija. Primero se suma 4, luego 5, y así sucesivamente. Al último se le suma 8.",
+    "pista": "Observa las diferencias entre los números consecutivos, ¿qué patrón forman esas diferencias?"
+  },
+  {
+    "id": 32,
+    "categoria": "patrones",
+    "dificultad": 3,
+    "enunciado": "Encuentra el siguiente término: 7, 9, 12, 16, 21, ...",
+    "respuesta": "27",
+    "explicacion": "La diferencia entre los números no es fija. Primero se suma 2, luego 3, y así sucesivamente. Al último se le suma 6.",
+    "pista": "Observa las diferencias entre los números consecutivos, ¿qué patrón forman esas diferencias?"
+  },
+  {
+    "id": 33,
+    "categoria": "logica",
+    "dificultad": 1,
+    "enunciado": "Las edades de Delfina y Beto suman 49 años. Si Delfina es 9 años mayor que Beto, ¿cuántos años tiene Delfina?",
+    "respuesta": "29",
+    "explicacion": "Si a la suma (49) le restamos la diferencia (9) queda 40. Dividimos por 2 y obtenemos la edad del menor (20). El mayor tiene 29.",
+    "pista": "Resta la diferencia a la suma total para igualarlos."
+  },
+  {
+    "id": 34,
+    "categoria": "logica",
+    "dificultad": 1,
+    "enunciado": "Las edades de Facu y Delfina suman 23 años. Si Facu es 9 años mayor que Delfina, ¿cuántos años tiene Facu?",
+    "respuesta": "16",
+    "explicacion": "Si a la suma (23) le restamos la diferencia (9) queda 14. Dividimos por 2 y obtenemos la edad del menor (7). El mayor tiene 16.",
+    "pista": "Resta la diferencia a la suma total para igualarlos."
+  },
+  {
+    "id": 35,
+    "categoria": "logica",
+    "dificultad": 1,
+    "enunciado": "Las edades de Ana y Carlos suman 34 años. Si Ana es 8 años mayor que Carlos, ¿cuántos años tiene Ana?",
+    "respuesta": "21",
+    "explicacion": "Si a la suma (34) le restamos la diferencia (8) queda 26. Dividimos por 2 y obtenemos la edad del menor (13). El mayor tiene 21.",
+    "pista": "Resta la diferencia a la suma total para igualarlos."
+  },
+  {
+    "id": 36,
+    "categoria": "logica",
+    "dificultad": 1,
+    "enunciado": "Las edades de Carlos y Gaby suman 33 años. Si Carlos es 5 años mayor que Gaby, ¿cuántos años tiene Carlos?",
+    "respuesta": "19",
+    "explicacion": "Si a la suma (33) le restamos la diferencia (5) queda 28. Dividimos por 2 y obtenemos la edad del menor (14). El mayor tiene 19.",
+    "pista": "Resta la diferencia a la suma total para igualarlos."
+  },
+  {
+    "id": 37,
+    "categoria": "logica",
+    "dificultad": 1,
+    "enunciado": "Las edades de Beto y Ana suman 46 años. Si Beto es 8 años mayor que Ana, ¿cuántos años tiene Beto?",
+    "respuesta": "27",
+    "explicacion": "Si a la suma (46) le restamos la diferencia (8) queda 38. Dividimos por 2 y obtenemos la edad del menor (19). El mayor tiene 27.",
+    "pista": "Resta la diferencia a la suma total para igualarlos."
+  },
+  {
+    "id": 38,
+    "categoria": "logica",
+    "dificultad": 1,
+    "enunciado": "Las edades de Gaby y Beto suman 36 años. Si Gaby es 6 años mayor que Beto, ¿cuántos años tiene Gaby?",
+    "respuesta": "21",
+    "explicacion": "Si a la suma (36) le restamos la diferencia (6) queda 30. Dividimos por 2 y obtenemos la edad del menor (15). El mayor tiene 21.",
+    "pista": "Resta la diferencia a la suma total para igualarlos."
+  },
+  {
+    "id": 39,
+    "categoria": "logica",
+    "dificultad": 1,
+    "enunciado": "Las edades de Delfina y Beto suman 50 años. Si Delfina es 4 años mayor que Beto, ¿cuántos años tiene Delfina?",
+    "respuesta": "27",
+    "explicacion": "Si a la suma (50) le restamos la diferencia (4) queda 46. Dividimos por 2 y obtenemos la edad del menor (23). El mayor tiene 27.",
+    "pista": "Resta la diferencia a la suma total para igualarlos."
+  },
+  {
+    "id": 40,
+    "categoria": "logica",
+    "dificultad": 1,
+    "enunciado": "Las edades de Ana y Gaby suman 42 años. Si Ana es 6 años mayor que Gaby, ¿cuántos años tiene Ana?",
+    "respuesta": "24",
+    "explicacion": "Si a la suma (42) le restamos la diferencia (6) queda 36. Dividimos por 2 y obtenemos la edad del menor (18). El mayor tiene 24.",
+    "pista": "Resta la diferencia a la suma total para igualarlos."
+  },
+  {
+    "id": 41,
+    "categoria": "logica",
+    "dificultad": 1,
+    "enunciado": "Las edades de Facu y Ana suman 47 años. Si Facu es 7 años mayor que Ana, ¿cuántos años tiene Facu?",
+    "respuesta": "27",
+    "explicacion": "Si a la suma (47) le restamos la diferencia (7) queda 40. Dividimos por 2 y obtenemos la edad del menor (20). El mayor tiene 27.",
+    "pista": "Resta la diferencia a la suma total para igualarlos."
+  },
+  {
+    "id": 42,
+    "categoria": "logica",
+    "dificultad": 1,
+    "enunciado": "Las edades de Ema y Carlos suman 38 años. Si Ema es 10 años mayor que Carlos, ¿cuántos años tiene Ema?",
+    "respuesta": "24",
+    "explicacion": "Si a la suma (38) le restamos la diferencia (10) queda 28. Dividimos por 2 y obtenemos la edad del menor (14). El mayor tiene 24.",
+    "pista": "Resta la diferencia a la suma total para igualarlos."
+  },
+  {
+    "id": 43,
+    "categoria": "logica",
+    "dificultad": 1,
+    "enunciado": "Las edades de Ema y Gaby suman 24 años. Si Ema es 4 años mayor que Gaby, ¿cuántos años tiene Ema?",
+    "respuesta": "14",
+    "explicacion": "Si a la suma (24) le restamos la diferencia (4) queda 20. Dividimos por 2 y obtenemos la edad del menor (10). El mayor tiene 14.",
+    "pista": "Resta la diferencia a la suma total para igualarlos."
+  },
+  {
+    "id": 44,
+    "categoria": "logica",
+    "dificultad": 1,
+    "enunciado": "Las edades de Ana y Carlos suman 23 años. Si Ana es 7 años mayor que Carlos, ¿cuántos años tiene Ana?",
+    "respuesta": "15",
+    "explicacion": "Si a la suma (23) le restamos la diferencia (7) queda 16. Dividimos por 2 y obtenemos la edad del menor (8). El mayor tiene 15.",
+    "pista": "Resta la diferencia a la suma total para igualarlos."
+  },
+  {
+    "id": 45,
+    "categoria": "logica",
+    "dificultad": 1,
+    "enunciado": "Las edades de Ana y Ema suman 20 años. Si Ana es 8 años mayor que Ema, ¿cuántos años tiene Ana?",
+    "respuesta": "14",
+    "explicacion": "Si a la suma (20) le restamos la diferencia (8) queda 12. Dividimos por 2 y obtenemos la edad del menor (6). El mayor tiene 14.",
+    "pista": "Resta la diferencia a la suma total para igualarlos."
+  },
+  {
+    "id": 46,
+    "categoria": "logica",
+    "dificultad": 1,
+    "enunciado": "Las edades de Ana y Carlos suman 41 años. Si Ana es 3 años mayor que Carlos, ¿cuántos años tiene Ana?",
+    "respuesta": "22",
+    "explicacion": "Si a la suma (41) le restamos la diferencia (3) queda 38. Dividimos por 2 y obtenemos la edad del menor (19). El mayor tiene 22.",
+    "pista": "Resta la diferencia a la suma total para igualarlos."
+  },
+  {
+    "id": 47,
+    "categoria": "logica",
+    "dificultad": 1,
+    "enunciado": "Las edades de Carlos y Delfina suman 24 años. Si Carlos es 4 años mayor que Delfina, ¿cuántos años tiene Carlos?",
+    "respuesta": "14",
+    "explicacion": "Si a la suma (24) le restamos la diferencia (4) queda 20. Dividimos por 2 y obtenemos la edad del menor (10). El mayor tiene 14.",
+    "pista": "Resta la diferencia a la suma total para igualarlos."
+  },
+  {
+    "id": 48,
+    "categoria": "logica",
+    "dificultad": 2,
+    "enunciado": "Delfina, Facu y Gaby juntaron 60 figuritas. Delfina tiene el doble que Facu, y Gaby tiene lo mismo que Facu. ¿Cuántas figuritas tiene Delfina?",
+    "respuesta": "30",
+    "explicacion": "Podemos pensar que Facu tiene 1 'parte', Gaby tiene 1 'parte' y Delfina tiene 2 'partes'. En total son 4 partes que suman 60. Cada parte es 60/4 = 15. Entonces Delfina tiene 2 * 15 = 30.",
+    "pista": "Dibuja cajitas. Si B tiene 1 cajita, C tiene 1 y A tiene 2."
+  },
+  {
+    "id": 49,
+    "categoria": "logica",
+    "dificultad": 2,
+    "enunciado": "Delfina, Ema y Carlos juntaron 48 figuritas. Delfina tiene el doble que Ema, y Carlos tiene lo mismo que Ema. ¿Cuántas figuritas tiene Delfina?",
+    "respuesta": "24",
+    "explicacion": "Podemos pensar que Ema tiene 1 'parte', Carlos tiene 1 'parte' y Delfina tiene 2 'partes'. En total son 4 partes que suman 48. Cada parte es 48/4 = 12. Entonces Delfina tiene 2 * 12 = 24.",
+    "pista": "Dibuja cajitas. Si B tiene 1 cajita, C tiene 1 y A tiene 2."
+  },
+  {
+    "id": 50,
+    "categoria": "logica",
+    "dificultad": 2,
+    "enunciado": "Beto, Facu y Gaby juntaron 60 figuritas. Beto tiene el doble que Facu, y Gaby tiene lo mismo que Facu. ¿Cuántas figuritas tiene Beto?",
+    "respuesta": "30",
+    "explicacion": "Podemos pensar que Facu tiene 1 'parte', Gaby tiene 1 'parte' y Beto tiene 2 'partes'. En total son 4 partes que suman 60. Cada parte es 60/4 = 15. Entonces Beto tiene 2 * 15 = 30.",
+    "pista": "Dibuja cajitas. Si B tiene 1 cajita, C tiene 1 y A tiene 2."
+  },
+  {
+    "id": 51,
+    "categoria": "logica",
+    "dificultad": 2,
+    "enunciado": "Gaby, Facu y Ema juntaron 60 figuritas. Gaby tiene el doble que Facu, y Ema tiene lo mismo que Facu. ¿Cuántas figuritas tiene Gaby?",
+    "respuesta": "30",
+    "explicacion": "Podemos pensar que Facu tiene 1 'parte', Ema tiene 1 'parte' y Gaby tiene 2 'partes'. En total son 4 partes que suman 60. Cada parte es 60/4 = 15. Entonces Gaby tiene 2 * 15 = 30.",
+    "pista": "Dibuja cajitas. Si B tiene 1 cajita, C tiene 1 y A tiene 2."
+  },
+  {
+    "id": 52,
+    "categoria": "logica",
+    "dificultad": 2,
+    "enunciado": "Ana, Delfina y Beto juntaron 32 figuritas. Ana tiene el doble que Delfina, y Beto tiene lo mismo que Delfina. ¿Cuántas figuritas tiene Ana?",
+    "respuesta": "16",
+    "explicacion": "Podemos pensar que Delfina tiene 1 'parte', Beto tiene 1 'parte' y Ana tiene 2 'partes'. En total son 4 partes que suman 32. Cada parte es 32/4 = 8. Entonces Ana tiene 2 * 8 = 16.",
+    "pista": "Dibuja cajitas. Si B tiene 1 cajita, C tiene 1 y A tiene 2."
+  },
+  {
+    "id": 53,
+    "categoria": "logica",
+    "dificultad": 2,
+    "enunciado": "Beto, Ema y Facu juntaron 20 figuritas. Beto tiene el doble que Ema, y Facu tiene lo mismo que Ema. ¿Cuántas figuritas tiene Beto?",
+    "respuesta": "10",
+    "explicacion": "Podemos pensar que Ema tiene 1 'parte', Facu tiene 1 'parte' y Beto tiene 2 'partes'. En total son 4 partes que suman 20. Cada parte es 20/4 = 5. Entonces Beto tiene 2 * 5 = 10.",
+    "pista": "Dibuja cajitas. Si B tiene 1 cajita, C tiene 1 y A tiene 2."
+  },
+  {
+    "id": 54,
+    "categoria": "logica",
+    "dificultad": 2,
+    "enunciado": "Delfina, Ema y Facu juntaron 24 figuritas. Delfina tiene el doble que Ema, y Facu tiene lo mismo que Ema. ¿Cuántas figuritas tiene Delfina?",
+    "respuesta": "12",
+    "explicacion": "Podemos pensar que Ema tiene 1 'parte', Facu tiene 1 'parte' y Delfina tiene 2 'partes'. En total son 4 partes que suman 24. Cada parte es 24/4 = 6. Entonces Delfina tiene 2 * 6 = 12.",
+    "pista": "Dibuja cajitas. Si B tiene 1 cajita, C tiene 1 y A tiene 2."
+  },
+  {
+    "id": 55,
+    "categoria": "logica",
+    "dificultad": 2,
+    "enunciado": "Facu, Ema y Gaby juntaron 24 figuritas. Facu tiene el doble que Ema, y Gaby tiene lo mismo que Ema. ¿Cuántas figuritas tiene Facu?",
+    "respuesta": "12",
+    "explicacion": "Podemos pensar que Ema tiene 1 'parte', Gaby tiene 1 'parte' y Facu tiene 2 'partes'. En total son 4 partes que suman 24. Cada parte es 24/4 = 6. Entonces Facu tiene 2 * 6 = 12.",
+    "pista": "Dibuja cajitas. Si B tiene 1 cajita, C tiene 1 y A tiene 2."
+  },
+  {
+    "id": 56,
+    "categoria": "logica",
+    "dificultad": 2,
+    "enunciado": "Ana, Ema y Carlos juntaron 52 figuritas. Ana tiene el doble que Ema, y Carlos tiene lo mismo que Ema. ¿Cuántas figuritas tiene Ana?",
+    "respuesta": "26",
+    "explicacion": "Podemos pensar que Ema tiene 1 'parte', Carlos tiene 1 'parte' y Ana tiene 2 'partes'. En total son 4 partes que suman 52. Cada parte es 52/4 = 13. Entonces Ana tiene 2 * 13 = 26.",
+    "pista": "Dibuja cajitas. Si B tiene 1 cajita, C tiene 1 y A tiene 2."
+  },
+  {
+    "id": 57,
+    "categoria": "logica",
+    "dificultad": 2,
+    "enunciado": "Delfina, Ana y Gaby juntaron 24 figuritas. Delfina tiene el doble que Ana, y Gaby tiene lo mismo que Ana. ¿Cuántas figuritas tiene Delfina?",
+    "respuesta": "12",
+    "explicacion": "Podemos pensar que Ana tiene 1 'parte', Gaby tiene 1 'parte' y Delfina tiene 2 'partes'. En total son 4 partes que suman 24. Cada parte es 24/4 = 6. Entonces Delfina tiene 2 * 6 = 12.",
+    "pista": "Dibuja cajitas. Si B tiene 1 cajita, C tiene 1 y A tiene 2."
+  },
+  {
+    "id": 58,
+    "categoria": "logica",
+    "dificultad": 3,
+    "enunciado": "En una granja hay gallinas y conejos. Si contamos las cabezas (o vehículos) hay 14, y si contamos las patas (o ruedas) hay 40. ¿Cuántos conejos hay?",
+    "respuesta": "6",
+    "explicacion": "Si todos fueran gallinas, habría 28 patas/ruedas. Pero hay 40, una diferencia de 12. Cada conejos aporta 2 extra. 12 / 2 = 6.",
+    "pista": "Imagina que todos son gallinas. ¿Cuántas patas/ruedas faltarían para llegar al total?"
+  },
+  {
+    "id": 59,
+    "categoria": "logica",
+    "dificultad": 3,
+    "enunciado": "En una granja hay patos y vacas. Si contamos las cabezas (o vehículos) hay 23, y si contamos las patas (o ruedas) hay 64. ¿Cuántos vacas hay?",
+    "respuesta": "9",
+    "explicacion": "Si todos fueran patos, habría 46 patas/ruedas. Pero hay 64, una diferencia de 18. Cada vacas aporta 2 extra. 18 / 2 = 9.",
+    "pista": "Imagina que todos son patos. ¿Cuántas patas/ruedas faltarían para llegar al total?"
+  },
+  {
+    "id": 60,
+    "categoria": "logica",
+    "dificultad": 3,
+    "enunciado": "En una granja hay triciclos y bicicletas. Si contamos las cabezas (o vehículos) hay 23, y si contamos las patas (o ruedas) hay 55. ¿Cuántos bicicletas hay?",
+    "respuesta": "14",
+    "explicacion": "Si todos fueran triciclos, habría 69 patas/ruedas. Pero hay 55, una diferencia de -14. Cada bicicletas aporta -1 extra. -14 / -1 = 14.",
+    "pista": "Imagina que todos son triciclos. ¿Cuántas patas/ruedas faltarían para llegar al total?"
+  },
+  {
+    "id": 61,
+    "categoria": "logica",
+    "dificultad": 3,
+    "enunciado": "En una granja hay patos y vacas. Si contamos las cabezas (o vehículos) hay 19, y si contamos las patas (o ruedas) hay 50. ¿Cuántos vacas hay?",
+    "respuesta": "6",
+    "explicacion": "Si todos fueran patos, habría 38 patas/ruedas. Pero hay 50, una diferencia de 12. Cada vacas aporta 2 extra. 12 / 2 = 6.",
+    "pista": "Imagina que todos son patos. ¿Cuántas patas/ruedas faltarían para llegar al total?"
+  },
+  {
+    "id": 62,
+    "categoria": "logica",
+    "dificultad": 3,
+    "enunciado": "En una granja hay triciclos y bicicletas. Si contamos las cabezas (o vehículos) hay 14, y si contamos las patas (o ruedas) hay 35. ¿Cuántos bicicletas hay?",
+    "respuesta": "7",
+    "explicacion": "Si todos fueran triciclos, habría 42 patas/ruedas. Pero hay 35, una diferencia de -7. Cada bicicletas aporta -1 extra. -7 / -1 = 7.",
+    "pista": "Imagina que todos son triciclos. ¿Cuántas patas/ruedas faltarían para llegar al total?"
+  },
+  {
+    "id": 63,
+    "categoria": "logica",
+    "dificultad": 3,
+    "enunciado": "En una granja hay patos y vacas. Si contamos las cabezas (o vehículos) hay 10, y si contamos las patas (o ruedas) hay 30. ¿Cuántos vacas hay?",
+    "respuesta": "5",
+    "explicacion": "Si todos fueran patos, habría 20 patas/ruedas. Pero hay 30, una diferencia de 10. Cada vacas aporta 2 extra. 10 / 2 = 5.",
+    "pista": "Imagina que todos son patos. ¿Cuántas patas/ruedas faltarían para llegar al total?"
+  },
+  {
+    "id": 64,
+    "categoria": "logica",
+    "dificultad": 3,
+    "enunciado": "En una granja hay patos y vacas. Si contamos las cabezas (o vehículos) hay 19, y si contamos las patas (o ruedas) hay 56. ¿Cuántos vacas hay?",
+    "respuesta": "9",
+    "explicacion": "Si todos fueran patos, habría 38 patas/ruedas. Pero hay 56, una diferencia de 18. Cada vacas aporta 2 extra. 18 / 2 = 9.",
+    "pista": "Imagina que todos son patos. ¿Cuántas patas/ruedas faltarían para llegar al total?"
+  },
+  {
+    "id": 65,
+    "categoria": "logica",
+    "dificultad": 3,
+    "enunciado": "En una granja hay gallinas y conejos. Si contamos las cabezas (o vehículos) hay 26, y si contamos las patas (o ruedas) hay 76. ¿Cuántos conejos hay?",
+    "respuesta": "12",
+    "explicacion": "Si todos fueran gallinas, habría 52 patas/ruedas. Pero hay 76, una diferencia de 24. Cada conejos aporta 2 extra. 24 / 2 = 12.",
+    "pista": "Imagina que todos son gallinas. ¿Cuántas patas/ruedas faltarían para llegar al total?"
+  },
+  {
+    "id": 66,
+    "categoria": "logica",
+    "dificultad": 3,
+    "enunciado": "En una granja hay triciclos y bicicletas. Si contamos las cabezas (o vehículos) hay 17, y si contamos las patas (o ruedas) hay 40. ¿Cuántos bicicletas hay?",
+    "respuesta": "11",
+    "explicacion": "Si todos fueran triciclos, habría 51 patas/ruedas. Pero hay 40, una diferencia de -11. Cada bicicletas aporta -1 extra. -11 / -1 = 11.",
+    "pista": "Imagina que todos son triciclos. ¿Cuántas patas/ruedas faltarían para llegar al total?"
+  },
+  {
+    "id": 67,
+    "categoria": "logica",
+    "dificultad": 3,
+    "enunciado": "En una granja hay triciclos y bicicletas. Si contamos las cabezas (o vehículos) hay 18, y si contamos las patas (o ruedas) hay 41. ¿Cuántos bicicletas hay?",
+    "respuesta": "13",
+    "explicacion": "Si todos fueran triciclos, habría 54 patas/ruedas. Pero hay 41, una diferencia de -13. Cada bicicletas aporta -1 extra. -13 / -1 = 13.",
+    "pista": "Imagina que todos son triciclos. ¿Cuántas patas/ruedas faltarían para llegar al total?"
+  },
+  {
+    "id": 68,
+    "categoria": "geometria",
+    "dificultad": 1,
+    "enunciado": "Se forma un rectángulo uniendo dos cuadrados iguales de lado 5 cm. ¿Cuál es el perímetro del rectángulo formado?",
+    "respuesta": "30",
+    "explicacion": "Al unir los dos cuadrados por un lado, esos dos lados quedan adentro. El perímetro está formado por 3 lados de un cuadrado y 3 del otro. Total: 6 lados de 5 cm = 30 cm.",
+    "pista": "Haz un dibujo. Cuenta cuántos 'lados' de los cuadrados originales quedan en el borde exterior.",
+    "figura": {
+      "tipo": "rect_dos_cuadrados",
+      "lado": 5
+    }
+  },
+  {
+    "id": 69,
+    "categoria": "geometria",
+    "dificultad": 1,
+    "enunciado": "Se forma un rectángulo uniendo dos cuadrados iguales de lado 8 cm. ¿Cuál es el perímetro del rectángulo formado?",
+    "respuesta": "48",
+    "explicacion": "Al unir los dos cuadrados por un lado, esos dos lados quedan adentro. El perímetro está formado por 3 lados de un cuadrado y 3 del otro. Total: 6 lados de 8 cm = 48 cm.",
+    "pista": "Haz un dibujo. Cuenta cuántos 'lados' de los cuadrados originales quedan en el borde exterior.",
+    "figura": {
+      "tipo": "rect_dos_cuadrados",
+      "lado": 8
+    }
+  },
+  {
+    "id": 70,
+    "categoria": "geometria",
+    "dificultad": 1,
+    "enunciado": "Se forma un rectángulo uniendo dos cuadrados iguales de lado 7 cm. ¿Cuál es el perímetro del rectángulo formado?",
+    "respuesta": "42",
+    "explicacion": "Al unir los dos cuadrados por un lado, esos dos lados quedan adentro. El perímetro está formado por 3 lados de un cuadrado y 3 del otro. Total: 6 lados de 7 cm = 42 cm.",
+    "pista": "Haz un dibujo. Cuenta cuántos 'lados' de los cuadrados originales quedan en el borde exterior.",
+    "figura": {
+      "tipo": "rect_dos_cuadrados",
+      "lado": 7
+    }
+  },
+  {
+    "id": 71,
+    "categoria": "geometria",
+    "dificultad": 1,
+    "enunciado": "Se forma un rectángulo uniendo dos cuadrados iguales de lado 13 cm. ¿Cuál es el perímetro del rectángulo formado?",
+    "respuesta": "78",
+    "explicacion": "Al unir los dos cuadrados por un lado, esos dos lados quedan adentro. El perímetro está formado por 3 lados de un cuadrado y 3 del otro. Total: 6 lados de 13 cm = 78 cm.",
+    "pista": "Haz un dibujo. Cuenta cuántos 'lados' de los cuadrados originales quedan en el borde exterior.",
+    "figura": {
+      "tipo": "rect_dos_cuadrados",
+      "lado": 13
+    }
+  },
+  {
+    "id": 72,
+    "categoria": "geometria",
+    "dificultad": 1,
+    "enunciado": "Se forma un rectángulo uniendo dos cuadrados iguales de lado 9 cm. ¿Cuál es el perímetro del rectángulo formado?",
+    "respuesta": "54",
+    "explicacion": "Al unir los dos cuadrados por un lado, esos dos lados quedan adentro. El perímetro está formado por 3 lados de un cuadrado y 3 del otro. Total: 6 lados de 9 cm = 54 cm.",
+    "pista": "Haz un dibujo. Cuenta cuántos 'lados' de los cuadrados originales quedan en el borde exterior.",
+    "figura": {
+      "tipo": "rect_dos_cuadrados",
+      "lado": 9
+    }
+  },
+  {
+    "id": 73,
+    "categoria": "geometria",
+    "dificultad": 1,
+    "enunciado": "Se forma un rectángulo uniendo dos cuadrados iguales de lado 11 cm. ¿Cuál es el perímetro del rectángulo formado?",
+    "respuesta": "66",
+    "explicacion": "Al unir los dos cuadrados por un lado, esos dos lados quedan adentro. El perímetro está formado por 3 lados de un cuadrado y 3 del otro. Total: 6 lados de 11 cm = 66 cm.",
+    "pista": "Haz un dibujo. Cuenta cuántos 'lados' de los cuadrados originales quedan en el borde exterior.",
+    "figura": {
+      "tipo": "rect_dos_cuadrados",
+      "lado": 11
+    }
+  },
+  {
+    "id": 74,
+    "categoria": "geometria",
+    "dificultad": 1,
+    "enunciado": "Se forma un rectángulo uniendo dos cuadrados iguales de lado 4 cm. ¿Cuál es el perímetro del rectángulo formado?",
+    "respuesta": "24",
+    "explicacion": "Al unir los dos cuadrados por un lado, esos dos lados quedan adentro. El perímetro está formado por 3 lados de un cuadrado y 3 del otro. Total: 6 lados de 4 cm = 24 cm.",
+    "pista": "Haz un dibujo. Cuenta cuántos 'lados' de los cuadrados originales quedan en el borde exterior.",
+    "figura": {
+      "tipo": "rect_dos_cuadrados",
+      "lado": 4
+    }
+  },
+  {
+    "id": 75,
+    "categoria": "geometria",
+    "dificultad": 1,
+    "enunciado": "Se forma un rectángulo uniendo dos cuadrados iguales de lado 15 cm. ¿Cuál es el perímetro del rectángulo formado?",
+    "respuesta": "90",
+    "explicacion": "Al unir los dos cuadrados por un lado, esos dos lados quedan adentro. El perímetro está formado por 3 lados de un cuadrado y 3 del otro. Total: 6 lados de 15 cm = 90 cm.",
+    "pista": "Haz un dibujo. Cuenta cuántos 'lados' de los cuadrados originales quedan en el borde exterior.",
+    "figura": {
+      "tipo": "rect_dos_cuadrados",
+      "lado": 15
+    }
+  },
+  {
+    "id": 76,
+    "categoria": "geometria",
+    "dificultad": 1,
+    "enunciado": "Se forma un rectángulo uniendo dos cuadrados iguales de lado 10 cm. ¿Cuál es el perímetro del rectángulo formado?",
+    "respuesta": "60",
+    "explicacion": "Al unir los dos cuadrados por un lado, esos dos lados quedan adentro. El perímetro está formado por 3 lados de un cuadrado y 3 del otro. Total: 6 lados de 10 cm = 60 cm.",
+    "pista": "Haz un dibujo. Cuenta cuántos 'lados' de los cuadrados originales quedan en el borde exterior.",
+    "figura": {
+      "tipo": "rect_dos_cuadrados",
+      "lado": 10
+    }
+  },
+  {
+    "id": 77,
+    "categoria": "geometria",
+    "dificultad": 1,
+    "enunciado": "Se forma un rectángulo uniendo dos cuadrados iguales de lado 6 cm. ¿Cuál es el perímetro del rectángulo formado?",
+    "respuesta": "36",
+    "explicacion": "Al unir los dos cuadrados por un lado, esos dos lados quedan adentro. El perímetro está formado por 3 lados de un cuadrado y 3 del otro. Total: 6 lados de 6 cm = 36 cm.",
+    "pista": "Haz un dibujo. Cuenta cuántos 'lados' de los cuadrados originales quedan en el borde exterior.",
+    "figura": {
+      "tipo": "rect_dos_cuadrados",
+      "lado": 6
+    }
+  },
+  {
+    "id": 78,
+    "categoria": "geometria",
+    "dificultad": 2,
+    "enunciado": "El área de un triángulo es 105 cm² y su base mide 14 cm. ¿Cuánto mide su altura?",
+    "respuesta": "15",
+    "explicacion": "El área de un triángulo es (base x altura) / 2. Entonces: 14 x altura / 2 = 105. Multiplicando por 2: 14 x altura = 210. La altura es 15 cm.",
+    "pista": "Recuerda la fórmula: Área = (base x altura) / 2.",
+    "figura": {
+      "tipo": "triangulo",
+      "base": 14,
+      "area": 105
+    }
+  },
+  {
+    "id": 79,
+    "categoria": "geometria",
+    "dificultad": 2,
+    "enunciado": "El área de un triángulo es 35 cm² y su base mide 10 cm. ¿Cuánto mide su altura?",
+    "respuesta": "7",
+    "explicacion": "El área de un triángulo es (base x altura) / 2. Entonces: 10 x altura / 2 = 35. Multiplicando por 2: 10 x altura = 70. La altura es 7 cm.",
+    "pista": "Recuerda la fórmula: Área = (base x altura) / 2.",
+    "figura": {
+      "tipo": "triangulo",
+      "base": 10,
+      "area": 35
+    }
+  },
+  {
+    "id": 80,
+    "categoria": "geometria",
+    "dificultad": 2,
+    "enunciado": "El área de un triángulo es 36 cm² y su base mide 12 cm. ¿Cuánto mide su altura?",
+    "respuesta": "6",
+    "explicacion": "El área de un triángulo es (base x altura) / 2. Entonces: 12 x altura / 2 = 36. Multiplicando por 2: 12 x altura = 72. La altura es 6 cm.",
+    "pista": "Recuerda la fórmula: Área = (base x altura) / 2.",
+    "figura": {
+      "tipo": "triangulo",
+      "base": 12,
+      "area": 36
+    }
+  },
+  {
+    "id": 81,
+    "categoria": "geometria",
+    "dificultad": 2,
+    "enunciado": "El área de un triángulo es 80 cm² y su base mide 16 cm. ¿Cuánto mide su altura?",
+    "respuesta": "10",
+    "explicacion": "El área de un triángulo es (base x altura) / 2. Entonces: 16 x altura / 2 = 80. Multiplicando por 2: 16 x altura = 160. La altura es 10 cm.",
+    "pista": "Recuerda la fórmula: Área = (base x altura) / 2.",
+    "figura": {
+      "tipo": "triangulo",
+      "base": 16,
+      "area": 80
+    }
+  },
+  {
+    "id": 82,
+    "categoria": "geometria",
+    "dificultad": 2,
+    "enunciado": "El área de un triángulo es 100 cm² y su base mide 20 cm. ¿Cuánto mide su altura?",
+    "respuesta": "10",
+    "explicacion": "El área de un triángulo es (base x altura) / 2. Entonces: 20 x altura / 2 = 100. Multiplicando por 2: 20 x altura = 200. La altura es 10 cm.",
+    "pista": "Recuerda la fórmula: Área = (base x altura) / 2.",
+    "figura": {
+      "tipo": "triangulo",
+      "base": 20,
+      "area": 100
+    }
+  },
+  {
+    "id": 83,
+    "categoria": "geometria",
+    "dificultad": 2,
+    "enunciado": "El área de un triángulo es 54 cm² y su base mide 12 cm. ¿Cuánto mide su altura?",
+    "respuesta": "9",
+    "explicacion": "El área de un triángulo es (base x altura) / 2. Entonces: 12 x altura / 2 = 54. Multiplicando por 2: 12 x altura = 108. La altura es 9 cm.",
+    "pista": "Recuerda la fórmula: Área = (base x altura) / 2.",
+    "figura": {
+      "tipo": "triangulo",
+      "base": 12,
+      "area": 54
+    }
+  },
+  {
+    "id": 84,
+    "categoria": "geometria",
+    "dificultad": 2,
+    "enunciado": "El área de un triángulo es 91 cm² y su base mide 14 cm. ¿Cuánto mide su altura?",
+    "respuesta": "13",
+    "explicacion": "El área de un triángulo es (base x altura) / 2. Entonces: 14 x altura / 2 = 91. Multiplicando por 2: 14 x altura = 182. La altura es 13 cm.",
+    "pista": "Recuerda la fórmula: Área = (base x altura) / 2.",
+    "figura": {
+      "tipo": "triangulo",
+      "base": 14,
+      "area": 91
+    }
+  },
+  {
+    "id": 85,
+    "categoria": "geometria",
+    "dificultad": 2,
+    "enunciado": "El área de un triángulo es 66 cm² y su base mide 12 cm. ¿Cuánto mide su altura?",
+    "respuesta": "11",
+    "explicacion": "El área de un triángulo es (base x altura) / 2. Entonces: 12 x altura / 2 = 66. Multiplicando por 2: 12 x altura = 132. La altura es 11 cm.",
+    "pista": "Recuerda la fórmula: Área = (base x altura) / 2.",
+    "figura": {
+      "tipo": "triangulo",
+      "base": 12,
+      "area": 66
+    }
+  },
+  {
+    "id": 86,
+    "categoria": "geometria",
+    "dificultad": 2,
+    "enunciado": "El área de un triángulo es 25 cm² y su base mide 10 cm. ¿Cuánto mide su altura?",
+    "respuesta": "5",
+    "explicacion": "El área de un triángulo es (base x altura) / 2. Entonces: 10 x altura / 2 = 25. Multiplicando por 2: 10 x altura = 50. La altura es 5 cm.",
+    "pista": "Recuerda la fórmula: Área = (base x altura) / 2.",
+    "figura": {
+      "tipo": "triangulo",
+      "base": 10,
+      "area": 25
+    }
+  },
+  {
+    "id": 87,
+    "categoria": "geometria",
+    "dificultad": 2,
+    "enunciado": "El área de un triángulo es 84 cm² y su base mide 14 cm. ¿Cuánto mide su altura?",
+    "respuesta": "12",
+    "explicacion": "El área de un triángulo es (base x altura) / 2. Entonces: 14 x altura / 2 = 84. Multiplicando por 2: 14 x altura = 168. La altura es 12 cm.",
+    "pista": "Recuerda la fórmula: Área = (base x altura) / 2.",
+    "figura": {
+      "tipo": "triangulo",
+      "base": 14,
+      "area": 84
+    }
+  },
+  {
+    "id": 88,
+    "categoria": "geometria",
+    "dificultad": 3,
+    "enunciado": "Un cuadrado grande se divide en 4 cuadrados más pequeños e iguales. El perímetro de uno de los cuadrados pequeños es 56. ¿Cuál es el área del cuadrado grande?",
+    "respuesta": "784",
+    "explicacion": "El perímetro del cuadrado pequeño es 56, entonces su lado es 14. El lado del cuadrado grande es el doble, es decir 28. Su área es (28) x (28) = 784.",
+    "pista": "Si sabes el perímetro del cuadradito, puedes saber cuánto mide su lado.",
+    "figura": {
+      "tipo": "cuadrado_4",
+      "perimetro_pequeno": 56
+    }
+  },
+  {
+    "id": 89,
+    "categoria": "geometria",
+    "dificultad": 3,
+    "enunciado": "Un cuadrado grande se divide en 4 cuadrados más pequeños e iguales. El perímetro de uno de los cuadrados pequeños es 72. ¿Cuál es el área del cuadrado grande?",
+    "respuesta": "1296",
+    "explicacion": "El perímetro del cuadrado pequeño es 72, entonces su lado es 18. El lado del cuadrado grande es el doble, es decir 36. Su área es (36) x (36) = 1296.",
+    "pista": "Si sabes el perímetro del cuadradito, puedes saber cuánto mide su lado.",
+    "figura": {
+      "tipo": "cuadrado_4",
+      "perimetro_pequeno": 72
+    }
+  },
+  {
+    "id": 90,
+    "categoria": "geometria",
+    "dificultad": 3,
+    "enunciado": "Un cuadrado grande se divide en 4 cuadrados más pequeños e iguales. El perímetro de uno de los cuadrados pequeños es 112. ¿Cuál es el área del cuadrado grande?",
+    "respuesta": "3136",
+    "explicacion": "El perímetro del cuadrado pequeño es 112, entonces su lado es 28. El lado del cuadrado grande es el doble, es decir 56. Su área es (56) x (56) = 3136.",
+    "pista": "Si sabes el perímetro del cuadradito, puedes saber cuánto mide su lado.",
+    "figura": {
+      "tipo": "cuadrado_4",
+      "perimetro_pequeno": 112
+    }
+  },
+  {
+    "id": 91,
+    "categoria": "geometria",
+    "dificultad": 3,
+    "enunciado": "Un cuadrado grande se divide en 4 cuadrados más pequeños e iguales. El perímetro de uno de los cuadrados pequeños es 92. ¿Cuál es el área del cuadrado grande?",
+    "respuesta": "2116",
+    "explicacion": "El perímetro del cuadrado pequeño es 92, entonces su lado es 23. El lado del cuadrado grande es el doble, es decir 46. Su área es (46) x (46) = 2116.",
+    "pista": "Si sabes el perímetro del cuadradito, puedes saber cuánto mide su lado.",
+    "figura": {
+      "tipo": "cuadrado_4",
+      "perimetro_pequeno": 92
+    }
+  },
+  {
+    "id": 92,
+    "categoria": "geometria",
+    "dificultad": 3,
+    "enunciado": "Un cuadrado grande se divide en 4 cuadrados más pequeños e iguales. El perímetro de uno de los cuadrados pequeños es 60. ¿Cuál es el área del cuadrado grande?",
+    "respuesta": "900",
+    "explicacion": "El perímetro del cuadrado pequeño es 60, entonces su lado es 15. El lado del cuadrado grande es el doble, es decir 30. Su área es (30) x (30) = 900.",
+    "pista": "Si sabes el perímetro del cuadradito, puedes saber cuánto mide su lado.",
+    "figura": {
+      "tipo": "cuadrado_4",
+      "perimetro_pequeno": 60
+    }
+  },
+  {
+    "id": 93,
+    "categoria": "geometria",
+    "dificultad": 3,
+    "enunciado": "Un cuadrado grande se divide en 4 cuadrados más pequeños e iguales. El perímetro de uno de los cuadrados pequeños es 52. ¿Cuál es el área del cuadrado grande?",
+    "respuesta": "676",
+    "explicacion": "El perímetro del cuadrado pequeño es 52, entonces su lado es 13. El lado del cuadrado grande es el doble, es decir 26. Su área es (26) x (26) = 676.",
+    "pista": "Si sabes el perímetro del cuadradito, puedes saber cuánto mide su lado.",
+    "figura": {
+      "tipo": "cuadrado_4",
+      "perimetro_pequeno": 52
+    }
+  },
+  {
+    "id": 94,
+    "categoria": "geometria",
+    "dificultad": 3,
+    "enunciado": "Un cuadrado grande se divide en 4 cuadrados más pequeños e iguales. El perímetro de uno de los cuadrados pequeños es 84. ¿Cuál es el área del cuadrado grande?",
+    "respuesta": "1764",
+    "explicacion": "El perímetro del cuadrado pequeño es 84, entonces su lado es 21. El lado del cuadrado grande es el doble, es decir 42. Su área es (42) x (42) = 1764.",
+    "pista": "Si sabes el perímetro del cuadradito, puedes saber cuánto mide su lado.",
+    "figura": {
+      "tipo": "cuadrado_4",
+      "perimetro_pequeno": 84
+    }
+  },
+  {
+    "id": 95,
+    "categoria": "geometria",
+    "dificultad": 3,
+    "enunciado": "Un cuadrado grande se divide en 4 cuadrados más pequeños e iguales. El perímetro de uno de los cuadrados pequeños es 44. ¿Cuál es el área del cuadrado grande?",
+    "respuesta": "484",
+    "explicacion": "El perímetro del cuadrado pequeño es 44, entonces su lado es 11. El lado del cuadrado grande es el doble, es decir 22. Su área es (22) x (22) = 484.",
+    "pista": "Si sabes el perímetro del cuadradito, puedes saber cuánto mide su lado.",
+    "figura": {
+      "tipo": "cuadrado_4",
+      "perimetro_pequeno": 44
+    }
+  },
+  {
+    "id": 96,
+    "categoria": "conteo",
+    "dificultad": 1,
+    "enunciado": "Para vestirse, un chico tiene 3 remeras, 4 pantalones y 2 pares de zapatillas. ¿De cuántas formas distintas puede vestirse usando una prenda de cada tipo?",
+    "respuesta": "24",
+    "explicacion": "Por el principio de multiplicación: 3 opciones de remera x 4 opciones de pantalón x 2 opciones de zapatillas = 24 formas distintas.",
+    "pista": "Multiplica las opciones de cada prenda."
+  },
+  {
+    "id": 97,
+    "categoria": "conteo",
+    "dificultad": 1,
+    "enunciado": "Para vestirse, un chico tiene 4 remeras, 2 pantalones y 2 pares de zapatillas. ¿De cuántas formas distintas puede vestirse usando una prenda de cada tipo?",
+    "respuesta": "16",
+    "explicacion": "Por el principio de multiplicación: 4 opciones de remera x 2 opciones de pantalón x 2 opciones de zapatillas = 16 formas distintas.",
+    "pista": "Multiplica las opciones de cada prenda."
+  },
+  {
+    "id": 98,
+    "categoria": "conteo",
+    "dificultad": 1,
+    "enunciado": "Para vestirse, un chico tiene 3 remeras, 3 pantalones y 3 pares de zapatillas. ¿De cuántas formas distintas puede vestirse usando una prenda de cada tipo?",
+    "respuesta": "27",
+    "explicacion": "Por el principio de multiplicación: 3 opciones de remera x 3 opciones de pantalón x 3 opciones de zapatillas = 27 formas distintas.",
+    "pista": "Multiplica las opciones de cada prenda."
+  },
+  {
+    "id": 99,
+    "categoria": "conteo",
+    "dificultad": 1,
+    "enunciado": "Para vestirse, un chico tiene 4 remeras, 4 pantalones y 3 pares de zapatillas. ¿De cuántas formas distintas puede vestirse usando una prenda de cada tipo?",
+    "respuesta": "48",
+    "explicacion": "Por el principio de multiplicación: 4 opciones de remera x 4 opciones de pantalón x 3 opciones de zapatillas = 48 formas distintas.",
+    "pista": "Multiplica las opciones de cada prenda."
+  },
+  {
+    "id": 100,
+    "categoria": "conteo",
+    "dificultad": 1,
+    "enunciado": "Para vestirse, un chico tiene 3 remeras, 2 pantalones y 2 pares de zapatillas. ¿De cuántas formas distintas puede vestirse usando una prenda de cada tipo?",
+    "respuesta": "12",
+    "explicacion": "Por el principio de multiplicación: 3 opciones de remera x 2 opciones de pantalón x 2 opciones de zapatillas = 12 formas distintas.",
+    "pista": "Multiplica las opciones de cada prenda."
+  },
+  {
+    "id": 101,
+    "categoria": "conteo",
+    "dificultad": 1,
+    "enunciado": "Para vestirse, un chico tiene 5 remeras, 3 pantalones y 3 pares de zapatillas. ¿De cuántas formas distintas puede vestirse usando una prenda de cada tipo?",
+    "respuesta": "45",
+    "explicacion": "Por el principio de multiplicación: 5 opciones de remera x 3 opciones de pantalón x 3 opciones de zapatillas = 45 formas distintas.",
+    "pista": "Multiplica las opciones de cada prenda."
+  },
+  {
+    "id": 102,
+    "categoria": "conteo",
+    "dificultad": 1,
+    "enunciado": "Para vestirse, un chico tiene 4 remeras, 2 pantalones y 4 pares de zapatillas. ¿De cuántas formas distintas puede vestirse usando una prenda de cada tipo?",
+    "respuesta": "32",
+    "explicacion": "Por el principio de multiplicación: 4 opciones de remera x 2 opciones de pantalón x 4 opciones de zapatillas = 32 formas distintas.",
+    "pista": "Multiplica las opciones de cada prenda."
+  },
+  {
+    "id": 103,
+    "categoria": "conteo",
+    "dificultad": 1,
+    "enunciado": "Para vestirse, un chico tiene 4 remeras, 3 pantalones y 3 pares de zapatillas. ¿De cuántas formas distintas puede vestirse usando una prenda de cada tipo?",
+    "respuesta": "36",
+    "explicacion": "Por el principio de multiplicación: 4 opciones de remera x 3 opciones de pantalón x 3 opciones de zapatillas = 36 formas distintas.",
+    "pista": "Multiplica las opciones de cada prenda."
+  },
+  {
+    "id": 104,
+    "categoria": "conteo",
+    "dificultad": 1,
+    "enunciado": "Para vestirse, un chico tiene 3 remeras, 3 pantalones y 2 pares de zapatillas. ¿De cuántas formas distintas puede vestirse usando una prenda de cada tipo?",
+    "respuesta": "18",
+    "explicacion": "Por el principio de multiplicación: 3 opciones de remera x 3 opciones de pantalón x 2 opciones de zapatillas = 18 formas distintas.",
+    "pista": "Multiplica las opciones de cada prenda."
+  },
+  {
+    "id": 105,
+    "categoria": "conteo",
+    "dificultad": 2,
+    "enunciado": "En un torneo participan 8 equipos. Si todos deben jugar contra todos exactamente una vez, ¿cuántos partidos se jugarán en total?",
+    "respuesta": "28",
+    "explicacion": "Cada uno de los 8 equipos juega con los 7 restantes. Eso da 56 partidos. Pero así estamos contando cada partido dos veces (A vs B y B vs A). Dividimos por 2: 28.",
+    "pista": "Imagina que son puntos en un papel unidos por líneas. ¿Cuántas líneas hay?"
+  },
+  {
+    "id": 106,
+    "categoria": "conteo",
+    "dificultad": 2,
+    "enunciado": "En un torneo participan 5 equipos. Si todos deben jugar contra todos exactamente una vez, ¿cuántos partidos se jugarán en total?",
+    "respuesta": "10",
+    "explicacion": "Cada uno de los 5 equipos juega con los 4 restantes. Eso da 20 partidos. Pero así estamos contando cada partido dos veces (A vs B y B vs A). Dividimos por 2: 10.",
+    "pista": "Imagina que son puntos en un papel unidos por líneas. ¿Cuántas líneas hay?"
+  },
+  {
+    "id": 107,
+    "categoria": "conteo",
+    "dificultad": 2,
+    "enunciado": "En un torneo participan 7 equipos. Si todos deben jugar contra todos exactamente una vez, ¿cuántos partidos se jugarán en total?",
+    "respuesta": "21",
+    "explicacion": "Cada uno de los 7 equipos juega con los 6 restantes. Eso da 42 partidos. Pero así estamos contando cada partido dos veces (A vs B y B vs A). Dividimos por 2: 21.",
+    "pista": "Imagina que son puntos en un papel unidos por líneas. ¿Cuántas líneas hay?"
+  },
+  {
+    "id": 108,
+    "categoria": "conteo",
+    "dificultad": 2,
+    "enunciado": "En un torneo participan 10 equipos. Si todos deben jugar contra todos exactamente una vez, ¿cuántos partidos se jugarán en total?",
+    "respuesta": "45",
+    "explicacion": "Cada uno de los 10 equipos juega con los 9 restantes. Eso da 90 partidos. Pero así estamos contando cada partido dos veces (A vs B y B vs A). Dividimos por 2: 45.",
+    "pista": "Imagina que son puntos en un papel unidos por líneas. ¿Cuántas líneas hay?"
+  },
+  {
+    "id": 109,
+    "categoria": "conteo",
+    "dificultad": 2,
+    "enunciado": "En un torneo participan 4 equipos. Si todos deben jugar contra todos exactamente una vez, ¿cuántos partidos se jugarán en total?",
+    "respuesta": "6",
+    "explicacion": "Cada uno de los 4 equipos juega con los 3 restantes. Eso da 12 partidos. Pero así estamos contando cada partido dos veces (A vs B y B vs A). Dividimos por 2: 6.",
+    "pista": "Imagina que son puntos en un papel unidos por líneas. ¿Cuántas líneas hay?"
+  },
+  {
+    "id": 110,
+    "categoria": "conteo",
+    "dificultad": 3,
+    "enunciado": "¿Cuántos números de 3 cifras distintas se pueden formar usando solamente los dígitos 5, 6, 7?",
+    "respuesta": "6",
+    "explicacion": "Para la 1ª cifra hay 3 opciones; en cada posición siguiente queda una opción menos porque no se repiten. 3 x 2 x 1 = 6.",
+    "pista": "Pensá cuántas opciones quedan para cada posición, descontando los dígitos ya usados."
+  },
+  {
+    "id": 111,
+    "categoria": "conteo",
+    "dificultad": 3,
+    "enunciado": "¿Cuántos números de 3 cifras distintas se pueden formar usando solamente los dígitos 1, 2, 3?",
+    "respuesta": "6",
+    "explicacion": "Para la 1ª cifra hay 3 opciones; en cada posición siguiente queda una opción menos porque no se repiten. 3 x 2 x 1 = 6.",
+    "pista": "Pensá cuántas opciones quedan para cada posición, descontando los dígitos ya usados."
+  },
+  {
+    "id": 112,
+    "categoria": "conteo",
+    "dificultad": 3,
+    "enunciado": "¿Cuántos números de 2 cifras distintas se pueden formar usando solamente los dígitos 5, 6, 7?",
+    "respuesta": "6",
+    "explicacion": "Para la 1ª cifra hay 3 opciones; en cada posición siguiente queda una opción menos porque no se repiten. 3 x 2 = 6.",
+    "pista": "Pensá cuántas opciones quedan para cada posición, descontando los dígitos ya usados."
+  },
+  {
+    "id": 113,
+    "categoria": "conteo",
+    "dificultad": 3,
+    "enunciado": "¿Cuántos números de 2 cifras distintas se pueden formar usando solamente los dígitos 1, 3, 5, 7?",
+    "respuesta": "12",
+    "explicacion": "Para la 1ª cifra hay 4 opciones; en cada posición siguiente queda una opción menos porque no se repiten. 4 x 3 = 12.",
+    "pista": "Pensá cuántas opciones quedan para cada posición, descontando los dígitos ya usados."
+  },
+  {
+    "id": 114,
+    "categoria": "conteo",
+    "dificultad": 3,
+    "enunciado": "¿Cuántos números de 2 cifras distintas se pueden formar usando solamente los dígitos 2, 3, 4, 5?",
+    "respuesta": "12",
+    "explicacion": "Para la 1ª cifra hay 4 opciones; en cada posición siguiente queda una opción menos porque no se repiten. 4 x 3 = 12.",
+    "pista": "Pensá cuántas opciones quedan para cada posición, descontando los dígitos ya usados."
+  },
+  {
+    "id": 115,
+    "categoria": "conteo",
+    "dificultad": 3,
+    "enunciado": "¿Cuántos números de 2 cifras distintas se pueden formar usando solamente los dígitos 2, 4, 6?",
+    "respuesta": "6",
+    "explicacion": "Para la 1ª cifra hay 3 opciones; en cada posición siguiente queda una opción menos porque no se repiten. 3 x 2 = 6.",
+    "pista": "Pensá cuántas opciones quedan para cada posición, descontando los dígitos ya usados."
+  },
+  {
+    "id": 116,
+    "categoria": "conteo",
+    "dificultad": 3,
+    "enunciado": "¿Cuántos números de 2 cifras distintas se pueden formar usando solamente los dígitos 1, 2, 3?",
+    "respuesta": "6",
+    "explicacion": "Para la 1ª cifra hay 3 opciones; en cada posición siguiente queda una opción menos porque no se repiten. 3 x 2 = 6.",
+    "pista": "Pensá cuántas opciones quedan para cada posición, descontando los dígitos ya usados."
+  },
+  {
+    "id": 117,
+    "categoria": "conteo",
+    "dificultad": 3,
+    "enunciado": "¿Cuántos números de 3 cifras distintas se pueden formar usando solamente los dígitos 1, 3, 5, 7?",
+    "respuesta": "24",
+    "explicacion": "Para la 1ª cifra hay 4 opciones; en cada posición siguiente queda una opción menos porque no se repiten. 4 x 3 x 2 = 24.",
+    "pista": "Pensá cuántas opciones quedan para cada posición, descontando los dígitos ya usados."
+  },
+  {
+    "id": 118,
+    "categoria": "divisibilidad",
+    "dificultad": 1,
+    "enunciado": "Dos luces parpadean: una cada 3 segundos y otra cada 4 segundos. Si parpadearon juntas recién, ¿en cuántos segundos volverán a parpadear juntas?",
+    "respuesta": "12",
+    "explicacion": "Buscamos el mínimo común múltiplo (MCM) entre 3 y 4. Los múltiplos de 3 son 3, 6, 9... El primer número común es 12.",
+    "pista": "Busca el Mínimo Común Múltiplo."
+  },
+  {
+    "id": 119,
+    "categoria": "divisibilidad",
+    "dificultad": 1,
+    "enunciado": "Dos luces parpadean: una cada 3 segundos y otra cada 5 segundos. Si parpadearon juntas recién, ¿en cuántos segundos volverán a parpadear juntas?",
+    "respuesta": "15",
+    "explicacion": "Buscamos el mínimo común múltiplo (MCM) entre 3 y 5. Los múltiplos de 3 son 3, 6, 9... El primer número común es 15.",
+    "pista": "Busca el Mínimo Común Múltiplo."
+  },
+  {
+    "id": 120,
+    "categoria": "divisibilidad",
+    "dificultad": 1,
+    "enunciado": "Dos luces parpadean: una cada 5 segundos y otra cada 7 segundos. Si parpadearon juntas recién, ¿en cuántos segundos volverán a parpadear juntas?",
+    "respuesta": "35",
+    "explicacion": "Buscamos el mínimo común múltiplo (MCM) entre 5 y 7. Los múltiplos de 5 son 5, 10, 15... El primer número común es 35.",
+    "pista": "Busca el Mínimo Común Múltiplo."
+  },
+  {
+    "id": 121,
+    "categoria": "divisibilidad",
+    "dificultad": 1,
+    "enunciado": "Dos luces parpadean: una cada 2 segundos y otra cada 4 segundos. Si parpadearon juntas recién, ¿en cuántos segundos volverán a parpadear juntas?",
+    "respuesta": "8",
+    "explicacion": "Buscamos el mínimo común múltiplo (MCM) entre 2 y 4. Los múltiplos de 2 son 2, 4, 6... El primer número común es 8.",
+    "pista": "Busca el Mínimo Común Múltiplo."
+  },
+  {
+    "id": 122,
+    "categoria": "divisibilidad",
+    "dificultad": 1,
+    "enunciado": "Dos luces parpadean: una cada 5 segundos y otra cada 3 segundos. Si parpadearon juntas recién, ¿en cuántos segundos volverán a parpadear juntas?",
+    "respuesta": "15",
+    "explicacion": "Buscamos el mínimo común múltiplo (MCM) entre 5 y 3. Los múltiplos de 5 son 5, 10, 15... El primer número común es 15.",
+    "pista": "Busca el Mínimo Común Múltiplo."
+  },
+  {
+    "id": 123,
+    "categoria": "divisibilidad",
+    "dificultad": 1,
+    "enunciado": "Dos luces parpadean: una cada 4 segundos y otra cada 5 segundos. Si parpadearon juntas recién, ¿en cuántos segundos volverán a parpadear juntas?",
+    "respuesta": "20",
+    "explicacion": "Buscamos el mínimo común múltiplo (MCM) entre 4 y 5. Los múltiplos de 4 son 4, 8, 12... El primer número común es 20.",
+    "pista": "Busca el Mínimo Común Múltiplo."
+  },
+  {
+    "id": 124,
+    "categoria": "divisibilidad",
+    "dificultad": 1,
+    "enunciado": "Dos luces parpadean: una cada 3 segundos y otra cada 7 segundos. Si parpadearon juntas recién, ¿en cuántos segundos volverán a parpadear juntas?",
+    "respuesta": "21",
+    "explicacion": "Buscamos el mínimo común múltiplo (MCM) entre 3 y 7. Los múltiplos de 3 son 3, 6, 9... El primer número común es 21.",
+    "pista": "Busca el Mínimo Común Múltiplo."
+  },
+  {
+    "id": 125,
+    "categoria": "divisibilidad",
+    "dificultad": 1,
+    "enunciado": "Dos luces parpadean: una cada 2 segundos y otra cada 7 segundos. Si parpadearon juntas recién, ¿en cuántos segundos volverán a parpadear juntas?",
+    "respuesta": "14",
+    "explicacion": "Buscamos el mínimo común múltiplo (MCM) entre 2 y 7. Los múltiplos de 2 son 2, 4, 6... El primer número común es 14.",
+    "pista": "Busca el Mínimo Común Múltiplo."
+  },
+  {
+    "id": 126,
+    "categoria": "divisibilidad",
+    "dificultad": 1,
+    "enunciado": "Dos luces parpadean: una cada 2 segundos y otra cada 3 segundos. Si parpadearon juntas recién, ¿en cuántos segundos volverán a parpadear juntas?",
+    "respuesta": "6",
+    "explicacion": "Buscamos el mínimo común múltiplo (MCM) entre 2 y 3. Los múltiplos de 2 son 2, 4, 6... El primer número común es 6.",
+    "pista": "Busca el Mínimo Común Múltiplo."
+  },
+  {
+    "id": 127,
+    "categoria": "divisibilidad",
+    "dificultad": 2,
+    "enunciado": "Si dividimos a un número entre 2, el resto es 1. ¿Cuál es el número más pequeño de dos cifras que cumple esto?",
+    "respuesta": "11",
+    "explicacion": "Los números que al dividir por 2 dan resto 1 son de la forma 2*k + 1. Probamos valores de k para encontrar el primero de dos cifras.",
+    "pista": "Escribe los múltiplos y súmales el resto."
+  },
+  {
+    "id": 128,
+    "categoria": "divisibilidad",
+    "dificultad": 2,
+    "enunciado": "Si dividimos a un número entre 6, el resto es 4. ¿Cuál es el número más pequeño de dos cifras que cumple esto?",
+    "respuesta": "10",
+    "explicacion": "Los números que al dividir por 6 dan resto 4 son de la forma 6*k + 4. Probamos valores de k para encontrar el primero de dos cifras.",
+    "pista": "Escribe los múltiplos y súmales el resto."
+  },
+  {
+    "id": 129,
+    "categoria": "divisibilidad",
+    "dificultad": 2,
+    "enunciado": "Si dividimos a un número entre 5, el resto es 1. ¿Cuál es el número más pequeño de dos cifras que cumple esto?",
+    "respuesta": "11",
+    "explicacion": "Los números que al dividir por 5 dan resto 1 son de la forma 5*k + 1. Probamos valores de k para encontrar el primero de dos cifras.",
+    "pista": "Escribe los múltiplos y súmales el resto."
+  },
+  {
+    "id": 130,
+    "categoria": "divisibilidad",
+    "dificultad": 2,
+    "enunciado": "Si dividimos a un número entre 3, el resto es 2. ¿Cuál es el número más pequeño de dos cifras que cumple esto?",
+    "respuesta": "11",
+    "explicacion": "Los números que al dividir por 3 dan resto 2 son de la forma 3*k + 2. Probamos valores de k para encontrar el primero de dos cifras.",
+    "pista": "Escribe los múltiplos y súmales el resto."
+  },
+  {
+    "id": 131,
+    "categoria": "divisibilidad",
+    "dificultad": 2,
+    "enunciado": "Si dividimos a un número entre 6, el resto es 3. ¿Cuál es el número más pequeño de dos cifras que cumple esto?",
+    "respuesta": "15",
+    "explicacion": "Los números que al dividir por 6 dan resto 3 son de la forma 6*k + 3. Probamos valores de k para encontrar el primero de dos cifras.",
+    "pista": "Escribe los múltiplos y súmales el resto."
+  },
+  {
+    "id": 132,
+    "categoria": "divisibilidad",
+    "dificultad": 2,
+    "enunciado": "Si dividimos a un número entre 5, el resto es 3. ¿Cuál es el número más pequeño de dos cifras que cumple esto?",
+    "respuesta": "13",
+    "explicacion": "Los números que al dividir por 5 dan resto 3 son de la forma 5*k + 3. Probamos valores de k para encontrar el primero de dos cifras.",
+    "pista": "Escribe los múltiplos y súmales el resto."
+  },
+  {
+    "id": 133,
+    "categoria": "divisibilidad",
+    "dificultad": 2,
+    "enunciado": "Si dividimos a un número entre 6, el resto es 5. ¿Cuál es el número más pequeño de dos cifras que cumple esto?",
+    "respuesta": "11",
+    "explicacion": "Los números que al dividir por 6 dan resto 5 son de la forma 6*k + 5. Probamos valores de k para encontrar el primero de dos cifras.",
+    "pista": "Escribe los múltiplos y súmales el resto."
+  },
+  {
+    "id": 134,
+    "categoria": "divisibilidad",
+    "dificultad": 2,
+    "enunciado": "Si dividimos a un número entre 3, el resto es 1. ¿Cuál es el número más pequeño de dos cifras que cumple esto?",
+    "respuesta": "10",
+    "explicacion": "Los números que al dividir por 3 dan resto 1 son de la forma 3*k + 1. Probamos valores de k para encontrar el primero de dos cifras.",
+    "pista": "Escribe los múltiplos y súmales el resto."
+  },
+  {
+    "id": 135,
+    "categoria": "divisibilidad",
+    "dificultad": 3,
+    "enunciado": "¿Cuál es el menor número (distinto de cero) que es múltiplo de 4, 5 y 10 al mismo tiempo?",
+    "respuesta": "20",
+    "explicacion": "Buscamos el Mínimo Común Múltiplo (MCM) de 4, 5 y 10. Tomando los factores necesarios para que sea divisible por todos, el MCM es 20.",
+    "pista": "Buscá el primer número que aparezca en las tablas de todos ellos a la vez."
+  },
+  {
+    "id": 136,
+    "categoria": "divisibilidad",
+    "dificultad": 3,
+    "enunciado": "¿Cuál es el menor número (distinto de cero) que es múltiplo de 3, 5 y 6 al mismo tiempo?",
+    "respuesta": "30",
+    "explicacion": "Buscamos el Mínimo Común Múltiplo (MCM) de 3, 5 y 6. Tomando los factores necesarios para que sea divisible por todos, el MCM es 30.",
+    "pista": "Buscá el primer número que aparezca en las tablas de todos ellos a la vez."
+  },
+  {
+    "id": 137,
+    "categoria": "divisibilidad",
+    "dificultad": 3,
+    "enunciado": "¿Cuál es el menor número (distinto de cero) que es múltiplo de 2, 3 y 5 al mismo tiempo?",
+    "respuesta": "30",
+    "explicacion": "Buscamos el Mínimo Común Múltiplo (MCM) de 2, 3 y 5. Tomando los factores necesarios para que sea divisible por todos, el MCM es 30.",
+    "pista": "Buscá el primer número que aparezca en las tablas de todos ellos a la vez."
+  },
+  {
+    "id": 138,
+    "categoria": "divisibilidad",
+    "dificultad": 3,
+    "enunciado": "¿Cuál es el menor número (distinto de cero) que es múltiplo de 3, 4 y 6 al mismo tiempo?",
+    "respuesta": "12",
+    "explicacion": "Buscamos el Mínimo Común Múltiplo (MCM) de 3, 4 y 6. Tomando los factores necesarios para que sea divisible por todos, el MCM es 12.",
+    "pista": "Buscá el primer número que aparezca en las tablas de todos ellos a la vez."
+  },
+  {
+    "id": 139,
+    "categoria": "divisibilidad",
+    "dificultad": 3,
+    "enunciado": "¿Cuál es el menor número (distinto de cero) que es múltiplo de 2, 3 y 4 al mismo tiempo?",
+    "respuesta": "12",
+    "explicacion": "Buscamos el Mínimo Común Múltiplo (MCM) de 2, 3 y 4. Tomando los factores necesarios para que sea divisible por todos, el MCM es 12.",
+    "pista": "Buscá el primer número que aparezca en las tablas de todos ellos a la vez."
+  },
+  {
+    "id": 140,
+    "categoria": "error",
+    "dificultad": 2,
+    "enunciado": "Resolución: 'El perímetro de un cuadrado de área 16 cm² es 8 cm, porque 16÷2=8'. Escribí la operación correcta para encontrar el lado.",
+    "respuesta": "raiz cuadrada",
+    "explicacion": "Si el área es 16 cm², el lado es √16 = 4 cm (no 16÷2). El perímetro correcto es 4×4 = 16 cm.",
+    "pista": "¿Cómo se calcula el lado de un cuadrado si conocés el área?"
+  },
+  {
+    "id": 141,
+    "categoria": "error",
+    "dificultad": 2,
+    "enunciado": "Resolución: 'El área de un triángulo de base 8 cm y altura 5 cm es 40 cm², porque 8×5=40'. ¿Qué operación faltó?",
+    "respuesta": "dividir por 2",
+    "explicacion": "El área de un triángulo es (base × altura) / 2 = (8 × 5) / 2 = 20 cm². Hay que dividir por 2.",
+    "pista": "¿Cuál es la fórmula del área de un triángulo?"
+  },
+  {
+    "id": 142,
+    "categoria": "error",
+    "dificultad": 2,
+    "enunciado": "Resolución: '1/2 + 1/3 = 2/5, porque sumo los numeradores y los denominadores'. ¿Qué se necesita para sumar fracciones?",
+    "respuesta": "denominador comun",
+    "explicacion": "Para sumar fracciones se necesita un denominador común. 1/2 + 1/3 = 3/6 + 2/6 = 5/6.",
+    "pista": "¿Podés sumar fracciones con distinto denominador directamente?"
+  },
+  {
+    "id": 143,
+    "categoria": "error",
+    "dificultad": 2,
+    "enunciado": "Resolución: '2 + 3 × 4 = 20, porque primero sumo 2+3=5 y luego 5×4=20'. ¿Qué operación tiene prioridad?",
+    "respuesta": "multiplicacion",
+    "explicacion": "La multiplicación va antes que la suma. Primero 3×4=12, luego 2+12=14. No 20.",
+    "pista": "¿Qué operación tiene mayor prioridad según el orden de operaciones?"
+  },
+  {
+    "id": 144,
+    "categoria": "error",
+    "dificultad": 2,
+    "enunciado": "Resolución: 'El 10% de 200 es 2, porque divido 200÷100=2'. ¿Por cuánto hay que dividir para calcular el 10%?",
+    "respuesta": "10",
+    "explicacion": "El 10% es la décima parte: 200÷10 = 20. Dividir por 100 da el 1%, no el 10%.",
+    "pista": "El 10% significa '10 de cada 100', es decir, 1 de cada 10."
+  },
+  {
+    "id": 145,
+    "categoria": "error",
+    "dificultad": 2,
+    "enunciado": "Resolución: 'El área de un cuadrado de lado 5 cm es 20 cm², porque 4×5=20'. ¿Qué calculó en realidad?",
+    "respuesta": "perimetro",
+    "explicacion": "4×5=20 es el perímetro, no el área. El área es lado×lado = 5×5 = 25 cm².",
+    "pista": "¿Cuál es la diferencia entre área y perímetro?"
+  },
+  {
+    "id": 146,
+    "categoria": "error",
+    "dificultad": 2,
+    "enunciado": "Resolución: '1/2 × 1/3 = 1/5, porque multiplico los numeradores y sumo los denominadores'. ¿Qué se hace con los denominadores al multiplicar fracciones?",
+    "respuesta": "multiplicar",
+    "explicacion": "Al multiplicar fracciones se multiplican numeradores y denominadores. 1/2 × 1/3 = (1×1)/(2×3) = 1/6.",
+    "pista": "¿Cómo se multiplican dos fracciones?"
+  },
+  {
+    "id": 147,
+    "categoria": "error",
+    "dificultad": 2,
+    "enunciado": "Resolución: 'Hay 3 camisetas y 2 pantalones, así que hay 5 combinaciones posibles porque 3+2=5'. ¿Cuál es la operación correcta?",
+    "respuesta": "multiplicar",
+    "explicacion": "Por el principio de multiplicación: 3 × 2 = 6 combinaciones. Cada camiseta se combina con cada pantalón.",
+    "pista": "¿Cuántas combinaciones tiene cada camiseta con los pantalones?"
+  },
+  {
+    "id": 148,
+    "categoria": "error",
+    "dificultad": 2,
+    "enunciado": "Resolución: 'La suma de los ángulos de un triángulo es 360° como la de cualquier figura'. ¿Cuántos grados suman los ángulos de un triángulo?",
+    "respuesta": "180",
+    "explicacion": "Los ángulos interiores de un triángulo suman 180°. Los 360° corresponden a los cuadriláteros.",
+    "pista": "¿Cuánto suman los ángulos de un triángulo?"
+  },
+  {
+    "id": 149,
+    "categoria": "error",
+    "dificultad": 2,
+    "enunciado": "Resolución: 'El MCM de 4 y 6 es 24, porque 4×6=24'. ¿Cuál es el Mínimo Común Múltiplo correcto?",
+    "respuesta": "12",
+    "explicacion": "El MCM de 4 y 6 es 12. Múltiplos de 4: 4,8,12... y de 6: 6,12... El primero en común es 12.",
+    "pista": "Busca el primer número que sea múltiplo de ambos."
+  },
+  {
+    "id": 150,
+    "categoria": "olimpico",
+    "dificultad": 3,
+    "enunciado": "Para numerar las páginas de un libro de 115 páginas, ¿cuántos dígitos se utilizan en total?",
+    "respuesta": "237",
+    "explicacion": "De la página 1 a la 9 se usan 9 dígitos. De la 10 a la 99 se usan 180 dígitos. Y si hay más de 99, las páginas de 3 cifras usan 3 dígitos cada una.",
+    "pista": "Separa por cantidad de cifras: de 1 cifra, de 2 cifras, etc."
+  },
+  {
+    "id": 151,
+    "categoria": "olimpico",
+    "dificultad": 3,
+    "enunciado": "Para numerar las páginas de un libro de 143 páginas, ¿cuántos dígitos se utilizan en total?",
+    "respuesta": "321",
+    "explicacion": "De la página 1 a la 9 se usan 9 dígitos. De la 10 a la 99 se usan 180 dígitos. Y si hay más de 99, las páginas de 3 cifras usan 3 dígitos cada una.",
+    "pista": "Separa por cantidad de cifras: de 1 cifra, de 2 cifras, etc."
+  },
+  {
+    "id": 152,
+    "categoria": "olimpico",
+    "dificultad": 3,
+    "enunciado": "Para numerar las páginas de un libro de 118 páginas, ¿cuántos dígitos se utilizan en total?",
+    "respuesta": "246",
+    "explicacion": "De la página 1 a la 9 se usan 9 dígitos. De la 10 a la 99 se usan 180 dígitos. Y si hay más de 99, las páginas de 3 cifras usan 3 dígitos cada una.",
+    "pista": "Separa por cantidad de cifras: de 1 cifra, de 2 cifras, etc."
+  },
+  {
+    "id": 153,
+    "categoria": "olimpico",
+    "dificultad": 3,
+    "enunciado": "Para numerar las páginas de un libro de 147 páginas, ¿cuántos dígitos se utilizan en total?",
+    "respuesta": "333",
+    "explicacion": "De la página 1 a la 9 se usan 9 dígitos. De la 10 a la 99 se usan 180 dígitos. Y si hay más de 99, las páginas de 3 cifras usan 3 dígitos cada una.",
+    "pista": "Separa por cantidad de cifras: de 1 cifra, de 2 cifras, etc."
+  },
+  {
+    "id": 154,
+    "categoria": "olimpico",
+    "dificultad": 3,
+    "enunciado": "Para numerar las páginas de un libro de 139 páginas, ¿cuántos dígitos se utilizan en total?",
+    "respuesta": "309",
+    "explicacion": "De la página 1 a la 9 se usan 9 dígitos. De la 10 a la 99 se usan 180 dígitos. Y si hay más de 99, las páginas de 3 cifras usan 3 dígitos cada una.",
+    "pista": "Separa por cantidad de cifras: de 1 cifra, de 2 cifras, etc."
+  },
+  {
+    "id": 155,
+    "categoria": "olimpico",
+    "dificultad": 3,
+    "enunciado": "Para numerar las páginas de un libro de 95 páginas, ¿cuántos dígitos se utilizan en total?",
+    "respuesta": "181",
+    "explicacion": "De la página 1 a la 9 se usan 9 dígitos. De la 10 a la 95 se usan 172 dígitos. Y si hay más de 99, las páginas de 3 cifras usan 3 dígitos cada una.",
+    "pista": "Separa por cantidad de cifras: de 1 cifra, de 2 cifras, etc."
+  },
+  {
+    "id": 156,
+    "categoria": "olimpico",
+    "dificultad": 3,
+    "enunciado": "Para numerar las páginas de un libro de 75 páginas, ¿cuántos dígitos se utilizan en total?",
+    "respuesta": "141",
+    "explicacion": "De la página 1 a la 9 se usan 9 dígitos. De la 10 a la 75 se usan 132 dígitos. Y si hay más de 99, las páginas de 3 cifras usan 3 dígitos cada una.",
+    "pista": "Separa por cantidad de cifras: de 1 cifra, de 2 cifras, etc."
+  },
+  {
+    "id": 157,
+    "categoria": "olimpico",
+    "dificultad": 3,
+    "enunciado": "Para numerar las páginas de un libro de 68 páginas, ¿cuántos dígitos se utilizan en total?",
+    "respuesta": "127",
+    "explicacion": "De la página 1 a la 9 se usan 9 dígitos. De la 10 a la 68 se usan 118 dígitos. Y si hay más de 99, las páginas de 3 cifras usan 3 dígitos cada una.",
+    "pista": "Separa por cantidad de cifras: de 1 cifra, de 2 cifras, etc."
+  },
+  {
+    "id": 158,
+    "categoria": "olimpico",
+    "dificultad": 3,
+    "enunciado": "Para numerar las páginas de un libro de 102 páginas, ¿cuántos dígitos se utilizan en total?",
+    "respuesta": "198",
+    "explicacion": "De la página 1 a la 9 se usan 9 dígitos. De la 10 a la 99 se usan 180 dígitos. Y si hay más de 99, las páginas de 3 cifras usan 3 dígitos cada una.",
+    "pista": "Separa por cantidad de cifras: de 1 cifra, de 2 cifras, etc."
+  },
+  {
+    "id": 159,
+    "categoria": "olimpico",
+    "dificultad": 3,
+    "enunciado": "Para numerar las páginas de un libro de 148 páginas, ¿cuántos dígitos se utilizan en total?",
+    "respuesta": "336",
+    "explicacion": "De la página 1 a la 9 se usan 9 dígitos. De la 10 a la 99 se usan 180 dígitos. Y si hay más de 99, las páginas de 3 cifras usan 3 dígitos cada una.",
+    "pista": "Separa por cantidad de cifras: de 1 cifra, de 2 cifras, etc."
+  },
+  {
+    "id": 160,
+    "categoria": "olimpico",
+    "dificultad": 3,
+    "enunciado": "Para numerar las páginas de un libro de 84 páginas, ¿cuántos dígitos se utilizan en total?",
+    "respuesta": "159",
+    "explicacion": "De la página 1 a la 9 se usan 9 dígitos. De la 10 a la 84 se usan 150 dígitos. Y si hay más de 99, las páginas de 3 cifras usan 3 dígitos cada una.",
+    "pista": "Separa por cantidad de cifras: de 1 cifra, de 2 cifras, etc."
+  },
+  {
+    "id": 161,
+    "categoria": "olimpico",
+    "dificultad": 3,
+    "enunciado": "Para numerar las páginas de un libro de 85 páginas, ¿cuántos dígitos se utilizan en total?",
+    "respuesta": "161",
+    "explicacion": "De la página 1 a la 9 se usan 9 dígitos. De la 10 a la 85 se usan 152 dígitos. Y si hay más de 99, las páginas de 3 cifras usan 3 dígitos cada una.",
+    "pista": "Separa por cantidad de cifras: de 1 cifra, de 2 cifras, etc."
+  },
+  {
+    "id": 162,
+    "categoria": "olimpico",
+    "dificultad": 3,
+    "enunciado": "Para numerar las páginas de un libro de 52 páginas, ¿cuántos dígitos se utilizan en total?",
+    "respuesta": "95",
+    "explicacion": "De la página 1 a la 9 se usan 9 dígitos. De la 10 a la 52 se usan 86 dígitos. Y si hay más de 99, las páginas de 3 cifras usan 3 dígitos cada una.",
+    "pista": "Separa por cantidad de cifras: de 1 cifra, de 2 cifras, etc."
+  },
+  {
+    "id": 163,
+    "categoria": "olimpico",
+    "dificultad": 3,
+    "enunciado": "Para numerar las páginas de un libro de 112 páginas, ¿cuántos dígitos se utilizan en total?",
+    "respuesta": "228",
+    "explicacion": "De la página 1 a la 9 se usan 9 dígitos. De la 10 a la 99 se usan 180 dígitos. Y si hay más de 99, las páginas de 3 cifras usan 3 dígitos cada una.",
+    "pista": "Separa por cantidad de cifras: de 1 cifra, de 2 cifras, etc."
+  },
+  {
+    "id": 164,
+    "categoria": "olimpico",
+    "dificultad": 3,
+    "enunciado": "En una caja hay bolitas rojas, azules y verdes. Hay 5 rojas más que azules, y 3 verdes menos que rojas. En total hay 34 bolitas. ¿Cuántas bolitas azules hay?",
+    "respuesta": "9",
+    "explicacion": "Si A son las azules: R = A+5 y V = R-3 = A+2. Total: A + (A+5) + (A+2) = 3A+7 = 34. Entonces 3A = 27, A = 9.",
+    "pista": "Usa una letra para las bolitas azules y expresa el resto en función de ellas."
+  },
+  {
+    "id": 165,
+    "categoria": "olimpico",
+    "dificultad": 3,
+    "enunciado": "En una caja hay bolitas rojas, azules y verdes. Hay 5 rojas más que azules, y 3 verdes menos que rojas. En total hay 43 bolitas. ¿Cuántas bolitas azules hay?",
+    "respuesta": "12",
+    "explicacion": "Si A son las azules: R = A+5 y V = R-3 = A+2. Total: A + (A+5) + (A+2) = 3A+7 = 43. Entonces 3A = 36, A = 12.",
+    "pista": "Usa una letra para las bolitas azules y expresa el resto en función de ellas."
+  },
+  {
+    "id": 166,
+    "categoria": "olimpico",
+    "dificultad": 3,
+    "enunciado": "En una caja hay bolitas rojas, azules y verdes. Hay 5 rojas más que azules, y 3 verdes menos que rojas. En total hay 22 bolitas. ¿Cuántas bolitas azules hay?",
+    "respuesta": "5",
+    "explicacion": "Si A son las azules: R = A+5 y V = R-3 = A+2. Total: A + (A+5) + (A+2) = 3A+7 = 22. Entonces 3A = 15, A = 5.",
+    "pista": "Usa una letra para las bolitas azules y expresa el resto en función de ellas."
+  },
+  {
+    "id": 167,
+    "categoria": "olimpico",
+    "dificultad": 3,
+    "enunciado": "En una caja hay bolitas rojas, azules y verdes. Hay 5 rojas más que azules, y 3 verdes menos que rojas. En total hay 28 bolitas. ¿Cuántas bolitas azules hay?",
+    "respuesta": "7",
+    "explicacion": "Si A son las azules: R = A+5 y V = R-3 = A+2. Total: A + (A+5) + (A+2) = 3A+7 = 28. Entonces 3A = 21, A = 7.",
+    "pista": "Usa una letra para las bolitas azules y expresa el resto en función de ellas."
+  },
+  {
+    "id": 168,
+    "categoria": "olimpico",
+    "dificultad": 3,
+    "enunciado": "En una caja hay bolitas rojas, azules y verdes. Hay 5 rojas más que azules, y 3 verdes menos que rojas. En total hay 19 bolitas. ¿Cuántas bolitas azules hay?",
+    "respuesta": "4",
+    "explicacion": "Si A son las azules: R = A+5 y V = R-3 = A+2. Total: A + (A+5) + (A+2) = 3A+7 = 19. Entonces 3A = 12, A = 4.",
+    "pista": "Usa una letra para las bolitas azules y expresa el resto en función de ellas."
+  },
+  {
+    "id": 169,
+    "categoria": "olimpico",
+    "dificultad": 3,
+    "enunciado": "En una caja hay bolitas rojas, azules y verdes. Hay 5 rojas más que azules, y 3 verdes menos que rojas. En total hay 40 bolitas. ¿Cuántas bolitas azules hay?",
+    "respuesta": "11",
+    "explicacion": "Si A son las azules: R = A+5 y V = R-3 = A+2. Total: A + (A+5) + (A+2) = 3A+7 = 40. Entonces 3A = 33, A = 11.",
+    "pista": "Usa una letra para las bolitas azules y expresa el resto en función de ellas."
+  },
+  {
+    "id": 170,
+    "categoria": "olimpico",
+    "dificultad": 3,
+    "enunciado": "En una caja hay bolitas rojas, azules y verdes. Hay 5 rojas más que azules, y 3 verdes menos que rojas. En total hay 37 bolitas. ¿Cuántas bolitas azules hay?",
+    "respuesta": "10",
+    "explicacion": "Si A son las azules: R = A+5 y V = R-3 = A+2. Total: A + (A+5) + (A+2) = 3A+7 = 37. Entonces 3A = 30, A = 10.",
+    "pista": "Usa una letra para las bolitas azules y expresa el resto en función de ellas."
+  }
+];
+
+        // State
+        let state = {
+            xp: 0,
+            level: 1,
+            achievements: [],
+            progress: {},
+            competencia: {
+                active: false,
+                stageIndex: 0, // 0: Escolar, 1: Interescolar, 2: Zonal, 3: Regional, 4: Nacional
+                problemCount: 0,
+                correctCount: 0
+            }
+        };
+
+        const stages = ["Escolar", "Interescolar", "Zonal", "Regional", "Nacional"];
+
+        let currentProblem = null;
+        let currentModule = null;
+        let recentIds = []; // ids mostrados recientemente, para no repetir los últimos N
+
+        // Initialization
+        function init() {
+            loadState();
+            updateStatsUI();
+            updateMascot();
+            updateProgressUI();
+        }
+
+        // Local Storage
+        function loadState() {
+            const saved = localStorage.getItem('nandu_state');
+            if (!saved) return;
+            let parsed;
+            try {
+                parsed = JSON.parse(saved);
+            } catch (e) {
+                // Estado corrupto: arrancamos limpio en lugar de romper la app.
+                console.warn('Estado guardado inválido, se reinicia.', e);
+                return;
+            }
+            // Merge sobre los valores por defecto: un estado guardado por una versión
+            // anterior (sin, p.ej., 'competencia') no debe dejar claves sin definir.
+            const defaultCompetencia = state.competencia;
+            state = Object.assign({}, state, parsed);
+            state.competencia = Object.assign({}, defaultCompetencia, parsed.competencia || {});
+            if (!state.progress || typeof state.progress !== 'object') state.progress = {};
+            if (!Array.isArray(state.achievements)) state.achievements = [];
+            if (typeof state.xp !== 'number') state.xp = 0;
+            if (typeof state.level !== 'number') state.level = 1;
+        }
+
+        function saveState() {
+            localStorage.setItem('nandu_state', JSON.stringify(state));
+        }
+
+        // UI Routing
+        function showScreen(id) {
+            document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+            
+            if (id === 'home') {
+                updateStatsUI();
+                updateMascot();
+                updateProgressUI();
+            }
+        }
+
+        // Mascot Evolution
+        function getMascotData() {
+            if (state.level < 4) {
+                return {
+                    name: "Huevo Matemático",
+                    desc: "Recién descubriendo los números.",
+                    svg: `<svg viewBox="0 0 100 100"><circle cx="50" cy="60" r="30" fill="#fef3c7"/><path d="M30 50 Q 50 30 70 50 Q 50 70 30 50" stroke="#f59e0b" stroke-width="2" fill="none" stroke-dasharray="4"/></svg>`
+                };
+            } else if (state.level < 8) {
+                return {
+                    name: "Ñanducito",
+                    desc: "Dando sus primeros pasos lógicos.",
+                    svg: `<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="20" fill="#d97706"/><circle cx="43" cy="45" r="3" fill="#fff"/><circle cx="57" cy="45" r="3" fill="#fff"/><circle cx="43" cy="45" r="1" fill="#000"/><circle cx="57" cy="45" r="1" fill="#000"/><path d="M45 55 Q 50 60 55 55" stroke="#fff" stroke-width="2" fill="none"/><line x1="50" y1="70" x2="50" y2="90" stroke="#d97706" stroke-width="4"/><line x1="50" y1="90" x2="40" y2="95" stroke="#d97706" stroke-width="3"/><line x1="50" y1="90" x2="60" y2="95" stroke="#d97706" stroke-width="3"/></svg>`
+                };
+            } else if (state.level < 13) {
+                return {
+                    name: "Ñandú Corredor",
+                    desc: "Veloz para calcular y razonar.",
+                    svg: `<svg viewBox="0 0 100 100"><ellipse cx="50" cy="60" rx="30" ry="20" fill="#b45309"/><circle cx="70" cy="30" r="15" fill="#b45309"/><path d="M 60 40 Q 50 50 50 60" stroke="#b45309" stroke-width="10" fill="none"/><circle cx="75" cy="25" r="2" fill="#fff"/><polygon points="85,30 95,35 85,40" fill="#f59e0b"/><line x1="40" y1="80" x2="40" y2="95" stroke="#b45309" stroke-width="5"/><line x1="60" y1="80" x2="60" y2="95" stroke="#b45309" stroke-width="5"/></svg>`
+                };
+            } else {
+                return {
+                    name: "Ñandú Ninja Olímpico",
+                    desc: "Maestro supremo de las estrategias.",
+                    svg: `<svg viewBox="0 0 100 100"><ellipse cx="50" cy="60" rx="30" ry="20" fill="#1e293b"/><circle cx="70" cy="30" r="15" fill="#1e293b"/><path d="M 60 40 Q 50 50 50 60" stroke="#1e293b" stroke-width="10" fill="none"/><rect x="60" y="20" width="20" height="5" fill="#ef4444"/><polygon points="85,30 95,35 85,40" fill="#f59e0b"/><line x1="40" y1="80" x2="40" y2="95" stroke="#1e293b" stroke-width="5"/><line x1="60" y1="80" x2="60" y2="95" stroke="#1e293b" stroke-width="5"/><path d="M 20 60 L 10 50 L 30 50 Z" fill="#ef4444"/></svg>`
+                };
+            }
+        }
+
+        function updateMascot() {
+            const data = getMascotData();
+            document.getElementById('mascot-svg-wrapper').innerHTML = `<div class="mascot-svg">${data.svg}</div>`;
+            document.getElementById('mascot-name').innerText = data.name;
+            document.getElementById('mascot-desc').innerText = data.desc;
+        }
+
+        function updateStatsUI() {
+            document.getElementById('level-display').innerText = `Nivel ${state.level}`;
+            const xpForNext = state.level * 100;
+            const percentage = (state.xp / xpForNext) * 100;
+            document.getElementById('xp-bar').style.width = `${percentage}%`;
+            document.getElementById('achievements-display').innerText = state.achievements.length;
+        }
+
+        function updateProgressUI() {
+            const cats = ['patrones', 'logica', 'geometria', 'conteo', 'divisibilidad', 'error', 'olimpico'];
+            const progress = state.progress || {};
+            cats.forEach(cat => {
+                const count = progress[cat] || 0;
+                const pct = Math.min(count / 20, 1) * 100;
+                const barEl = document.getElementById(`prog-${cat}`);
+                const labelEl = document.getElementById(`prog-${cat}-label`);
+                if (barEl) barEl.style.width = `${pct}%`;
+                if (labelEl) labelEl.innerText = `${count} resueltos`;
+            });
+        }
+
+        function gainXP(amount) {
+            state.xp += amount;
+            let xpForNext = state.level * 100;
+            while (state.xp >= xpForNext) {
+                state.xp -= xpForNext;
+                state.level++;
+                xpForNext = state.level * 100;
+                alert(`¡Felicidades! Has alcanzado el Nivel ${state.level} 🏆`);
+            }
+            saveState();
+            updateStatsUI();
+        }
+
+        // Gameplay
+        function startModule(category) {
+            state.competencia.active = false;
+            document.getElementById('competencia-tracker').style.display = 'none';
+            document.getElementById('mode-indicator').innerText = `Entrenamiento: ${category.toUpperCase()}`;
+            currentModule = category;
+            loadNextProblem();
+            showScreen('play');
+        }
+
+        function startCompetencia() {
+            state.competencia = {
+                active: true,
+                stageIndex: 0,
+                problemCount: 0,
+                correctCount: 0
+            };
+            document.getElementById('competencia-tracker').style.display = 'flex';
+            updateCompetenciaUI();
+            currentModule = 'olimpico'; // Mezcla de problemas
+            loadNextProblem();
+            showScreen('play');
+        }
+
+        function updateCompetenciaUI() {
+            const st = state.competencia;
+            document.getElementById('mode-indicator').innerText = `🏆 Competencia Oficial: Instancia ${stages[st.stageIndex]} (${st.problemCount}/3)`;
+            for(let i=0; i<5; i++) {
+                const node = document.getElementById(`stage-${i}`);
+                node.className = 'stage-node';
+                if(i < st.stageIndex) node.classList.add('passed');
+                if(i === st.stageIndex) node.classList.add('active');
+            }
+        }
+
+        function loadNextProblem() {
+            document.getElementById('feedback').style.display = 'none';
+            document.getElementById('answer-input').value = '';
+            document.getElementById('answer-input').disabled = false;
+            document.getElementById('svg-workspace').style.display = 'none';
+            document.getElementById('svg-workspace').innerHTML = '';
+
+            let available;
+            if (state.competencia.active) {
+                // La competencia es de respuesta numérica: excluimos 'Encuentra el Error' (respuesta de texto).
+                const diff = Math.min(Math.floor(state.competencia.stageIndex / 2) + 1, 3);
+                available = problemBank.filter(p => p.dificultad === diff && p.categoria !== 'error');
+                if (available.length === 0) available = problemBank.filter(p => p.categoria !== 'error');
+            } else {
+                available = problemBank.filter(p => p.categoria === currentModule);
+                if (available.length === 0) available = problemBank;
+            }
+
+            // Evita repetir los últimos N problemas (N se adapta al tamaño del bucket).
+            const windowSize = Math.min(5, Math.max(0, available.length - 1));
+            let candidates = available.filter(p => !recentIds.includes(p.id));
+            if (candidates.length === 0) candidates = available;
+            const randomIndex = Math.floor(Math.random() * candidates.length);
+            currentProblem = candidates[randomIndex];
+            recentIds.push(currentProblem.id);
+            while (recentIds.length > windowSize) recentIds.shift();
+
+            document.getElementById('problem-category').innerText = `MÓDULO: ${currentProblem.categoria}`;
+            document.getElementById('problem-statement').innerText = currentProblem.enunciado;
+
+            // Easter egg interactive SVG for Geometry
+            if (currentProblem.categoria === 'geometria') {
+                setupInteractiveGeometry();
+            }
+        }
+
+        // Dibuja la figura concreta del problema usando currentProblem.figura.
+        // Solo rotula los datos DADOS en el enunciado, nunca la respuesta.
+        function setupInteractiveGeometry() {
+            const svg = document.getElementById('svg-workspace');
+            const fig = currentProblem.figura;
+            if (!fig) { svg.style.display = 'none'; svg.innerHTML = ''; return; }
+            svg.style.display = 'block';
+
+            const width = svg.clientWidth || 800;
+            const height = 300;
+            const cx = width / 2, cy = height / 2;
+
+            const STROKE = '#3b82f6';            // --accent-primary
+            const FILL = 'rgba(59,130,246,0.25)';
+            const GIVEN = '#f59e0b';             // --accent-warning (datos del enunciado)
+            const MUTED = '#cbd5e1';             // --text-muted
+
+            const txt = (x, y, t, color, size, anchor) =>
+                `<text x="${x}" y="${y}" fill="${color || '#f8fafc'}" font-size="${size || 16}" ` +
+                `font-family="system-ui, sans-serif" font-weight="600" text-anchor="${anchor || 'middle'}">${t}</text>`;
+            const vertex = (x, y) =>
+                `<circle cx="${x}" cy="${y}" class="interactive-vertex" onclick="flashVertex(this)"/>`;
+
+            // Grilla de fondo
+            let grid = '';
+            for (let i = 0; i < width; i += 20) grid += `<line x1="${i}" y1="0" x2="${i}" y2="${height}" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>`;
+            for (let i = 0; i < height; i += 20) grid += `<line x1="0" y1="${i}" x2="${width}" y2="${i}" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>`;
+
+            let shape = '';
+
+            if (fig.tipo === 'rect_dos_cuadrados') {
+                // Dos cuadrados iguales unidos -> rectángulo 2:1. Dato dado: el lado.
+                const s = 90, w = s * 2, h = s;
+                const x0 = cx - w / 2, y0 = cy - h / 2 + 10;
+                shape += `<rect x="${x0}" y="${y0}" width="${w}" height="${h}" fill="${FILL}" stroke="${STROKE}" stroke-width="3"/>`;
+                shape += `<line x1="${cx}" y1="${y0}" x2="${cx}" y2="${y0 + h}" stroke="${STROKE}" stroke-width="2" stroke-dasharray="7"/>`;
+                // Acotación del lado (dato)
+                shape += `<line x1="${x0 - 14}" y1="${y0}" x2="${x0 - 14}" y2="${y0 + h}" stroke="${GIVEN}" stroke-width="1.5"/>`;
+                shape += txt(x0 - 22, cy + 15, `${fig.lado} cm`, GIVEN, 15, 'end');
+                shape += txt(x0 + s / 2, y0 - 12, `${fig.lado} cm`, GIVEN, 14, 'middle');
+                shape += txt(cx, y0 + h + 32, 'Dos cuadrados iguales unidos', MUTED, 13, 'middle');
+                [[x0, y0], [cx, y0], [x0 + w, y0], [x0, y0 + h], [cx, y0 + h], [x0 + w, y0 + h]].forEach(p => shape += vertex(p[0], p[1]));
+
+            } else if (fig.tipo === 'triangulo') {
+                // Triángulo con base y área dadas; la altura es la incógnita (NO se rotula).
+                const bw = 200, th = 150;
+                const ax = cx - 30, ay = cy - th / 2;          // vértice superior (no centrado, genérico)
+                const blx = cx - bw / 2, brx = cx + bw / 2, by = cy + th / 2;
+                shape += `<polygon points="${ax},${ay} ${brx},${by} ${blx},${by}" fill="${FILL}" stroke="${STROKE}" stroke-width="3"/>`;
+                // Altura punteada con marca de ángulo recto (sin rotular su valor)
+                shape += `<line x1="${ax}" y1="${ay}" x2="${ax}" y2="${by}" stroke="${MUTED}" stroke-width="1.5" stroke-dasharray="5"/>`;
+                shape += `<path d="M ${ax} ${by - 12} L ${ax + 12} ${by - 12} L ${ax + 12} ${by}" fill="none" stroke="${MUTED}" stroke-width="1.5"/>`;
+                shape += txt(ax + 20, cy, 'altura = ?', MUTED, 13, 'start');
+                // Datos dados
+                shape += `<line x1="${blx}" y1="${by + 14}" x2="${brx}" y2="${by + 14}" stroke="${GIVEN}" stroke-width="1.5"/>`;
+                shape += txt(cx, by + 32, `base = ${fig.base} cm`, GIVEN, 15, 'middle');
+                shape += txt(cx - 5, by - 28, `Área = ${fig.area} cm²`, GIVEN, 15, 'middle');
+                [[ax, ay], [brx, by], [blx, by]].forEach(p => shape += vertex(p[0], p[1]));
+
+            } else if (fig.tipo === 'cuadrado_4') {
+                // Cuadrado grande dividido en 4 cuadraditos iguales. Dato: perímetro del cuadradito.
+                const S = 170, x0 = cx - S / 2, y0 = cy - S / 2 + 6, m = S / 2;
+                shape += `<rect x="${x0}" y="${y0}" width="${S}" height="${S}" fill="${FILL}" stroke="${STROKE}" stroke-width="3"/>`;
+                shape += `<line x1="${x0 + m}" y1="${y0}" x2="${x0 + m}" y2="${y0 + S}" stroke="${STROKE}" stroke-width="2" stroke-dasharray="7"/>`;
+                shape += `<line x1="${x0}" y1="${y0 + m}" x2="${x0 + S}" y2="${y0 + m}" stroke="${STROKE}" stroke-width="2" stroke-dasharray="7"/>`;
+                // Resalta un cuadradito y rotula su perímetro (dato)
+                shape += `<rect x="${x0}" y="${y0}" width="${m}" height="${m}" fill="rgba(245,158,11,0.18)" stroke="${GIVEN}" stroke-width="2"/>`;
+                shape += txt(x0 + m / 2, y0 + m / 2 + 5, `P = ${fig.perimetro_pequeno} cm`, GIVEN, 13, 'middle');
+                shape += txt(cx, y0 + S + 30, 'Cuatro cuadraditos iguales', MUTED, 13, 'middle');
+                [[x0, y0], [x0 + S, y0], [x0, y0 + S], [x0 + S, y0 + S]].forEach(p => shape += vertex(p[0], p[1]));
+
+            } else {
+                svg.style.display = 'none'; svg.innerHTML = ''; return;
+            }
+
+            svg.innerHTML = grid + shape;
+        }
+
+        window.flashVertex = function(el) {
+            el.setAttribute('fill', '#f59e0b');
+            el.setAttribute('r', '10');
+            setTimeout(() => {
+                el.setAttribute('fill', 'white');
+                el.setAttribute('r', '6');
+            }, 300);
+        }
+
+        function showHint() {
+            if(currentProblem.pista) {
+                alert("Pista del Entrenador: " + currentProblem.pista);
+            } else {
+                alert("¡Tú puedes! Lee con cuidado y haz un dibujo.");
+            }
+        }
+
+        window.checkAnswer = function() {
+            const input = document.getElementById('answer-input').value.trim().toLowerCase();
+            if (!input) return;
+
+            const correct = String(currentProblem.respuesta).trim().toLowerCase();
+            const normalize = s => s.normalize('NFD').replace(/[̀-ͯ]/g, '');
+            const isMatch = normalize(input) === normalize(correct);
+
+            document.getElementById('answer-input').disabled = true;
+            const feedback = document.getElementById('feedback');
+            
+            if (isMatch) {
+                feedback.className = 'feedback success';
+                document.getElementById('feedback-title').innerText = '¡Excelente Resolución! ✨';
+                gainXP(20 * currentProblem.dificultad);
+                if (!state.progress) state.progress = {};
+                state.progress[currentProblem.categoria] = (state.progress[currentProblem.categoria] || 0) + 1;
+                updateProgressUI();
+
+                if (state.competencia.active) {
+                    state.competencia.correctCount++;
+                }
+            } else {
+                feedback.className = 'feedback error';
+                document.getElementById('feedback-title').innerText = 'Hay un detalle para revisar... 🤔';
+            }
+
+            document.getElementById('feedback-desc').innerHTML = `
+                <strong>Respuesta correcta:</strong> ${currentProblem.respuesta}<br><br>
+                <strong>Estrategia Olímpica:</strong><br> ${currentProblem.explicacion}
+            `;
+            feedback.style.display = 'block';
+
+            if (state.competencia.active) {
+                state.competencia.problemCount++;
+                if (state.competencia.problemCount >= 3) {
+                    document.getElementById('next-problem-btn').innerText = "Ver Resultado de la Etapa";
+                } else {
+                    document.getElementById('next-problem-btn').innerText = "Siguiente Problema →";
+                    updateCompetenciaUI();
+                }
+            }
+        }
+
+        window.nextProblem = function() {
+            if (state.competencia.active && state.competencia.problemCount >= 3) {
+                // Etapa finalizada
+                if (state.competencia.correctCount >= 2) {
+                    // Aprueba
+                    alert(`¡Felicitaciones! Aprobaste el certamen ${stages[state.competencia.stageIndex]} con ${state.competencia.correctCount}/3 correctas.`);
+                    gainXP(100 * (state.competencia.stageIndex + 1));
+                    state.competencia.stageIndex++;
+                    state.competencia.problemCount = 0;
+                    state.competencia.correctCount = 0;
+
+                    if (state.competencia.stageIndex >= 5) {
+                        alert("¡INCREÍBLE! ¡Eres CAMPEÓN NACIONAL! Has completado el juego.");
+                        if(!state.achievements.includes("CampeonNacional")) {
+                            state.achievements.push("CampeonNacional");
+                        }
+                        showScreen('home');
+                    } else {
+                        updateCompetenciaUI();
+                        loadNextProblem();
+                    }
+                } else {
+                    // Desaprueba
+                    alert(`No alcanzaste los 2 puntos necesarios en el certamen ${stages[state.competencia.stageIndex]}. ¡Sigue entrenando!`);
+                    showScreen('home');
+                }
+            } else {
+                loadNextProblem();
+            }
+        }
+
+        // Boot
+        init();
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# Editores / OS
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
+Thumbs.db
+
+# Claude Code (config local del usuario)
+.claude/settings.local.json
+
+# Nota: mision_nandu.html y problemas_nandu.json SÍ se versionan a propósito:
+# el HTML es el producto final portable y el JSON fija el banco de problemas
+# (generate_problems.py usa random sin semilla, así que regenerar cambia el contenido).
