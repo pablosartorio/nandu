@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Misión Ñandú — Entrenamiento para la Olimpíada Ñandú</title>
+<meta name="description" content="Juego de práctica matemática para la Olimpíada Ñandú: patrones, lógica, geometría, conteo, divisibilidad y desafíos olímpicos, con niveles progresivos y modo competencia.">
+<style>
+  :root {
+    --bg-primary: #0f172a;
+    --bg-secondary: #1e293b;
+    --accent-primary: #3b82f6;
+    --accent-secondary: #8b5cf6;
+    --accent-success: #10b981;
+    --accent-warning: #f59e0b;
+    --text-main: #f8fafc;
+    --text-muted: #cbd5e1;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    background: radial-gradient(circle at top right, #1e1b4b, var(--bg-primary));
+    color: var(--text-main);
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+  .wrap { max-width: 1000px; margin: 0 auto; padding: 0 1.5rem; }
+
+  /* HERO */
+  .hero { text-align: center; padding: 4rem 1.5rem 3rem; }
+  .mascot {
+    width: 150px; height: 150px; margin: 0 auto 1.5rem;
+    filter: drop-shadow(0 10px 25px rgba(245, 158, 11, 0.35));
+    animation: float 3.5s ease-in-out infinite;
+  }
+  @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+  .hero h1 {
+    font-size: clamp(2.4rem, 7vw, 4rem); font-weight: 800; letter-spacing: -1px;
+    background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  .hero .tagline { color: var(--text-muted); font-size: 1.2rem; margin: 0.75rem auto 0.4rem; max-width: 640px; }
+  .hero .sub { color: var(--accent-warning); font-weight: 600; font-size: 0.95rem; letter-spacing: 1px; text-transform: uppercase; }
+
+  .cta { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.9rem 2rem; border-radius: 12px; font-size: 1.1rem; font-weight: 700;
+    text-decoration: none; transition: transform 0.15s, box-shadow 0.2s; border: 2px solid transparent;
+  }
+  .btn-primary {
+    background: linear-gradient(90deg, var(--accent-warning), #f97316); color: #1e1b14;
+    box-shadow: 0 8px 24px rgba(245, 158, 11, 0.35);
+  }
+  .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(245, 158, 11, 0.5); }
+  .btn-ghost { background: transparent; border-color: rgba(255,255,255,0.25); color: var(--text-main); }
+  .btn-ghost:hover { border-color: var(--accent-primary); background: rgba(59,130,246,0.12); }
+
+  /* SECCIONES */
+  section.block { padding: 2.5rem 0; }
+  h2 { font-size: 1.8rem; text-align: center; margin-bottom: 0.5rem; }
+  .lead { text-align: center; color: var(--text-muted); max-width: 700px; margin: 0 auto 2rem; }
+
+  /* GRID DE MÓDULOS */
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+  .card {
+    background: var(--bg-secondary); border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 14px; padding: 1.4rem; transition: transform 0.15s, border-color 0.2s;
+  }
+  .card:hover { transform: translateY(-4px); border-color: var(--accent-secondary); }
+  .card .icon { font-size: 1.8rem; }
+  .card h3 { font-size: 1.15rem; margin: 0.4rem 0; }
+  .card p { color: var(--text-muted); font-size: 0.92rem; }
+
+  /* CÓMO PROGRESÁS */
+  .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.2rem; }
+  .step { text-align: center; padding: 1rem; }
+  .step .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 48px; height: 48px; border-radius: 50%; font-weight: 800; font-size: 1.3rem;
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary)); margin-bottom: 0.6rem;
+  }
+  .stages { text-align: center; color: var(--text-muted); margin-top: 1.5rem; font-size: 0.95rem; }
+  .stages b { color: var(--accent-warning); }
+
+  footer { text-align: center; padding: 2.5rem 1.5rem; color: var(--text-muted); border-top: 1px solid rgba(255,255,255,0.08); margin-top: 2rem; }
+  footer a { color: var(--accent-primary); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+
+  <header class="hero">
+    <div class="mascot">
+      <svg viewBox="0 0 100 100" width="150" height="150">
+        <ellipse cx="50" cy="60" rx="30" ry="20" fill="#b45309"/>
+        <circle cx="70" cy="30" r="15" fill="#b45309"/>
+        <path d="M 60 40 Q 50 50 50 60" stroke="#b45309" stroke-width="10" fill="none"/>
+        <circle cx="75" cy="25" r="2.5" fill="#fff"/>
+        <polygon points="85,30 96,35 85,40" fill="#f59e0b"/>
+        <line x1="40" y1="80" x2="40" y2="96" stroke="#b45309" stroke-width="5"/>
+        <line x1="60" y1="80" x2="60" y2="96" stroke="#b45309" stroke-width="5"/>
+      </svg>
+    </div>
+    <p class="sub">Olimpíada Ñandú · Matemática para primaria</p>
+    <h1>Misión Ñandú</h1>
+    <p class="tagline">Entrená para la Olimpíada Ñandú resolviendo desafíos, ganá experiencia y hacé evolucionar a tu ñandú matemático. 🪶</p>
+    <div class="cta">
+      <a class="btn btn-primary" href="mision_nandu.html">🎮 Jugar ahora</a>
+      <a class="btn btn-ghost" href="https://github.com/pablosartorio/nandu">Ver el proyecto</a>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <section class="block">
+      <h2>¿Qué es?</h2>
+      <p class="lead">
+        Un juego para practicar para la <strong>Olimpíada Ñandú</strong>, el certamen
+        argentino de matemática de nivel primario. Resolvés problemas de distintos temas
+        organizados por <strong>nivel de dificultad</strong>, así cada chico practica donde está.
+        Funciona en cualquier navegador, sin instalar nada, y guarda tu progreso.
+      </p>
+    </section>
+
+    <section class="block">
+      <h2>Módulos de entrenamiento</h2>
+      <p class="lead">Siete áreas para dominar, de lo más simple al desafío olímpico.</p>
+      <div class="grid">
+        <div class="card"><div class="icon">🔢</div><h3>Patrones</h3><p>Descubrí las secuencias numéricas ocultas.</p></div>
+        <div class="card"><div class="icon">🧠</div><h3>Lógica</h3><p>Razonamiento deductivo y estrategias.</p></div>
+        <div class="card"><div class="icon">📐</div><h3>Geometría</h3><p>Perímetros y áreas, con figuras dibujadas.</p></div>
+        <div class="card"><div class="icon">🎲</div><h3>Conteo</h3><p>Combinatoria y conteo de posibilidades.</p></div>
+        <div class="card"><div class="icon">➗</div><h3>Divisibilidad</h3><p>Los secretos de múltiplos y divisores.</p></div>
+        <div class="card"><div class="icon">🔍</div><h3>Encuentra el Error</h3><p>Analizá resoluciones falsas y corregilas.</p></div>
+        <div class="card"><div class="icon">🏆</div><h3>Olímpico</h3><p>El desafío final de campeones.</p></div>
+      </div>
+    </section>
+
+    <section class="block">
+      <h2>Cómo progresás</h2>
+      <p class="lead">Mientras más resolvés, más crece tu ñandú.</p>
+      <div class="steps">
+        <div class="step"><div class="num">1</div><h3>Entrená por módulo</h3><p>Elegí un tema y resolvé a tu ritmo, con pistas y explicaciones.</p></div>
+        <div class="step"><div class="num">2</div><h3>Ganá XP y subí de nivel</h3><p>Tu ñandú evoluciona: de huevo a Ñandú Ninja Olímpico.</p></div>
+        <div class="step"><div class="num">3</div><h3>Competí</h3><p>Simulá el certamen oficial con dificultad creciente.</p></div>
+      </div>
+      <p class="stages">
+        Modo Competencia · 5 instancias:
+        <b>Escolar</b> → <b>Interescolar</b> → <b>Zonal</b> → <b>Regional</b> → <b>Nacional</b>
+      </p>
+    </section>
+
+    <section class="block" style="text-align:center;">
+      <a class="btn btn-primary" href="mision_nandu.html">🎮 Empezar a jugar</a>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Misión Ñandú · Hecho con 🪶 para los que entrenan para la Olimpíada Ñandú.</p>
+    <p style="margin-top:0.4rem;"><a href="https://github.com/pablosartorio/nandu">Código en GitHub</a></p>
+  </footer>
+
+</body>
+</html>
