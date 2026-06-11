@@ -155,6 +155,8 @@
 
         .module-card:hover::before { opacity: 1; }
 
+        .module-card.dimmed { opacity: 0.5; }
+
         .module-progress {
             height: 4px;
             background: rgba(255,255,255,0.1);
@@ -226,6 +228,17 @@
             transform: scale(1.05);
         }
 
+        .comp-timer-label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            justify-content: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 0.8rem;
+            cursor: pointer;
+        }
+
         /* Gameplay Area */
         .play-area {
             max-width: 800px;
@@ -247,7 +260,8 @@
         .answer-section {
             display: flex;
             gap: 1rem;
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
         }
 
         .answer-input {
@@ -295,6 +309,53 @@
             background: rgba(255,255,255,0.2);
         }
 
+        /* Opción múltiple (Encuentra el Error) */
+        #options-container {
+            display: none;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-bottom: 1rem;
+        }
+        .btn-option {
+            background: rgba(255,255,255,0.08);
+            border: 2px solid rgba(255,255,255,0.2);
+            color: white;
+            flex: 1 1 45%;
+            text-align: left;
+            font-size: 1rem;
+        }
+        .btn-option:hover:not(:disabled) {
+            border-color: var(--accent-primary);
+            transform: translateY(-2px);
+        }
+        .btn-option:disabled { cursor: default; }
+        .btn-option.ok {
+            border-color: var(--accent-success);
+            background: rgba(16, 185, 129, 0.25);
+        }
+        .btn-option.mal {
+            border-color: var(--accent-error);
+            background: rgba(239, 68, 68, 0.25);
+            opacity: 0.85;
+        }
+
+        /* Pista inline */
+        .hint-box {
+            display: none;
+            background: rgba(245, 158, 11, 0.12);
+            border: 1px solid var(--accent-warning);
+            border-radius: 10px;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
+        }
+        .hint-cost {
+            display: block;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 0.4rem;
+        }
+
         .feedback {
             padding: 1.5rem;
             border-radius: 10px;
@@ -313,6 +374,143 @@
             display: block;
             background: rgba(239, 68, 68, 0.2);
             border: 1px solid var(--accent-error);
+        }
+
+        /* Segundo intento pendiente */
+        .feedback.retry {
+            display: block;
+            background: rgba(245, 158, 11, 0.15);
+            border: 1px solid var(--accent-warning);
+        }
+
+        /* Respuesta registrada en competencia (sin revelar corrección) */
+        .feedback.neutral {
+            display: block;
+            background: rgba(59, 130, 246, 0.15);
+            border: 1px solid var(--accent-primary);
+        }
+
+        /* Timer de competencia */
+        #timer-display {
+            display: none;
+            text-align: center;
+            font-weight: 900;
+            font-size: 1.3rem;
+            letter-spacing: 2px;
+            background: rgba(255,255,255,0.06);
+            border-radius: 10px;
+            padding: 0.4rem 1rem;
+            margin-bottom: 1rem;
+        }
+        #timer-display.warning {
+            color: var(--accent-error);
+            animation: pulseTimer 1s infinite;
+        }
+        @keyframes pulseTimer { 50% { opacity: 0.55; } }
+
+        /* Resumen de etapa */
+        .summary-item {
+            border: 1px solid rgba(255,255,255,0.15);
+            border-left-width: 5px;
+            border-radius: 10px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+        .summary-item.ok { border-left-color: var(--accent-success); }
+        .summary-item.mal { border-left-color: var(--accent-error); }
+        .summary-enunciado {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin: 0.4rem 0;
+        }
+        .summary-expl {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+            border-top: 1px dashed rgba(255,255,255,0.15);
+            padding-top: 0.5rem;
+        }
+
+        /* Modal propio (reemplaza a los alert() del navegador) */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(2, 6, 23, 0.75);
+            backdrop-filter: blur(4px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 200;
+            padding: 1rem;
+        }
+        .modal-overlay.visible { display: flex; }
+        .modal-card {
+            background: var(--bg-secondary);
+            border: 1px solid rgba(139, 92, 246, 0.4);
+            border-radius: 20px;
+            padding: 2rem;
+            max-width: 640px;
+            width: 100%;
+            max-height: 85vh;
+            overflow-y: auto;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+            animation: fadeIn 0.25s ease-out;
+        }
+        .modal-card h2 { margin-bottom: 1rem; }
+        .modal-body { color: var(--text-muted); line-height: 1.5; }
+        .modal-actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            justify-content: flex-end;
+            flex-wrap: wrap;
+        }
+
+        /* Toasts (avisos no bloqueantes) */
+        #toast-container {
+            position: fixed;
+            bottom: 1.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            z-index: 300;
+            align-items: center;
+        }
+        .toast {
+            background: var(--bg-secondary);
+            border: 1px solid var(--accent-secondary);
+            padding: 0.8rem 1.4rem;
+            border-radius: 30px;
+            font-weight: 700;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.35s ease;
+            max-width: 90vw;
+        }
+        .toast.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Panel del Entrenador */
+        .panel-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+        .panel-table th, .panel-table td {
+            padding: 0.7rem 0.5rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .panel-table th {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         /* Geometria SVG Canvas */
@@ -352,6 +550,7 @@
             .user-stats { gap: 1rem; }
             .title-logo { font-size: 1.2rem; }
             .xp-bar-container { width: 100px; }
+            .btn-option { flex: 1 1 100%; }
         }
 
         /* Competencia Mode Tracker */
@@ -386,11 +585,14 @@
 <body>
 
     <header>
-        <div class="title-logo" style="cursor: pointer" onclick="showScreen('home')">Misión Ñandú</div>
+        <div class="title-logo" style="cursor: pointer" onclick="volverAlInicio()">Misión Ñandú</div>
         <div class="user-stats">
             <div class="stat-badge">
                 🏆 <span id="level-display">Nivel 1</span>
                 <div class="xp-bar-container"><div class="xp-bar-fill" id="xp-bar"></div></div>
+            </div>
+            <div class="stat-badge" title="Días seguidos entrenando">
+                🔥 <span id="streak-display">0</span>
             </div>
             <div class="stat-badge">
                 🏅 <span id="achievements-display">0</span>
@@ -406,7 +608,7 @@
                     <div class="module-card" onclick="startModule('patrones')">
                         <div class="module-icon">🕵️‍♂️</div>
                         <div class="module-title">Detective de Patrones</div>
-                        <div style="color: var(--text-muted); font-size: 0.9rem;">Descubre secuencias numéricas ocultas.</div>
+                        <div style="color: var(--text-muted); font-size: 0.9rem;">Descubrí secuencias numéricas ocultas.</div>
                         <div class="module-progress"><div class="module-progress-bar" id="prog-patrones"></div></div>
                         <div class="module-progress-label" id="prog-patrones-label">0 resueltos</div>
                     </div>
@@ -420,7 +622,7 @@
                     <div class="module-card" onclick="startModule('geometria')">
                         <div class="module-icon">🥷</div>
                         <div class="module-title">Geometría Ninja</div>
-                        <div style="color: var(--text-muted); font-size: 0.9rem;">Domina perímetros y áreas con precisión.</div>
+                        <div style="color: var(--text-muted); font-size: 0.9rem;">Dominá perímetros y áreas con precisión.</div>
                         <div class="module-progress"><div class="module-progress-bar" id="prog-geometria"></div></div>
                         <div class="module-progress-label" id="prog-geometria-label">0 resueltos</div>
                     </div>
@@ -441,7 +643,7 @@
                     <div class="module-card" onclick="startModule('error')">
                         <div class="module-icon">🔍</div>
                         <div class="module-title">Encuentra el Error</div>
-                        <div style="color: var(--text-muted); font-size: 0.9rem;">Analiza resoluciones falsas.</div>
+                        <div style="color: var(--text-muted); font-size: 0.9rem;">Analizá resoluciones falsas.</div>
                         <div class="module-progress"><div class="module-progress-bar" id="prog-error"></div></div>
                         <div class="module-progress-label" id="prog-error-label">0 resueltos</div>
                     </div>
@@ -452,21 +654,31 @@
                         <div class="module-progress"><div class="module-progress-bar" id="prog-olimpico"></div></div>
                         <div class="module-progress-label" id="prog-olimpico-label">0 resueltos</div>
                     </div>
+                    <div class="module-card" id="revancha-card" onclick="startRevancha()">
+                        <div class="module-icon">🔁</div>
+                        <div class="module-title">Revancha</div>
+                        <div style="color: var(--text-muted); font-size: 0.9rem;">Volvé a enfrentar los problemas que te ganaron.</div>
+                        <div class="module-progress-label" id="revancha-label" style="margin-top: 0.8rem;">Sin pendientes</div>
+                    </div>
                 </div>
-                
+
                 <div>
                     <div class="mascot-container">
                         <div id="mascot-svg-wrapper">
                             <!-- SVG Mascot injected here based on level -->
                         </div>
                         <h3 style="margin-bottom: 0.5rem;" id="mascot-name">Huevo Matemático</h3>
-                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem;" id="mascot-desc">Resuelve problemas para evolucionar tu Ñandú.</p>
-                        
+                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem;" id="mascot-desc">Resolvé problemas para evolucionar tu Ñandú.</p>
+
                         <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1)">
                             <h3>Modo Competencia</h3>
-                            <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 1rem;">Simula las 5 etapas oficiales.</p>
+                            <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 1rem;">Simulá las 5 instancias oficiales.</p>
                             <button class="competencia-btn" onclick="startCompetencia()">¡Inscribirse!</button>
+                            <label class="comp-timer-label">
+                                <input type="checkbox" id="comp-timer-check"> ⏱️ Contrarreloj (15 min por etapa)
+                            </label>
                         </div>
+                        <button class="btn btn-secondary" style="width: 100%; margin-top: 1.5rem; font-size: 0.95rem;" onclick="showScreen('panel')">📊 Panel del Entrenador</button>
                     </div>
                 </div>
             </div>
@@ -476,20 +688,22 @@
         <div id="play" class="screen">
             <div class="play-area">
                 <div style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
-                    <button class="btn btn-secondary" style="padding: 0.5rem 1rem" onclick="showScreen('home')">← Volver</button>
+                    <button class="btn btn-secondary" style="padding: 0.5rem 1rem" onclick="volverAlInicio()">← Volver</button>
                     <div id="mode-indicator" style="color: var(--accent-warning); font-weight: bold; align-self: center;">Entrenamiento</div>
                 </div>
-                
+
                 <div id="competencia-tracker" class="stage-tracker" style="display: none;">
                     <div class="stage-node" id="stage-0" title="Escolar">1</div>
-                    <div class="stage-node" id="stage-1" title="Interescolar">2</div>
+                    <div class="stage-node" id="stage-1" title="Intercolegial">2</div>
                     <div class="stage-node" id="stage-2" title="Zonal">3</div>
                     <div class="stage-node" id="stage-3" title="Regional">4</div>
                     <div class="stage-node" id="stage-4" title="Nacional">5</div>
                 </div>
 
+                <div id="timer-display">⏱️ 15:00</div>
+
                 <div id="problem-category" style="text-transform: uppercase; letter-spacing: 2px; color: var(--accent-secondary); font-size: 0.9rem; font-weight: 700; margin-bottom: 1rem;">CATEGORIA</div>
-                
+
                 <!-- Interactive SVG Canvas for Geometry -->
                 <svg id="svg-workspace"></svg>
 
@@ -497,11 +711,16 @@
                     Cargando problema...
                 </div>
 
+                <!-- Opciones para problemas de opción múltiple -->
+                <div id="options-container"></div>
+
                 <div class="answer-section">
                     <input type="text" id="answer-input" class="answer-input" placeholder="Tu respuesta final..." onkeypress="if(event.key === 'Enter') checkAnswer()">
-                    <button class="btn btn-primary" onclick="checkAnswer()">Responder</button>
+                    <button class="btn btn-primary" id="responder-btn" onclick="checkAnswer()">Responder</button>
                     <button class="btn btn-secondary" onclick="showHint()" id="hint-btn">💡 Pista</button>
                 </div>
+
+                <div class="hint-box" id="hint-box"></div>
 
                 <div id="feedback" class="feedback">
                     <h3 id="feedback-title" style="margin-bottom: 0.5rem;"></h3>
@@ -512,8 +731,42 @@
                 </div>
             </div>
         </div>
-        
+
+        <!-- Coach Panel Screen -->
+        <div id="panel" class="screen">
+            <div class="play-area">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
+                    <button class="btn btn-secondary" style="padding: 0.5rem 1rem" onclick="showScreen('home')">← Volver</button>
+                </div>
+                <h2 style="margin-bottom: 0.5rem;">📊 Panel del Entrenador</h2>
+                <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem;">Cómo viene el entrenamiento, módulo por módulo.</p>
+                <div id="panel-resumen" style="line-height: 1.8;"></div>
+                <table class="panel-table">
+                    <thead>
+                        <tr><th>Módulo</th><th>Intentos</th><th>Correctos</th><th>Precisión</th></tr>
+                    </thead>
+                    <tbody id="panel-body"></tbody>
+                </table>
+                <div class="hint-box" id="panel-reco" style="display: block;"></div>
+                <button class="btn btn-secondary" style="margin-top: 1rem; font-size: 0.9rem;" onclick="confirmarReinicio()">🗑️ Borrar todo el progreso</button>
+            </div>
+        </div>
+
     </main>
+
+    <!-- Modal genérico (reemplaza a los alert()) -->
+    <div id="modal-overlay" class="modal-overlay">
+        <div class="modal-card">
+            <h2 id="modal-title"></h2>
+            <div id="modal-body" class="modal-body"></div>
+            <div class="modal-actions">
+                <button class="btn btn-secondary" id="modal-secondary" onclick="modalSecondary()"></button>
+                <button class="btn btn-primary" id="modal-primary" onclick="modalPrimary()"></button>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast-container"></div>
 
     <script>
         // Data
@@ -2177,20 +2430,38 @@
             xp: 0,
             level: 1,
             achievements: [],
-            progress: {},
+            stats: {},        // por categoría: { intentos, aciertos }
+            errores: [],      // problemas fallados pendientes de revancha: [{ id, ts, veces }]
+            racha: { dias: 0, ultimoDia: null },
             competencia: {
                 active: false,
-                stageIndex: 0, // 0: Escolar, 1: Interescolar, 2: Zonal, 3: Regional, 4: Nacional
+                stageIndex: 0, // 0: Escolar, 1: Intercolegial, 2: Zonal, 3: Regional, 4: Nacional
                 problemCount: 0,
-                correctCount: 0
+                conTimer: false,
+                stageAnswers: [] // respuestas de la etapa en curso (la corrección se revela al final)
             }
         };
 
-        const stages = ["Escolar", "Interescolar", "Zonal", "Regional", "Nacional"];
+        const stages = ["Escolar", "Intercolegial", "Zonal", "Regional", "Nacional"];
+        const NOMBRES_CAT = {
+            patrones: "Detective de Patrones",
+            logica: "Laboratorio de Estrategias",
+            geometria: "Geometría Ninja",
+            conteo: "Cuenta Caminos",
+            divisibilidad: "Cofre de Divisibilidad",
+            error: "Encuentra el Error",
+            olimpico: "Problema Olímpico"
+        };
+        const TIEMPO_ETAPA = 15 * 60; // segundos por etapa en modo contrarreloj
 
         let currentProblem = null;
         let currentModule = null;
-        let recentIds = []; // ids mostrados recientemente, para no repetir los últimos N
+        let recentIds = [];          // ids mostrados recientemente, para no repetir los últimos N
+        let attemptsOnCurrent = 0;   // intentos sobre el problema actual
+        let hintUsed = false;        // si pidió pista en el problema actual
+        let problemaResuelto = false;
+        let timerInterval = null;
+        let timerRestante = 0;
 
         // Initialization
         function init() {
@@ -2213,14 +2484,26 @@
                 return;
             }
             // Merge sobre los valores por defecto: un estado guardado por una versión
-            // anterior (sin, p.ej., 'competencia') no debe dejar claves sin definir.
+            // anterior no debe dejar claves sin definir.
             const defaultCompetencia = state.competencia;
             state = Object.assign({}, state, parsed);
             state.competencia = Object.assign({}, defaultCompetencia, parsed.competencia || {});
-            if (!state.progress || typeof state.progress !== 'object') state.progress = {};
+            // Una competencia a medias no sobrevive a recargar la página: se abandona.
+            state.competencia.active = false;
+            state.competencia.stageAnswers = [];
             if (!Array.isArray(state.achievements)) state.achievements = [];
             if (typeof state.xp !== 'number') state.xp = 0;
             if (typeof state.level !== 'number') state.level = 1;
+            if (!state.stats || typeof state.stats !== 'object') state.stats = {};
+            if (!Array.isArray(state.errores)) state.errores = [];
+            if (!state.racha || typeof state.racha !== 'object') state.racha = { dias: 0, ultimoDia: null };
+            // Migración desde versiones que solo guardaban 'progress' (resueltos por categoría).
+            if (parsed.progress && typeof parsed.progress === 'object' && !parsed.stats) {
+                for (const cat in parsed.progress) {
+                    const n = parsed.progress[cat] || 0;
+                    state.stats[cat] = { intentos: n, aciertos: n };
+                }
+            }
         }
 
         function saveState() {
@@ -2231,13 +2514,80 @@
         function showScreen(id) {
             document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
             document.getElementById(id).classList.add('active');
-            
+
             if (id === 'home') {
                 updateStatsUI();
                 updateMascot();
                 updateProgressUI();
             }
+            if (id === 'panel') updatePanelUI();
         }
+
+        window.volverAlInicio = function() {
+            if (state.competencia.active) {
+                showModal({
+                    titulo: '¿Abandonar la competencia?',
+                    html: 'Si salís ahora perdés el avance de esta competencia (el XP ganado se conserva).',
+                    primario: 'Seguir compitiendo',
+                    secundario: 'Salir',
+                    onSecundario: () => { abandonarCompetencia(); showScreen('home'); }
+                });
+                return;
+            }
+            showScreen('home');
+        }
+
+        // Modal genérico
+        let modalPrimaryAction = null;
+        let modalSecondaryAction = null;
+
+        function showModal(opts) {
+            document.getElementById('modal-title').innerHTML = opts.titulo || '';
+            document.getElementById('modal-body').innerHTML = opts.html || '';
+            const prim = document.getElementById('modal-primary');
+            const sec = document.getElementById('modal-secondary');
+            prim.innerText = opts.primario || 'Entendido';
+            modalPrimaryAction = opts.onPrimario || null;
+            if (opts.secundario) {
+                sec.style.display = '';
+                sec.innerText = opts.secundario;
+                modalSecondaryAction = opts.onSecundario || null;
+            } else {
+                sec.style.display = 'none';
+                modalSecondaryAction = null;
+            }
+            document.getElementById('modal-overlay').classList.add('visible');
+        }
+
+        function closeModal() {
+            document.getElementById('modal-overlay').classList.remove('visible');
+        }
+
+        window.modalPrimary = function() {
+            closeModal();
+            if (modalPrimaryAction) modalPrimaryAction();
+        }
+
+        window.modalSecondary = function() {
+            closeModal();
+            if (modalSecondaryAction) modalSecondaryAction();
+        }
+
+        // Toasts no bloqueantes
+        function toast(mensaje) {
+            const cont = document.getElementById('toast-container');
+            const el = document.createElement('div');
+            el.className = 'toast';
+            el.innerHTML = mensaje;
+            cont.appendChild(el);
+            setTimeout(() => el.classList.add('show'), 10);
+            setTimeout(() => {
+                el.classList.remove('show');
+                setTimeout(() => el.remove(), 400);
+            }, 3200);
+        }
+
+        const escHtml = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
         // Mascot Evolution
         function getMascotData() {
@@ -2281,18 +2631,65 @@
             const percentage = (state.xp / xpForNext) * 100;
             document.getElementById('xp-bar').style.width = `${percentage}%`;
             document.getElementById('achievements-display').innerText = state.achievements.length;
+            document.getElementById('streak-display').innerText = state.racha.dias;
         }
 
         function updateProgressUI() {
-            const cats = ['patrones', 'logica', 'geometria', 'conteo', 'divisibilidad', 'error', 'olimpico'];
-            const progress = state.progress || {};
+            const cats = Object.keys(NOMBRES_CAT);
             cats.forEach(cat => {
-                const count = progress[cat] || 0;
-                const pct = Math.min(count / 20, 1) * 100;
+                const s = state.stats[cat] || { intentos: 0, aciertos: 0 };
+                const pct = Math.min(s.aciertos / 20, 1) * 100;
                 const barEl = document.getElementById(`prog-${cat}`);
                 const labelEl = document.getElementById(`prog-${cat}-label`);
                 if (barEl) barEl.style.width = `${pct}%`;
-                if (labelEl) labelEl.innerText = `${count} resueltos`;
+                if (labelEl) labelEl.innerText = `${s.aciertos} resueltos`;
+            });
+            const pendientes = state.errores.length;
+            document.getElementById('revancha-label').innerText = pendientes
+                ? `${pendientes} problema${pendientes === 1 ? '' : 's'} esperando revancha`
+                : 'Sin pendientes ¡bien ahí!';
+            document.getElementById('revancha-card').classList.toggle('dimmed', pendientes === 0);
+        }
+
+        function updatePanelUI() {
+            let filas = '';
+            let totInt = 0, totOk = 0;
+            let peor = null;
+            for (const cat of Object.keys(NOMBRES_CAT)) {
+                const s = state.stats[cat] || { intentos: 0, aciertos: 0 };
+                totInt += s.intentos;
+                totOk += s.aciertos;
+                const prec = s.intentos ? Math.round(100 * s.aciertos / s.intentos) : null;
+                // Solo sugerimos módulos con suficientes intentos como para que la precisión diga algo.
+                if (s.intentos >= 5 && (peor === null || prec < peor.prec)) peor = { nombre: NOMBRES_CAT[cat], prec };
+                filas += `<tr><td>${NOMBRES_CAT[cat]}</td><td>${s.intentos}</td><td>${s.aciertos}</td><td>${prec === null ? '—' : prec + '%'}</td></tr>`;
+            }
+            document.getElementById('panel-body').innerHTML = filas;
+            document.getElementById('panel-resumen').innerHTML =
+                `🔥 Racha: <strong>${state.racha.dias} día${state.racha.dias === 1 ? '' : 's'}</strong> seguidos · ` +
+                `✅ <strong>${totOk}</strong> correctos sobre <strong>${totInt}</strong> intentos · ` +
+                `🔁 <strong>${state.errores.length}</strong> pendientes de revancha`;
+            let reco;
+            if (peor && peor.prec < 85) {
+                reco = `🎯 Sugerencia: hoy conviene entrenar <strong>${peor.nombre}</strong> (precisión ${peor.prec}%).`;
+            } else if (totInt < 10) {
+                reco = '🧭 Jugá un poco más y acá va a aparecer una sugerencia de qué entrenar.';
+            } else {
+                reco = '🌟 Vas muy parejo en todos los módulos. ¡Probá el Modo Competencia!';
+            }
+            document.getElementById('panel-reco').innerHTML = reco;
+        }
+
+        window.confirmarReinicio = function() {
+            showModal({
+                titulo: '¿Borrar todo el progreso?',
+                html: 'Se pierde el nivel, el XP, la racha, las estadísticas y la lista de revancha. No hay vuelta atrás.',
+                primario: 'Cancelar',
+                secundario: 'Sí, borrar todo',
+                onSecundario: () => {
+                    localStorage.removeItem('nandu_state');
+                    location.reload();
+                }
             });
         }
 
@@ -2303,18 +2700,76 @@
                 state.xp -= xpForNext;
                 state.level++;
                 xpForNext = state.level * 100;
-                alert(`¡Felicidades! Has alcanzado el Nivel ${state.level} 🏆`);
+                toast(`🏆 ¡Subiste al Nivel ${state.level}! Tu ñandú está creciendo.`);
+                updateMascot();
             }
             saveState();
             updateStatsUI();
         }
 
+        // Racha de días entrenando (cuenta días con al menos un problema correcto).
+        function hoyKey(offsetDias) {
+            const d = new Date(Date.now() + (offsetDias || 0) * 86400000);
+            return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+        }
+
+        function actualizarRacha() {
+            const hoy = hoyKey(0);
+            if (state.racha.ultimoDia === hoy) return;
+            state.racha.dias = (state.racha.ultimoDia === hoyKey(-1)) ? state.racha.dias + 1 : 1;
+            state.racha.ultimoDia = hoy;
+            if (state.racha.dias > 1) toast(`🔥 ¡Racha de ${state.racha.dias} días entrenando!`);
+            updateStatsUI();
+        }
+
+        // Estadísticas y cola de revancha
+        function registrarResultado(categoria, correcto) {
+            if (!categoria) return;
+            if (!state.stats[categoria]) state.stats[categoria] = { intentos: 0, aciertos: 0 };
+            state.stats[categoria].intentos++;
+            if (correcto) state.stats[categoria].aciertos++;
+        }
+
+        function agregarAErrores(id) {
+            if (id == null) return;
+            const e = state.errores.find(x => x.id === id);
+            if (e) {
+                e.veces++;
+                e.ts = Date.now();
+            } else {
+                state.errores.push({ id, ts: Date.now(), veces: 1 });
+            }
+        }
+
+        function quitarDeErrores(id) {
+            const i = state.errores.findIndex(x => x.id === id);
+            if (i >= 0) {
+                state.errores.splice(i, 1);
+                if (currentModule === 'revancha') toast('🎯 ¡Revancha ganada!');
+            }
+        }
+
         // Gameplay
         function startModule(category) {
             state.competencia.active = false;
+            detenerTimer();
             document.getElementById('competencia-tracker').style.display = 'none';
-            document.getElementById('mode-indicator').innerText = `Entrenamiento: ${category.toUpperCase()}`;
+            document.getElementById('mode-indicator').innerText = `Entrenamiento: ${NOMBRES_CAT[category] || category}`;
             currentModule = category;
+            loadNextProblem();
+            showScreen('play');
+        }
+
+        window.startRevancha = function() {
+            if (!state.errores.length) {
+                toast('🎉 No tenés problemas pendientes. ¡A entrenar otro módulo!');
+                return;
+            }
+            state.competencia.active = false;
+            detenerTimer();
+            document.getElementById('competencia-tracker').style.display = 'none';
+            document.getElementById('mode-indicator').innerText = '🔁 Revancha';
+            currentModule = 'revancha';
             loadNextProblem();
             showScreen('play');
         }
@@ -2324,13 +2779,22 @@
                 active: true,
                 stageIndex: 0,
                 problemCount: 0,
-                correctCount: 0
+                conTimer: document.getElementById('comp-timer-check').checked,
+                stageAnswers: []
             };
             document.getElementById('competencia-tracker').style.display = 'flex';
-            updateCompetenciaUI();
             currentModule = 'olimpico'; // Mezcla de problemas
+            if (state.competencia.conTimer) iniciarTimer();
             loadNextProblem();
             showScreen('play');
+        }
+
+        function abandonarCompetencia() {
+            state.competencia.active = false;
+            state.competencia.stageAnswers = [];
+            detenerTimer();
+            document.getElementById('competencia-tracker').style.display = 'none';
+            saveState();
         }
 
         function updateCompetenciaUI() {
@@ -2344,19 +2808,89 @@
             }
         }
 
+        // Timer de competencia (opcional)
+        function iniciarTimer() {
+            detenerTimer();
+            timerRestante = TIEMPO_ETAPA;
+            const disp = document.getElementById('timer-display');
+            disp.style.display = 'block';
+            pintarTimer();
+            timerInterval = setInterval(() => {
+                timerRestante--;
+                pintarTimer();
+                if (timerRestante <= 0) tiempoAgotado();
+            }, 1000);
+        }
+
+        function detenerTimer() {
+            if (timerInterval) clearInterval(timerInterval);
+            timerInterval = null;
+            const disp = document.getElementById('timer-display');
+            disp.style.display = 'none';
+            disp.classList.remove('warning');
+        }
+
+        function pintarTimer() {
+            const disp = document.getElementById('timer-display');
+            const m = Math.max(0, Math.floor(timerRestante / 60));
+            const s = Math.max(0, timerRestante % 60);
+            disp.innerText = `⏱️ ${m}:${String(s).padStart(2, '0')}`;
+            disp.classList.toggle('warning', timerRestante <= 60);
+        }
+
+        function tiempoAgotado() {
+            detenerTimer();
+            const st = state.competencia;
+            if (!st.active) return;
+            // Los problemas que quedaron sin responder cuentan como incorrectos.
+            while (st.stageAnswers.length < 3) {
+                st.stageAnswers.push({
+                    id: null, categoria: null, dificultad: 0,
+                    enunciado: '(Sin responder: se acabó el tiempo)',
+                    dada: '—', respuesta: '—', explicacion: '', correcto: false
+                });
+            }
+            st.problemCount = 3;
+            showStageSummary();
+        }
+
         function loadNextProblem() {
             document.getElementById('feedback').style.display = 'none';
+            document.getElementById('feedback').className = 'feedback';
             document.getElementById('answer-input').value = '';
             document.getElementById('answer-input').disabled = false;
+            document.getElementById('next-problem-btn').innerText = 'Siguiente Problema →';
             document.getElementById('svg-workspace').style.display = 'none';
             document.getElementById('svg-workspace').innerHTML = '';
+            const hintBox = document.getElementById('hint-box');
+            hintBox.style.display = 'none';
+            hintBox.innerHTML = '';
+            const hintBtn = document.getElementById('hint-btn');
+            hintBtn.disabled = false;
+            // En el certamen real no hay pistas: las deshabilitamos en competencia.
+            hintBtn.style.display = state.competencia.active ? 'none' : '';
+            attemptsOnCurrent = 0;
+            hintUsed = false;
+            problemaResuelto = false;
 
             let available;
             if (state.competencia.active) {
-                // La competencia es de respuesta numérica: excluimos 'Encuentra el Error' (respuesta de texto).
+                // La competencia es de respuesta escrita: excluimos los de opción múltiple.
                 const diff = Math.min(Math.floor(state.competencia.stageIndex / 2) + 1, 3);
                 available = problemBank.filter(p => p.dificultad === diff && p.categoria !== 'error');
                 if (available.length === 0) available = problemBank.filter(p => p.categoria !== 'error');
+            } else if (currentModule === 'revancha') {
+                const ids = state.errores.map(e => e.id);
+                available = problemBank.filter(p => ids.includes(p.id));
+                if (available.length === 0) {
+                    toast('🎉 ¡No te queda ningún problema pendiente!');
+                    showScreen('home');
+                    return;
+                }
+                // El fallado hace más tiempo va primero.
+                const orden = {};
+                state.errores.forEach(e => { orden[e.id] = e.ts || 0; });
+                available.sort((a, b) => (orden[a.id] || 0) - (orden[b.id] || 0));
             } else {
                 available = problemBank.filter(p => p.categoria === currentModule);
                 if (available.length === 0) available = problemBank;
@@ -2366,17 +2900,52 @@
             const windowSize = Math.min(5, Math.max(0, available.length - 1));
             let candidates = available.filter(p => !recentIds.includes(p.id));
             if (candidates.length === 0) candidates = available;
-            const randomIndex = Math.floor(Math.random() * candidates.length);
-            currentProblem = candidates[randomIndex];
+            currentProblem = (currentModule === 'revancha' && !state.competencia.active)
+                ? candidates[0]
+                : candidates[Math.floor(Math.random() * candidates.length)];
             recentIds.push(currentProblem.id);
             while (recentIds.length > windowSize) recentIds.shift();
 
-            document.getElementById('problem-category').innerText = `MÓDULO: ${currentProblem.categoria}`;
+            document.getElementById('problem-category').innerText = `MÓDULO: ${NOMBRES_CAT[currentProblem.categoria] || currentProblem.categoria}`;
             document.getElementById('problem-statement').innerText = currentProblem.enunciado;
+            renderEntrada();
 
             // Easter egg interactive SVG for Geometry
             if (currentProblem.categoria === 'geometria') {
                 setupInteractiveGeometry();
+            }
+            if (state.competencia.active) updateCompetenciaUI();
+        }
+
+        // Muestra el campo de texto o los botones de opción múltiple según el problema.
+        function renderEntrada() {
+            const input = document.getElementById('answer-input');
+            const respBtn = document.getElementById('responder-btn');
+            const cont = document.getElementById('options-container');
+            cont.innerHTML = '';
+            if (Array.isArray(currentProblem.opciones) && currentProblem.opciones.length) {
+                input.style.display = 'none';
+                respBtn.style.display = 'none';
+                cont.style.display = 'flex';
+                const ops = currentProblem.opciones.slice();
+                for (let i = ops.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [ops[i], ops[j]] = [ops[j], ops[i]];
+                }
+                ops.forEach(op => {
+                    const b = document.createElement('button');
+                    b.className = 'btn btn-option';
+                    b.innerText = op;
+                    b.onclick = () => elegirOpcion(b, op);
+                    cont.appendChild(b);
+                });
+            } else {
+                cont.style.display = 'none';
+                input.style.display = '';
+                respBtn.style.display = '';
+                // Teclado numérico en tablets/celulares cuando la respuesta es un número.
+                input.setAttribute('inputmode', parseNumero(String(currentProblem.respuesta)) !== null ? 'numeric' : 'text');
+                input.focus();
             }
         }
 
@@ -2467,39 +3036,139 @@
             }, 300);
         }
 
-        function showHint() {
-            if(currentProblem.pista) {
-                alert("Pista del Entrenador: " + currentProblem.pista);
-            } else {
-                alert("¡Tú puedes! Lee con cuidado y haz un dibujo.");
+        window.showHint = function() {
+            if (state.competencia.active || problemaResuelto) return;
+            hintUsed = true;
+            const box = document.getElementById('hint-box');
+            box.innerHTML = '💡 <strong>Pista del Entrenador:</strong> ' +
+                escHtml(currentProblem.pista || '¡Vos podés! Leé con cuidado y hacé un dibujo.') +
+                '<span class="hint-cost">Resolver con pista da la mitad de XP.</span>';
+            box.style.display = 'block';
+            document.getElementById('hint-btn').disabled = true;
+        }
+
+        // --- Validación de respuestas ---
+
+        // Interpreta "16", "16 cm", "1.000", "3,5" o "$ 120" como número.
+        // Devuelve null si el texto no es una respuesta numérica.
+        function parseNumero(s) {
+            const m = String(s).trim().match(/^[^0-9\-]*(-?\d[\d.,]*)\s*[a-zA-ZáéíóúüñÁÉÍÓÚÜÑ°º²³%$\s.]*$/);
+            if (!m) return null;
+            let num = m[1].replace(/[.,]$/, '');
+            const tienePunto = num.includes('.');
+            const tieneComa = num.includes(',');
+            if (tienePunto && tieneComa) {
+                // "1.234,5": puntos de miles y coma decimal
+                num = num.replace(/\./g, '').replace(',', '.');
+            } else if (tieneComa) {
+                num = num.replace(',', '.');
+            } else if (tienePunto && /^-?\d{1,3}(\.\d{3})+$/.test(num)) {
+                // "1.000" es mil, no uno: punto de miles
+                num = num.replace(/\./g, '');
             }
+            const v = parseFloat(num);
+            return isNaN(v) ? null : v;
+        }
+
+        function esRespuestaCorrecta(input, problema) {
+            const normalizar = s => String(s).normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim().toLowerCase();
+            const aceptadas = [problema.respuesta].concat(problema.respuestas_aceptadas || []);
+            const numInput = parseNumero(input);
+            return aceptadas.some(resp => {
+                const numResp = parseNumero(resp);
+                if (numInput !== null && numResp !== null) return Math.abs(numInput - numResp) < 1e-9;
+                return normalizar(input) === normalizar(resp);
+            });
         }
 
         window.checkAnswer = function() {
-            const input = document.getElementById('answer-input').value.trim().toLowerCase();
-            if (!input) return;
+            const input = document.getElementById('answer-input').value.trim();
+            if (!input || problemaResuelto) return;
+            resolverRespuesta(input, null);
+        }
 
-            const correct = String(currentProblem.respuesta).trim().toLowerCase();
-            const normalize = s => s.normalize('NFD').replace(/[̀-ͯ]/g, '');
-            const isMatch = normalize(input) === normalize(correct);
+        function elegirOpcion(btn, valor) {
+            if (problemaResuelto || btn.disabled) return;
+            resolverRespuesta(valor, btn);
+        }
 
+        function deshabilitarEntrada() {
             document.getElementById('answer-input').disabled = true;
-            const feedback = document.getElementById('feedback');
-            
-            if (isMatch) {
-                feedback.className = 'feedback success';
-                document.getElementById('feedback-title').innerText = '¡Excelente Resolución! ✨';
-                gainXP(20 * currentProblem.dificultad);
-                if (!state.progress) state.progress = {};
-                state.progress[currentProblem.categoria] = (state.progress[currentProblem.categoria] || 0) + 1;
-                updateProgressUI();
+            document.querySelectorAll('#options-container .btn-option').forEach(b => b.disabled = true);
+        }
 
-                if (state.competencia.active) {
-                    state.competencia.correctCount++;
+        function marcarOpciones(btnElegido, correcto) {
+            document.querySelectorAll('#options-container .btn-option').forEach(b => {
+                if (esRespuestaCorrecta(b.innerText, currentProblem)) b.classList.add('ok');
+            });
+            if (btnElegido && !correcto) btnElegido.classList.add('mal');
+        }
+
+        function resolverRespuesta(valor, btnElegido) {
+            const correcto = esRespuestaCorrecta(valor, currentProblem);
+            attemptsOnCurrent++;
+            const feedback = document.getElementById('feedback');
+
+            // En competencia no se corrige en el momento: se registra y se sigue.
+            if (state.competencia.active) {
+                problemaResuelto = true;
+                deshabilitarEntrada();
+                const st = state.competencia;
+                st.stageAnswers.push({
+                    id: currentProblem.id,
+                    categoria: currentProblem.categoria,
+                    dificultad: currentProblem.dificultad,
+                    enunciado: currentProblem.enunciado,
+                    dada: valor,
+                    respuesta: currentProblem.respuesta,
+                    explicacion: currentProblem.explicacion,
+                    correcto
+                });
+                st.problemCount++;
+                feedback.className = 'feedback neutral';
+                document.getElementById('feedback-title').innerText = `Respuesta registrada (${st.problemCount}/3) 📝`;
+                document.getElementById('feedback-desc').innerText = 'Como en el certamen real, la corrección llega al final de la etapa. ¡Seguí!';
+                document.getElementById('next-problem-btn').innerText = st.problemCount >= 3 ? 'Ver resultado de la etapa' : 'Siguiente Problema →';
+                feedback.style.display = 'block';
+                updateCompetenciaUI();
+                return;
+            }
+
+            // Entrenamiento: el primer error da una segunda oportunidad sin revelar la respuesta.
+            if (!correcto && attemptsOnCurrent === 1) {
+                if (btnElegido) {
+                    btnElegido.classList.add('mal');
+                    btnElegido.disabled = true;
+                } else {
+                    const inp = document.getElementById('answer-input');
+                    inp.select();
+                    inp.focus();
                 }
+                feedback.className = 'feedback retry';
+                document.getElementById('feedback-title').innerText = '¡Casi! Probá una vez más 💪';
+                document.getElementById('feedback-desc').innerText = 'Revisá tu cuenta con calma. Si querés, pedí una pista.';
+                feedback.style.display = 'block';
+                return;
+            }
+
+            // Resolución final del problema de entrenamiento.
+            problemaResuelto = true;
+            deshabilitarEntrada();
+            if (btnElegido || document.querySelector('#options-container .btn-option')) marcarOpciones(btnElegido, correcto);
+            registrarResultado(currentProblem.categoria, correcto);
+
+            if (correcto) {
+                let xp = 20 * currentProblem.dificultad;
+                if (hintUsed || attemptsOnCurrent > 1) xp = Math.ceil(xp / 2);
+                feedback.className = 'feedback success';
+                document.getElementById('feedback-title').innerText = `¡Excelente Resolución! ✨ +${xp} XP`;
+                quitarDeErrores(currentProblem.id);
+                actualizarRacha();
+                gainXP(xp);
             } else {
                 feedback.className = 'feedback error';
                 document.getElementById('feedback-title').innerText = 'Hay un detalle para revisar... 🤔';
+                agregarAErrores(currentProblem.id);
             }
 
             document.getElementById('feedback-desc').innerHTML = `
@@ -2507,44 +3176,89 @@
                 <strong>Estrategia Olímpica:</strong><br> ${currentProblem.explicacion}
             `;
             feedback.style.display = 'block';
+            updateProgressUI();
+            saveState();
+        }
 
-            if (state.competencia.active) {
-                state.competencia.problemCount++;
-                if (state.competencia.problemCount >= 3) {
-                    document.getElementById('next-problem-btn').innerText = "Ver Resultado de la Etapa";
+        // Cierre de etapa de competencia: corrección completa + avance o salida.
+        function showStageSummary() {
+            detenerTimer();
+            const st = state.competencia;
+            const respuestas = st.stageAnswers.slice(0, 3);
+            const aciertos = respuestas.filter(a => a.correcto).length;
+            const aprobo = aciertos >= 2;
+            const etapaActual = stages[st.stageIndex];
+
+            // Recién acá impactan las estadísticas, la cola de revancha y el XP.
+            let xpGanado = 0;
+            respuestas.forEach(a => {
+                registrarResultado(a.categoria, a.correcto);
+                if (a.correcto) {
+                    xpGanado += 20 * a.dificultad;
+                    quitarDeErrores(a.id);
                 } else {
-                    document.getElementById('next-problem-btn').innerText = "Siguiente Problema →";
-                    updateCompetenciaUI();
+                    agregarAErrores(a.id);
                 }
+            });
+            if (aciertos > 0) actualizarRacha();
+
+            const detalle = respuestas.map((a, i) => `
+                <div class="summary-item ${a.correcto ? 'ok' : 'mal'}">
+                    <strong>${a.correcto ? '✅' : '❌'} Problema ${i + 1}</strong>
+                    <div class="summary-enunciado">${escHtml(a.enunciado)}</div>
+                    <div>Tu respuesta: <strong>${escHtml(a.dada)}</strong> · Correcta: <strong>${escHtml(a.respuesta)}</strong></div>
+                    ${a.explicacion ? `<div class="summary-expl">${a.explicacion}</div>` : ''}
+                </div>`).join('');
+
+            if (aprobo) {
+                xpGanado += 100 * (st.stageIndex + 1);
+                st.stageIndex++;
+                st.problemCount = 0;
+                st.stageAnswers = [];
+
+                if (st.stageIndex >= 5) {
+                    if (!state.achievements.includes('CampeonNacional')) {
+                        state.achievements.push('CampeonNacional');
+                    }
+                    state.competencia.active = false;
+                    document.getElementById('competencia-tracker').style.display = 'none';
+                    gainXP(xpGanado);
+                    showModal({
+                        titulo: '🏆 ¡CAMPEÓN NACIONAL!',
+                        html: `<p style="margin-bottom:1rem;">Aprobaste la instancia <strong>${etapaActual}</strong> con ${aciertos}/3 y completaste las 5 etapas. ¡Sos campeón!</p>${detalle}`,
+                        primario: 'Volver al inicio',
+                        onPrimario: () => showScreen('home')
+                    });
+                } else {
+                    gainXP(xpGanado);
+                    showModal({
+                        titulo: `🎉 ¡Aprobaste ${etapaActual}!`,
+                        html: `<p style="margin-bottom:1rem;">Sacaste <strong>${aciertos}/3</strong>. Acá está la corrección completa:</p>${detalle}`,
+                        primario: `Siguiente: ${stages[st.stageIndex]} →`,
+                        onPrimario: () => {
+                            if (st.conTimer) iniciarTimer();
+                            loadNextProblem();
+                        },
+                        secundario: 'Salir',
+                        onSecundario: () => { abandonarCompetencia(); showScreen('home'); }
+                    });
+                }
+            } else {
+                gainXP(xpGanado);
+                showModal({
+                    titulo: 'Esta vez no alcanzó 😅',
+                    html: `<p style="margin-bottom:1rem;">En la instancia <strong>${etapaActual}</strong> sacaste <strong>${aciertos}/3</strong> y se necesitan 2. Mirá la corrección, que de acá se aprende:</p>${detalle}`,
+                    primario: 'Volver a entrenar',
+                    onPrimario: () => { abandonarCompetencia(); showScreen('home'); }
+                });
             }
+            saveState();
+            updateProgressUI();
         }
 
         window.nextProblem = function() {
             if (state.competencia.active && state.competencia.problemCount >= 3) {
-                // Etapa finalizada
-                if (state.competencia.correctCount >= 2) {
-                    // Aprueba
-                    alert(`¡Felicitaciones! Aprobaste el certamen ${stages[state.competencia.stageIndex]} con ${state.competencia.correctCount}/3 correctas.`);
-                    gainXP(100 * (state.competencia.stageIndex + 1));
-                    state.competencia.stageIndex++;
-                    state.competencia.problemCount = 0;
-                    state.competencia.correctCount = 0;
-
-                    if (state.competencia.stageIndex >= 5) {
-                        alert("¡INCREÍBLE! ¡Eres CAMPEÓN NACIONAL! Has completado el juego.");
-                        if(!state.achievements.includes("CampeonNacional")) {
-                            state.achievements.push("CampeonNacional");
-                        }
-                        showScreen('home');
-                    } else {
-                        updateCompetenciaUI();
-                        loadNextProblem();
-                    }
-                } else {
-                    // Desaprueba
-                    alert(`No alcanzaste los 2 puntos necesarios en el certamen ${stages[state.competencia.stageIndex]}. ¡Sigue entrenando!`);
-                    showScreen('home');
-                }
+                showStageSummary();
             } else {
                 loadNextProblem();
             }
