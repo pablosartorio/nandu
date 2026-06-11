@@ -1,65 +1,58 @@
 # Plan de mejora — Misión Ñandú
 
-## Fase 1 — Bugs que rompen la experiencia
+## ✅ Hecho
 
-**a. Validación de respuesta permisiva**
-- Archivo: `mision_nandu.html` línea ~717
-- Cambiar `input === correct || input.includes(correct)` por `input === correct`
-- Actualmente "16" o "600" pasan como respuesta correcta cuando la respuesta es "6"
+**Tanda 1 (junio 2026, primeras fases):** validación estricta de respuestas,
+problemas olímpicos consistentes, banco deduplicado, 10 errores distintos en
+"Encuentra el Error", dificultad progresiva en competencia, IDs únicos,
+progreso por categoría, anti-repetición inmediata, SVG de geometría con los
+datos del problema.
 
-**b. Problemas olímpicos con respuesta incorrecta**
-- Archivo: `generate_problems.py` líneas 218-223
-- El enunciado muestra un total aleatorio (25/34/40/52) pero la respuesta siempre es 6 (calculada para 25)
-- Solución: escribirlos como datos fijos en lugar de generación paramétrica
+**Tanda 2 (2026-06-11):** las cinco mejoras grandes — el porqué de cada
+decisión está en [`PEDAGOGIA.md`](PEDAGOGIA.md):
 
-**c. Deduplicar el banco de problemas**
-- Archivo: `generate_problems.py`
-- Usar un set de enunciados vistos y skipear antes de hacer `append`
-- Actualmente hay problemas idénticos (ej: "3, 9, 27, 81..." aparece 3 veces)
-
----
-
-## Fase 2 — Calidad del contenido
-
-**d. Módulo "Encuentra el Error" con variedad real**
-- Actualmente: 15 problemas idénticos (mismo enunciado, misma respuesta)
-- Escribir ~10 errores distintos: perímetro vs área, fracciones, orden de operaciones, unidades, etc.
-- No aplica generación paramétrica, hay que escribirlos a mano
-
-**e. Dificultad progresiva en Modo Competencia**
-- En lugar de problemas aleatorios, subir dificultad por etapa
-- Escolar → dificultad 1, Zonal → dificultad 2, Nacional → dificultad 3
-
-**f. IDs únicos globales**
-- Archivo: `generate_problems.py` líneas 82-83
-- Eliminar el reset de `id_counter` y de `problems` a mitad del script
-- Actualmente los problemas de lógica reutilizan IDs 26-35 (ya usados por patrones)
+1. **Validación justa:** comparación numérica tolerante a unidades y
+   separadores de miles, `respuestas_aceptadas` por problema, y opción
+   múltiple en "Encuentra el Error" (4 opciones con distractores
+   conceptuales).
+2. **UX sin `alert()`:** modales y toasts propios, pista inline con costo de
+   medio XP, segunda oportunidad antes de revelar la respuesta, teclado
+   numérico en mobile.
+3. **Competencia fiel al certamen:** "Intercolegial" (nombre oficial), sin
+   corrección hasta terminar los 3 problemas, resumen de etapa con la
+   corrección completa, contrarreloj opcional de 15 min, confirmación al
+   abandonar, sin pistas.
+4. **Revancha + Panel del Entrenador:** cola de problemas fallados que se
+   redime al acertar, precisión por módulo, racha diaria y sugerencia de qué
+   entrenar.
+5. **Contenido y calidad:** semilla fija (banco reproducible), 24 problemas
+   manuales estilo certamen (4 por categoría), voseo consistente, y
+   `test_banco.py` que recalcula cada respuesta desde el enunciado por un
+   método independiente (185/195 verificadas; el resto son los de opción
+   múltiple, con control estructural).
 
 ---
 
-## Fase 3 — Features de valor
+## Ideas futuras (por orden de retorno estimado)
 
-**g. Tracking de progreso por categoría**
-- Guardar en estado cuántos problemas resolvió por módulo
-- Mostrar barras de progreso en el dashboard
-
-**h. Anti-repetición inmediata**
-- Guardar el id del último problema mostrado y excluirlo del sorteo siguiente
-- Evita que el mismo problema salga dos veces seguidas
-
-**i. SVG de geometría útil**
-- Dibujar la figura con las medidas del problema concreto (base, altura, lado)
-- Requiere agregar metadata de figura al JSON de cada problema de geometría
-- Actualmente el SVG es siempre el mismo cuadrado decorativo independiente del problema
-
----
+- **Selector de nivel Ñandú (1/2/3 según grado):** requiere etiquetar el
+  banco por grado con criterio curricular real (temario oficial de cada
+  nivel), no "a ojo".
+- **Más problemas manuales:** es la mejora de mayor valor por hora invertida;
+  el mecanismo ya está (lista `manuales` en `generate_problems.py` + control
+  en `MANUALES_ESPERADOS` de `test_banco.py`).
+- **Práctica de justificación escrita:** un modo donde el alumno escribe su
+  razonamiento y un adulto lo revisa (la app no puede corregirlo sola).
+- **Multi-perfil:** dos hermanos en el mismo dispositivo hoy comparten
+  progreso.
+- **PWA / ícono en pantalla de inicio:** el HTML único ya funciona offline
+  una vez descargado; faltaría manifest para instalarlo como app.
 
 ## Lo que NO hacer
 
-- No migrar a frameworks (React, Vue) — el valor del proyecto es ser un único HTML portable
-- No separar en múltiples archivos
-- No agregar backend ni servidor
-
-## Orden recomendado por retorno
-
-1c (deduplicar) → 1a (validación) → 1b (olímpicos) → 2d (errores) → 3h (anti-repetición)
+- No migrar a frameworks (React, Vue) — el valor del proyecto es ser un único
+  HTML portable.
+- No separar en múltiples archivos.
+- No agregar backend ni servidor.
+- No agregar mecánicas punitivas (perder XP, rankings, presión de tiempo
+  obligatoria) — ver PEDAGOGIA.md §8.

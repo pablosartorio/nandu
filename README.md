@@ -6,28 +6,43 @@ matemática para nivel primario), empaquetada como **un único HTML portable**.
 El alumno entrena por módulos (patrones, lógica, geometría, conteo,
 divisibilidad, "encuentra el error" y olímpico), gana XP que hace evolucionar a
 una mascota Ñandú, y puede simular las 5 instancias oficiales del certamen en el
-**Modo Competencia**. El progreso se guarda en `localStorage`.
+**Modo Competencia** (con contrarreloj opcional y corrección al final de cada
+etapa, como en el certamen real). Los problemas fallados quedan en una cola de
+**Revancha** para reintentarlos, y el **Panel del Entrenador** muestra precisión
+por módulo, racha diaria y qué conviene practicar. El progreso se guarda en
+`localStorage`.
+
+Las decisiones didácticas (doble intento, pistas con costo, feedback diferido
+en competencia, etc.) están explicadas en [`PEDAGOGIA.md`](PEDAGOGIA.md).
 
 ## Estructura
 
 | Archivo | Rol |
 |---------|-----|
 | `generate_problems.py` | Genera el banco de problemas → `problemas_nandu.json` |
+| `test_banco.py` | Verifica el banco: recalcula cada respuesta desde el enunciado |
 | `build_html.py` | Embebe el banco en la plantilla → `mision_nandu.html` |
 | `problemas_nandu.json` | Banco de problemas (artefacto versionado) |
 | `mision_nandu.html` | **Producto final** — abrir en cualquier navegador |
+| `index.html` | Landing page del sitio público |
+| `PEDAGOGIA.md` | Decisiones de diseño didáctico/pedagógico |
 | `plan-de-mejora.md` | Hoja de ruta de mejoras |
 
 ## Cómo regenerar
 
 ```bash
 python3 generate_problems.py   # crea problemas_nandu.json
+python3 test_banco.py          # verifica el banco (no commitear si falla)
 python3 build_html.py          # crea mision_nandu.html
 ```
 
-> `generate_problems.py` usa `random` sin semilla: cada corrida produce un banco
-> distinto. Por eso `problemas_nandu.json` y `mision_nandu.html` se versionan,
-> para fijar una versión estable.
+> `generate_problems.py` usa una **semilla fija**: la misma corrida produce
+> exactamente el mismo banco (reproducible y diffeable). Para publicar un banco
+> distinto hay que cambiar la semilla en el script y regenerar.
+>
+> ⚠️ Regenerar con otra semilla cambia los `id` de los problemas: el progreso
+> guardado en `localStorage` (en particular la cola de Revancha) puede quedar
+> apuntando a problemas distintos.
 
 ## Jugar online
 
