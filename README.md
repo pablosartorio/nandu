@@ -26,6 +26,7 @@ en competencia, etc.) están explicadas en [`PEDAGOGIA.md`](PEDAGOGIA.md).
 | `mision_nandu.html` | **Producto final** — abrir en cualquier navegador |
 | `index.html` | Landing page del sitio público |
 | `PEDAGOGIA.md` | Decisiones de diseño didáctico/pedagógico |
+| `pedagogia.html` | Versión web de `PEDAGOGIA.md` (linkeada desde la landing) |
 | `plan-de-mejora.md` | Hoja de ruta de mejoras |
 
 ## Cómo regenerar

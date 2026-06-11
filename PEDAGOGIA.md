@@ -1,5 +1,8 @@
 # Decisiones de diseño didáctico — Misión Ñandú
 
+> Versión web: [`pedagogia.html`](pedagogia.html) (mismo contenido, linkeada
+> desde la landing — si se cambia uno, actualizar el otro).
+
 Este documento explica **por qué** la app está diseñada como está. La audiencia
 es un chico de primaria (9 a 12 años) que entrena para la Olimpíada Ñandú, y el
 objetivo no es solo que practique cuentas: es que desarrolle el hábito de
