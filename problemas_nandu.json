@@ -3,886 +3,994 @@
     "id": 1,
     "categoria": "patrones",
     "dificultad": 1,
-    "enunciado": "Observa la secuencia: 20, 31, 42, 53, 64, ... ¿Qué número sigue?",
-    "respuesta": "75",
-    "explicacion": "La secuencia aumenta sumando 11 en cada paso. 64 + 11 = 75",
-    "pista": "Calcula la diferencia entre números consecutivos."
+    "enunciado": "Observá la secuencia: 19, 26, 33, 40, 47, ... ¿Qué número sigue?",
+    "respuesta": "54",
+    "explicacion": "La secuencia aumenta sumando 7 en cada paso. 47 + 7 = 54",
+    "pista": "Calculá la diferencia entre números consecutivos.",
+    "template": "patrones_aritmetica"
   },
   {
     "id": 2,
     "categoria": "patrones",
     "dificultad": 1,
-    "enunciado": "Observa la secuencia: 5, 13, 21, 29, 37, ... ¿Qué número sigue?",
-    "respuesta": "45",
-    "explicacion": "La secuencia aumenta sumando 8 en cada paso. 37 + 8 = 45",
-    "pista": "Calcula la diferencia entre números consecutivos."
+    "enunciado": "Observá la secuencia: 16, 27, 38, 49, 60, ... ¿Qué número sigue?",
+    "respuesta": "71",
+    "explicacion": "La secuencia aumenta sumando 11 en cada paso. 60 + 11 = 71",
+    "pista": "Calculá la diferencia entre números consecutivos.",
+    "template": "patrones_aritmetica"
   },
   {
     "id": 3,
     "categoria": "patrones",
     "dificultad": 1,
-    "enunciado": "Observa la secuencia: 9, 18, 27, 36, 45, ... ¿Qué número sigue?",
-    "respuesta": "54",
-    "explicacion": "La secuencia aumenta sumando 9 en cada paso. 45 + 9 = 54",
-    "pista": "Calcula la diferencia entre números consecutivos."
+    "enunciado": "Observá la secuencia: 19, 31, 43, 55, 67, ... ¿Qué número sigue?",
+    "respuesta": "79",
+    "explicacion": "La secuencia aumenta sumando 12 en cada paso. 67 + 12 = 79",
+    "pista": "Calculá la diferencia entre números consecutivos.",
+    "template": "patrones_aritmetica"
   },
   {
     "id": 4,
     "categoria": "patrones",
     "dificultad": 1,
-    "enunciado": "Observa la secuencia: 16, 19, 22, 25, 28, ... ¿Qué número sigue?",
-    "respuesta": "31",
-    "explicacion": "La secuencia aumenta sumando 3 en cada paso. 28 + 3 = 31",
-    "pista": "Calcula la diferencia entre números consecutivos."
+    "enunciado": "Observá la secuencia: 9, 14, 19, 24, 29, ... ¿Qué número sigue?",
+    "respuesta": "34",
+    "explicacion": "La secuencia aumenta sumando 5 en cada paso. 29 + 5 = 34",
+    "pista": "Calculá la diferencia entre números consecutivos.",
+    "template": "patrones_aritmetica"
   },
   {
     "id": 5,
     "categoria": "patrones",
     "dificultad": 1,
-    "enunciado": "Observa la secuencia: 11, 20, 29, 38, 47, ... ¿Qué número sigue?",
-    "respuesta": "56",
-    "explicacion": "La secuencia aumenta sumando 9 en cada paso. 47 + 9 = 56",
-    "pista": "Calcula la diferencia entre números consecutivos."
+    "enunciado": "Observá la secuencia: 20, 32, 44, 56, 68, ... ¿Qué número sigue?",
+    "respuesta": "80",
+    "explicacion": "La secuencia aumenta sumando 12 en cada paso. 68 + 12 = 80",
+    "pista": "Calculá la diferencia entre números consecutivos.",
+    "template": "patrones_aritmetica"
   },
   {
     "id": 6,
     "categoria": "patrones",
     "dificultad": 1,
-    "enunciado": "Observa la secuencia: 13, 25, 37, 49, 61, ... ¿Qué número sigue?",
-    "respuesta": "73",
-    "explicacion": "La secuencia aumenta sumando 12 en cada paso. 61 + 12 = 73",
-    "pista": "Calcula la diferencia entre números consecutivos."
+    "enunciado": "Observá la secuencia: 6, 9, 12, 15, 18, ... ¿Qué número sigue?",
+    "respuesta": "21",
+    "explicacion": "La secuencia aumenta sumando 3 en cada paso. 18 + 3 = 21",
+    "pista": "Calculá la diferencia entre números consecutivos.",
+    "template": "patrones_aritmetica"
   },
   {
     "id": 7,
     "categoria": "patrones",
     "dificultad": 1,
-    "enunciado": "Observa la secuencia: 11, 16, 21, 26, 31, ... ¿Qué número sigue?",
-    "respuesta": "36",
-    "explicacion": "La secuencia aumenta sumando 5 en cada paso. 31 + 5 = 36",
-    "pista": "Calcula la diferencia entre números consecutivos."
+    "enunciado": "Observá la secuencia: 3, 6, 9, 12, 15, ... ¿Qué número sigue?",
+    "respuesta": "18",
+    "explicacion": "La secuencia aumenta sumando 3 en cada paso. 15 + 3 = 18",
+    "pista": "Calculá la diferencia entre números consecutivos.",
+    "template": "patrones_aritmetica"
   },
   {
     "id": 8,
     "categoria": "patrones",
     "dificultad": 1,
-    "enunciado": "Observa la secuencia: 12, 21, 30, 39, 48, ... ¿Qué número sigue?",
-    "respuesta": "57",
-    "explicacion": "La secuencia aumenta sumando 9 en cada paso. 48 + 9 = 57",
-    "pista": "Calcula la diferencia entre números consecutivos."
+    "enunciado": "Observá la secuencia: 16, 19, 22, 25, 28, ... ¿Qué número sigue?",
+    "respuesta": "31",
+    "explicacion": "La secuencia aumenta sumando 3 en cada paso. 28 + 3 = 31",
+    "pista": "Calculá la diferencia entre números consecutivos.",
+    "template": "patrones_aritmetica"
   },
   {
     "id": 9,
     "categoria": "patrones",
     "dificultad": 1,
-    "enunciado": "Observa la secuencia: 4, 15, 26, 37, 48, ... ¿Qué número sigue?",
-    "respuesta": "59",
-    "explicacion": "La secuencia aumenta sumando 11 en cada paso. 48 + 11 = 59",
-    "pista": "Calcula la diferencia entre números consecutivos."
+    "enunciado": "Observá la secuencia: 8, 18, 28, 38, 48, ... ¿Qué número sigue?",
+    "respuesta": "58",
+    "explicacion": "La secuencia aumenta sumando 10 en cada paso. 48 + 10 = 58",
+    "pista": "Calculá la diferencia entre números consecutivos.",
+    "template": "patrones_aritmetica"
   },
   {
     "id": 10,
     "categoria": "patrones",
     "dificultad": 1,
-    "enunciado": "Observa la secuencia: 9, 12, 15, 18, 21, ... ¿Qué número sigue?",
-    "respuesta": "24",
-    "explicacion": "La secuencia aumenta sumando 3 en cada paso. 21 + 3 = 24",
-    "pista": "Calcula la diferencia entre números consecutivos."
+    "enunciado": "Observá la secuencia: 11, 19, 27, 35, 43, ... ¿Qué número sigue?",
+    "respuesta": "51",
+    "explicacion": "La secuencia aumenta sumando 8 en cada paso. 43 + 8 = 51",
+    "pista": "Calculá la diferencia entre números consecutivos.",
+    "template": "patrones_aritmetica"
   },
   {
     "id": 11,
     "categoria": "patrones",
     "dificultad": 1,
-    "enunciado": "Observa la secuencia: 10, 21, 32, 43, 54, ... ¿Qué número sigue?",
-    "respuesta": "65",
-    "explicacion": "La secuencia aumenta sumando 11 en cada paso. 54 + 11 = 65",
-    "pista": "Calcula la diferencia entre números consecutivos."
+    "enunciado": "Observá la secuencia: 16, 22, 28, 34, 40, ... ¿Qué número sigue?",
+    "respuesta": "46",
+    "explicacion": "La secuencia aumenta sumando 6 en cada paso. 40 + 6 = 46",
+    "pista": "Calculá la diferencia entre números consecutivos.",
+    "template": "patrones_aritmetica"
   },
   {
     "id": 12,
     "categoria": "patrones",
     "dificultad": 1,
-    "enunciado": "Observa la secuencia: 8, 13, 18, 23, 28, ... ¿Qué número sigue?",
-    "respuesta": "33",
-    "explicacion": "La secuencia aumenta sumando 5 en cada paso. 28 + 5 = 33",
-    "pista": "Calcula la diferencia entre números consecutivos."
+    "enunciado": "Observá la secuencia: 20, 31, 42, 53, 64, ... ¿Qué número sigue?",
+    "respuesta": "75",
+    "explicacion": "La secuencia aumenta sumando 11 en cada paso. 64 + 11 = 75",
+    "pista": "Calculá la diferencia entre números consecutivos.",
+    "template": "patrones_aritmetica"
   },
   {
     "id": 13,
     "categoria": "patrones",
     "dificultad": 1,
-    "enunciado": "Observa la secuencia: 3, 12, 21, 30, 39, ... ¿Qué número sigue?",
-    "respuesta": "48",
-    "explicacion": "La secuencia aumenta sumando 9 en cada paso. 39 + 9 = 48",
-    "pista": "Calcula la diferencia entre números consecutivos."
+    "enunciado": "Observá la secuencia: 3, 14, 25, 36, 47, ... ¿Qué número sigue?",
+    "respuesta": "58",
+    "explicacion": "La secuencia aumenta sumando 11 en cada paso. 47 + 11 = 58",
+    "pista": "Calculá la diferencia entre números consecutivos.",
+    "template": "patrones_aritmetica"
   },
   {
     "id": 14,
     "categoria": "patrones",
-    "dificultad": 1,
-    "enunciado": "Observa la secuencia: 17, 28, 39, 50, 61, ... ¿Qué número sigue?",
-    "respuesta": "72",
-    "explicacion": "La secuencia aumenta sumando 11 en cada paso. 61 + 11 = 72",
-    "pista": "Calcula la diferencia entre números consecutivos."
+    "dificultad": 2,
+    "enunciado": "Descifrá el patrón: 3, 9, 27, 81, ... ¿Cuál es el próximo número?",
+    "respuesta": "243",
+    "explicacion": "Cada número se multiplica por 3 para obtener el siguiente. 81 x 3 = 243",
+    "pista": "Fijate si en lugar de sumar, los números se multiplican.",
+    "template": "patrones_geometrica"
   },
   {
     "id": 15,
     "categoria": "patrones",
     "dificultad": 2,
-    "enunciado": "Descifra el patrón: 4, 12, 36, 108, ... ¿Cuál es el próximo número?",
-    "respuesta": "324",
-    "explicacion": "Cada número se multiplica por 3 para obtener el siguiente. 108 x 3 = 324",
-    "pista": "Fíjate si en lugar de sumar, los números se multiplican."
+    "enunciado": "Descifrá el patrón: 4, 8, 16, 32, ... ¿Cuál es el próximo número?",
+    "respuesta": "64",
+    "explicacion": "Cada número se multiplica por 2 para obtener el siguiente. 32 x 2 = 64",
+    "pista": "Fijate si en lugar de sumar, los números se multiplican.",
+    "template": "patrones_geometrica"
   },
   {
     "id": 16,
     "categoria": "patrones",
     "dificultad": 2,
-    "enunciado": "Descifra el patrón: 3, 9, 27, 81, ... ¿Cuál es el próximo número?",
-    "respuesta": "243",
-    "explicacion": "Cada número se multiplica por 3 para obtener el siguiente. 81 x 3 = 243",
-    "pista": "Fíjate si en lugar de sumar, los números se multiplican."
+    "enunciado": "Descifrá el patrón: 3, 6, 12, 24, ... ¿Cuál es el próximo número?",
+    "respuesta": "48",
+    "explicacion": "Cada número se multiplica por 2 para obtener el siguiente. 24 x 2 = 48",
+    "pista": "Fijate si en lugar de sumar, los números se multiplican.",
+    "template": "patrones_geometrica"
   },
   {
     "id": 17,
     "categoria": "patrones",
     "dificultad": 2,
-    "enunciado": "Descifra el patrón: 2, 4, 8, 16, ... ¿Cuál es el próximo número?",
-    "respuesta": "32",
-    "explicacion": "Cada número se multiplica por 2 para obtener el siguiente. 16 x 2 = 32",
-    "pista": "Fíjate si en lugar de sumar, los números se multiplican."
+    "enunciado": "Descifrá el patrón: 5, 10, 20, 40, ... ¿Cuál es el próximo número?",
+    "respuesta": "80",
+    "explicacion": "Cada número se multiplica por 2 para obtener el siguiente. 40 x 2 = 80",
+    "pista": "Fijate si en lugar de sumar, los números se multiplican.",
+    "template": "patrones_geometrica"
   },
   {
     "id": 18,
     "categoria": "patrones",
     "dificultad": 2,
-    "enunciado": "Descifra el patrón: 2, 6, 18, 54, ... ¿Cuál es el próximo número?",
-    "respuesta": "162",
-    "explicacion": "Cada número se multiplica por 3 para obtener el siguiente. 54 x 3 = 162",
-    "pista": "Fíjate si en lugar de sumar, los números se multiplican."
+    "enunciado": "Descifrá el patrón: 4, 16, 64, 256, ... ¿Cuál es el próximo número?",
+    "respuesta": "1024",
+    "explicacion": "Cada número se multiplica por 4 para obtener el siguiente. 256 x 4 = 1024",
+    "pista": "Fijate si en lugar de sumar, los números se multiplican.",
+    "template": "patrones_geometrica"
   },
   {
     "id": 19,
     "categoria": "patrones",
-    "dificultad": 2,
-    "enunciado": "Descifra el patrón: 4, 8, 16, 32, ... ¿Cuál es el próximo número?",
-    "respuesta": "64",
-    "explicacion": "Cada número se multiplica por 2 para obtener el siguiente. 32 x 2 = 64",
-    "pista": "Fíjate si en lugar de sumar, los números se multiplican."
+    "dificultad": 3,
+    "enunciado": "Encontrá el siguiente término: 2, 4, 7, 11, 16, ...",
+    "respuesta": "22",
+    "explicacion": "La diferencia entre los números no es fija. Primero se suma 2, luego 3, y así sucesivamente. Al último se le suma 6.",
+    "pista": "Observá las diferencias entre los números consecutivos, ¿qué patrón forman esas diferencias?",
+    "template": "patrones_dif_creciente"
   },
   {
     "id": 20,
     "categoria": "patrones",
-    "dificultad": 2,
-    "enunciado": "Descifra el patrón: 4, 16, 64, 256, ... ¿Cuál es el próximo número?",
-    "respuesta": "1024",
-    "explicacion": "Cada número se multiplica por 4 para obtener el siguiente. 256 x 4 = 1024",
-    "pista": "Fíjate si en lugar de sumar, los números se multiplican."
+    "dificultad": 3,
+    "enunciado": "Encontrá el siguiente término: 4, 7, 11, 16, 22, ...",
+    "respuesta": "29",
+    "explicacion": "La diferencia entre los números no es fija. Primero se suma 3, luego 4, y así sucesivamente. Al último se le suma 7.",
+    "pista": "Observá las diferencias entre los números consecutivos, ¿qué patrón forman esas diferencias?",
+    "template": "patrones_dif_creciente"
   },
   {
     "id": 21,
     "categoria": "patrones",
-    "dificultad": 2,
-    "enunciado": "Descifra el patrón: 3, 6, 12, 24, ... ¿Cuál es el próximo número?",
-    "respuesta": "48",
-    "explicacion": "Cada número se multiplica por 2 para obtener el siguiente. 24 x 2 = 48",
-    "pista": "Fíjate si en lugar de sumar, los números se multiplican."
+    "dificultad": 3,
+    "enunciado": "Encontrá el siguiente término: 2, 7, 13, 20, 28, ...",
+    "respuesta": "37",
+    "explicacion": "La diferencia entre los números no es fija. Primero se suma 5, luego 6, y así sucesivamente. Al último se le suma 9.",
+    "pista": "Observá las diferencias entre los números consecutivos, ¿qué patrón forman esas diferencias?",
+    "template": "patrones_dif_creciente"
   },
   {
     "id": 22,
     "categoria": "patrones",
-    "dificultad": 2,
-    "enunciado": "Descifra el patrón: 3, 12, 48, 192, ... ¿Cuál es el próximo número?",
-    "respuesta": "768",
-    "explicacion": "Cada número se multiplica por 4 para obtener el siguiente. 192 x 4 = 768",
-    "pista": "Fíjate si en lugar de sumar, los números se multiplican."
+    "dificultad": 3,
+    "enunciado": "Encontrá el siguiente término: 10, 12, 15, 19, 24, ...",
+    "respuesta": "30",
+    "explicacion": "La diferencia entre los números no es fija. Primero se suma 2, luego 3, y así sucesivamente. Al último se le suma 6.",
+    "pista": "Observá las diferencias entre los números consecutivos, ¿qué patrón forman esas diferencias?",
+    "template": "patrones_dif_creciente"
   },
   {
     "id": 23,
     "categoria": "patrones",
     "dificultad": 3,
-    "enunciado": "Encuentra el siguiente término: 1, 5, 10, 16, 23, ...",
-    "respuesta": "31",
-    "explicacion": "La diferencia entre los números no es fija. Primero se suma 4, luego 5, y así sucesivamente. Al último se le suma 8.",
-    "pista": "Observa las diferencias entre los números consecutivos, ¿qué patrón forman esas diferencias?"
+    "enunciado": "Encontrá el siguiente término: 3, 6, 10, 15, 21, ...",
+    "respuesta": "28",
+    "explicacion": "La diferencia entre los números no es fija. Primero se suma 3, luego 4, y así sucesivamente. Al último se le suma 7.",
+    "pista": "Observá las diferencias entre los números consecutivos, ¿qué patrón forman esas diferencias?",
+    "template": "patrones_dif_creciente"
   },
   {
     "id": 24,
     "categoria": "patrones",
     "dificultad": 3,
-    "enunciado": "Encuentra el siguiente término: 8, 11, 15, 20, 26, ...",
-    "respuesta": "33",
-    "explicacion": "La diferencia entre los números no es fija. Primero se suma 3, luego 4, y así sucesivamente. Al último se le suma 7.",
-    "pista": "Observa las diferencias entre los números consecutivos, ¿qué patrón forman esas diferencias?"
+    "enunciado": "Encontrá el siguiente término: 5, 10, 16, 23, 31, ...",
+    "respuesta": "40",
+    "explicacion": "La diferencia entre los números no es fija. Primero se suma 5, luego 6, y así sucesivamente. Al último se le suma 9.",
+    "pista": "Observá las diferencias entre los números consecutivos, ¿qué patrón forman esas diferencias?",
+    "template": "patrones_dif_creciente"
   },
   {
     "id": 25,
     "categoria": "patrones",
     "dificultad": 3,
-    "enunciado": "Encuentra el siguiente término: 8, 13, 19, 26, 34, ...",
-    "respuesta": "43",
-    "explicacion": "La diferencia entre los números no es fija. Primero se suma 5, luego 6, y así sucesivamente. Al último se le suma 9.",
-    "pista": "Observa las diferencias entre los números consecutivos, ¿qué patrón forman esas diferencias?"
+    "enunciado": "Encontrá el siguiente término: 9, 13, 18, 24, 31, ...",
+    "respuesta": "39",
+    "explicacion": "La diferencia entre los números no es fija. Primero se suma 4, luego 5, y así sucesivamente. Al último se le suma 8.",
+    "pista": "Observá las diferencias entre los números consecutivos, ¿qué patrón forman esas diferencias?",
+    "template": "patrones_dif_creciente"
   },
   {
     "id": 26,
     "categoria": "patrones",
     "dificultad": 3,
-    "enunciado": "Encuentra el siguiente término: 10, 13, 17, 22, 28, ...",
-    "respuesta": "35",
-    "explicacion": "La diferencia entre los números no es fija. Primero se suma 3, luego 4, y así sucesivamente. Al último se le suma 7.",
-    "pista": "Observa las diferencias entre los números consecutivos, ¿qué patrón forman esas diferencias?"
+    "enunciado": "Encontrá el siguiente término: 4, 9, 15, 22, 30, ...",
+    "respuesta": "39",
+    "explicacion": "La diferencia entre los números no es fija. Primero se suma 5, luego 6, y así sucesivamente. Al último se le suma 9.",
+    "pista": "Observá las diferencias entre los números consecutivos, ¿qué patrón forman esas diferencias?",
+    "template": "patrones_dif_creciente"
   },
   {
     "id": 27,
     "categoria": "patrones",
     "dificultad": 3,
-    "enunciado": "Encuentra el siguiente término: 1, 6, 12, 19, 27, ...",
-    "respuesta": "36",
+    "enunciado": "Encontrá el siguiente término: 8, 13, 19, 26, 34, ...",
+    "respuesta": "43",
     "explicacion": "La diferencia entre los números no es fija. Primero se suma 5, luego 6, y así sucesivamente. Al último se le suma 9.",
-    "pista": "Observa las diferencias entre los números consecutivos, ¿qué patrón forman esas diferencias?"
+    "pista": "Observá las diferencias entre los números consecutivos, ¿qué patrón forman esas diferencias?",
+    "template": "patrones_dif_creciente"
   },
   {
     "id": 28,
-    "categoria": "patrones",
-    "dificultad": 3,
-    "enunciado": "Encuentra el siguiente término: 10, 12, 15, 19, 24, ...",
-    "respuesta": "30",
-    "explicacion": "La diferencia entre los números no es fija. Primero se suma 2, luego 3, y así sucesivamente. Al último se le suma 6.",
-    "pista": "Observa las diferencias entre los números consecutivos, ¿qué patrón forman esas diferencias?"
+    "categoria": "logica",
+    "dificultad": 1,
+    "enunciado": "Las edades de Ana y Facu suman 32 años. Si Ana es 4 años mayor que Facu, ¿cuántos años tiene Ana?",
+    "respuesta": "18",
+    "explicacion": "Si a la suma (32) le restamos la diferencia (4) queda 28. Dividimos por 2 y obtenemos la edad del menor (14). El mayor tiene 18.",
+    "pista": "Restá la diferencia a la suma total para igualarlos.",
+    "template": "logica_edades"
   },
   {
     "id": 29,
-    "categoria": "patrones",
-    "dificultad": 3,
-    "enunciado": "Encuentra el siguiente término: 2, 5, 9, 14, 20, ...",
-    "respuesta": "27",
-    "explicacion": "La diferencia entre los números no es fija. Primero se suma 3, luego 4, y así sucesivamente. Al último se le suma 7.",
-    "pista": "Observa las diferencias entre los números consecutivos, ¿qué patrón forman esas diferencias?"
+    "categoria": "logica",
+    "dificultad": 1,
+    "enunciado": "Las edades de Facu y Carlos suman 50 años. Si Facu es 10 años mayor que Carlos, ¿cuántos años tiene Facu?",
+    "respuesta": "30",
+    "explicacion": "Si a la suma (50) le restamos la diferencia (10) queda 40. Dividimos por 2 y obtenemos la edad del menor (20). El mayor tiene 30.",
+    "pista": "Restá la diferencia a la suma total para igualarlos.",
+    "template": "logica_edades"
   },
   {
     "id": 30,
-    "categoria": "patrones",
-    "dificultad": 3,
-    "enunciado": "Encuentra el siguiente término: 3, 8, 14, 21, 29, ...",
-    "respuesta": "38",
-    "explicacion": "La diferencia entre los números no es fija. Primero se suma 5, luego 6, y así sucesivamente. Al último se le suma 9.",
-    "pista": "Observa las diferencias entre los números consecutivos, ¿qué patrón forman esas diferencias?"
+    "categoria": "logica",
+    "dificultad": 1,
+    "enunciado": "Las edades de Delfina y Ema suman 33 años. Si Delfina es 5 años mayor que Ema, ¿cuántos años tiene Delfina?",
+    "respuesta": "19",
+    "explicacion": "Si a la suma (33) le restamos la diferencia (5) queda 28. Dividimos por 2 y obtenemos la edad del menor (14). El mayor tiene 19.",
+    "pista": "Restá la diferencia a la suma total para igualarlos.",
+    "template": "logica_edades"
   },
   {
     "id": 31,
-    "categoria": "patrones",
-    "dificultad": 3,
-    "enunciado": "Encuentra el siguiente término: 3, 7, 12, 18, 25, ...",
-    "respuesta": "33",
-    "explicacion": "La diferencia entre los números no es fija. Primero se suma 4, luego 5, y así sucesivamente. Al último se le suma 8.",
-    "pista": "Observa las diferencias entre los números consecutivos, ¿qué patrón forman esas diferencias?"
+    "categoria": "logica",
+    "dificultad": 1,
+    "enunciado": "Las edades de Ema y Carlos suman 23 años. Si Ema es 5 años mayor que Carlos, ¿cuántos años tiene Ema?",
+    "respuesta": "14",
+    "explicacion": "Si a la suma (23) le restamos la diferencia (5) queda 18. Dividimos por 2 y obtenemos la edad del menor (9). El mayor tiene 14.",
+    "pista": "Restá la diferencia a la suma total para igualarlos.",
+    "template": "logica_edades"
   },
   {
     "id": 32,
-    "categoria": "patrones",
-    "dificultad": 3,
-    "enunciado": "Encuentra el siguiente término: 7, 9, 12, 16, 21, ...",
-    "respuesta": "27",
-    "explicacion": "La diferencia entre los números no es fija. Primero se suma 2, luego 3, y así sucesivamente. Al último se le suma 6.",
-    "pista": "Observa las diferencias entre los números consecutivos, ¿qué patrón forman esas diferencias?"
+    "categoria": "logica",
+    "dificultad": 1,
+    "enunciado": "Las edades de Facu y Ana suman 34 años. Si Facu es 4 años mayor que Ana, ¿cuántos años tiene Facu?",
+    "respuesta": "19",
+    "explicacion": "Si a la suma (34) le restamos la diferencia (4) queda 30. Dividimos por 2 y obtenemos la edad del menor (15). El mayor tiene 19.",
+    "pista": "Restá la diferencia a la suma total para igualarlos.",
+    "template": "logica_edades"
   },
   {
     "id": 33,
     "categoria": "logica",
     "dificultad": 1,
-    "enunciado": "Las edades de Delfina y Beto suman 49 años. Si Delfina es 9 años mayor que Beto, ¿cuántos años tiene Delfina?",
-    "respuesta": "29",
-    "explicacion": "Si a la suma (49) le restamos la diferencia (9) queda 40. Dividimos por 2 y obtenemos la edad del menor (20). El mayor tiene 29.",
-    "pista": "Resta la diferencia a la suma total para igualarlos."
+    "enunciado": "Las edades de Gaby y Ema suman 21 años. Si Gaby es 9 años mayor que Ema, ¿cuántos años tiene Gaby?",
+    "respuesta": "15",
+    "explicacion": "Si a la suma (21) le restamos la diferencia (9) queda 12. Dividimos por 2 y obtenemos la edad del menor (6). El mayor tiene 15.",
+    "pista": "Restá la diferencia a la suma total para igualarlos.",
+    "template": "logica_edades"
   },
   {
     "id": 34,
     "categoria": "logica",
     "dificultad": 1,
-    "enunciado": "Las edades de Facu y Delfina suman 23 años. Si Facu es 9 años mayor que Delfina, ¿cuántos años tiene Facu?",
-    "respuesta": "16",
-    "explicacion": "Si a la suma (23) le restamos la diferencia (9) queda 14. Dividimos por 2 y obtenemos la edad del menor (7). El mayor tiene 16.",
-    "pista": "Resta la diferencia a la suma total para igualarlos."
+    "enunciado": "Las edades de Beto y Delfina suman 30 años. Si Beto es 6 años mayor que Delfina, ¿cuántos años tiene Beto?",
+    "respuesta": "18",
+    "explicacion": "Si a la suma (30) le restamos la diferencia (6) queda 24. Dividimos por 2 y obtenemos la edad del menor (12). El mayor tiene 18.",
+    "pista": "Restá la diferencia a la suma total para igualarlos.",
+    "template": "logica_edades"
   },
   {
     "id": 35,
     "categoria": "logica",
     "dificultad": 1,
-    "enunciado": "Las edades de Ana y Carlos suman 34 años. Si Ana es 8 años mayor que Carlos, ¿cuántos años tiene Ana?",
-    "respuesta": "21",
-    "explicacion": "Si a la suma (34) le restamos la diferencia (8) queda 26. Dividimos por 2 y obtenemos la edad del menor (13). El mayor tiene 21.",
-    "pista": "Resta la diferencia a la suma total para igualarlos."
+    "enunciado": "Las edades de Gaby y Delfina suman 44 años. Si Gaby es 6 años mayor que Delfina, ¿cuántos años tiene Gaby?",
+    "respuesta": "25",
+    "explicacion": "Si a la suma (44) le restamos la diferencia (6) queda 38. Dividimos por 2 y obtenemos la edad del menor (19). El mayor tiene 25.",
+    "pista": "Restá la diferencia a la suma total para igualarlos.",
+    "template": "logica_edades"
   },
   {
     "id": 36,
     "categoria": "logica",
     "dificultad": 1,
-    "enunciado": "Las edades de Carlos y Gaby suman 33 años. Si Carlos es 5 años mayor que Gaby, ¿cuántos años tiene Carlos?",
-    "respuesta": "19",
-    "explicacion": "Si a la suma (33) le restamos la diferencia (5) queda 28. Dividimos por 2 y obtenemos la edad del menor (14). El mayor tiene 19.",
-    "pista": "Resta la diferencia a la suma total para igualarlos."
+    "enunciado": "Las edades de Ana y Facu suman 40 años. Si Ana es 10 años mayor que Facu, ¿cuántos años tiene Ana?",
+    "respuesta": "25",
+    "explicacion": "Si a la suma (40) le restamos la diferencia (10) queda 30. Dividimos por 2 y obtenemos la edad del menor (15). El mayor tiene 25.",
+    "pista": "Restá la diferencia a la suma total para igualarlos.",
+    "template": "logica_edades"
   },
   {
     "id": 37,
     "categoria": "logica",
     "dificultad": 1,
-    "enunciado": "Las edades de Beto y Ana suman 46 años. Si Beto es 8 años mayor que Ana, ¿cuántos años tiene Beto?",
-    "respuesta": "27",
-    "explicacion": "Si a la suma (46) le restamos la diferencia (8) queda 38. Dividimos por 2 y obtenemos la edad del menor (19). El mayor tiene 27.",
-    "pista": "Resta la diferencia a la suma total para igualarlos."
+    "enunciado": "Las edades de Facu y Gaby suman 42 años. Si Facu es 10 años mayor que Gaby, ¿cuántos años tiene Facu?",
+    "respuesta": "26",
+    "explicacion": "Si a la suma (42) le restamos la diferencia (10) queda 32. Dividimos por 2 y obtenemos la edad del menor (16). El mayor tiene 26.",
+    "pista": "Restá la diferencia a la suma total para igualarlos.",
+    "template": "logica_edades"
   },
   {
     "id": 38,
     "categoria": "logica",
     "dificultad": 1,
-    "enunciado": "Las edades de Gaby y Beto suman 36 años. Si Gaby es 6 años mayor que Beto, ¿cuántos años tiene Gaby?",
-    "respuesta": "21",
-    "explicacion": "Si a la suma (36) le restamos la diferencia (6) queda 30. Dividimos por 2 y obtenemos la edad del menor (15). El mayor tiene 21.",
-    "pista": "Resta la diferencia a la suma total para igualarlos."
+    "enunciado": "Las edades de Delfina y Ana suman 43 años. Si Delfina es 3 años mayor que Ana, ¿cuántos años tiene Delfina?",
+    "respuesta": "23",
+    "explicacion": "Si a la suma (43) le restamos la diferencia (3) queda 40. Dividimos por 2 y obtenemos la edad del menor (20). El mayor tiene 23.",
+    "pista": "Restá la diferencia a la suma total para igualarlos.",
+    "template": "logica_edades"
   },
   {
     "id": 39,
     "categoria": "logica",
     "dificultad": 1,
-    "enunciado": "Las edades de Delfina y Beto suman 50 años. Si Delfina es 4 años mayor que Beto, ¿cuántos años tiene Delfina?",
-    "respuesta": "27",
-    "explicacion": "Si a la suma (50) le restamos la diferencia (4) queda 46. Dividimos por 2 y obtenemos la edad del menor (23). El mayor tiene 27.",
-    "pista": "Resta la diferencia a la suma total para igualarlos."
+    "enunciado": "Las edades de Delfina y Carlos suman 31 años. Si Delfina es 3 años mayor que Carlos, ¿cuántos años tiene Delfina?",
+    "respuesta": "17",
+    "explicacion": "Si a la suma (31) le restamos la diferencia (3) queda 28. Dividimos por 2 y obtenemos la edad del menor (14). El mayor tiene 17.",
+    "pista": "Restá la diferencia a la suma total para igualarlos.",
+    "template": "logica_edades"
   },
   {
     "id": 40,
     "categoria": "logica",
     "dificultad": 1,
-    "enunciado": "Las edades de Ana y Gaby suman 42 años. Si Ana es 6 años mayor que Gaby, ¿cuántos años tiene Ana?",
-    "respuesta": "24",
-    "explicacion": "Si a la suma (42) le restamos la diferencia (6) queda 36. Dividimos por 2 y obtenemos la edad del menor (18). El mayor tiene 24.",
-    "pista": "Resta la diferencia a la suma total para igualarlos."
+    "enunciado": "Las edades de Beto y Ema suman 23 años. Si Beto es 3 años mayor que Ema, ¿cuántos años tiene Beto?",
+    "respuesta": "13",
+    "explicacion": "Si a la suma (23) le restamos la diferencia (3) queda 20. Dividimos por 2 y obtenemos la edad del menor (10). El mayor tiene 13.",
+    "pista": "Restá la diferencia a la suma total para igualarlos.",
+    "template": "logica_edades"
   },
   {
     "id": 41,
     "categoria": "logica",
     "dificultad": 1,
-    "enunciado": "Las edades de Facu y Ana suman 47 años. Si Facu es 7 años mayor que Ana, ¿cuántos años tiene Facu?",
-    "respuesta": "27",
-    "explicacion": "Si a la suma (47) le restamos la diferencia (7) queda 40. Dividimos por 2 y obtenemos la edad del menor (20). El mayor tiene 27.",
-    "pista": "Resta la diferencia a la suma total para igualarlos."
+    "enunciado": "Las edades de Facu y Carlos suman 27 años. Si Facu es 7 años mayor que Carlos, ¿cuántos años tiene Facu?",
+    "respuesta": "17",
+    "explicacion": "Si a la suma (27) le restamos la diferencia (7) queda 20. Dividimos por 2 y obtenemos la edad del menor (10). El mayor tiene 17.",
+    "pista": "Restá la diferencia a la suma total para igualarlos.",
+    "template": "logica_edades"
   },
   {
     "id": 42,
     "categoria": "logica",
     "dificultad": 1,
-    "enunciado": "Las edades de Ema y Carlos suman 38 años. Si Ema es 10 años mayor que Carlos, ¿cuántos años tiene Ema?",
-    "respuesta": "24",
-    "explicacion": "Si a la suma (38) le restamos la diferencia (10) queda 28. Dividimos por 2 y obtenemos la edad del menor (14). El mayor tiene 24.",
-    "pista": "Resta la diferencia a la suma total para igualarlos."
+    "enunciado": "Las edades de Delfina y Ema suman 34 años. Si Delfina es 8 años mayor que Ema, ¿cuántos años tiene Delfina?",
+    "respuesta": "21",
+    "explicacion": "Si a la suma (34) le restamos la diferencia (8) queda 26. Dividimos por 2 y obtenemos la edad del menor (13). El mayor tiene 21.",
+    "pista": "Restá la diferencia a la suma total para igualarlos.",
+    "template": "logica_edades"
   },
   {
     "id": 43,
     "categoria": "logica",
-    "dificultad": 1,
-    "enunciado": "Las edades de Ema y Gaby suman 24 años. Si Ema es 4 años mayor que Gaby, ¿cuántos años tiene Ema?",
-    "respuesta": "14",
-    "explicacion": "Si a la suma (24) le restamos la diferencia (4) queda 20. Dividimos por 2 y obtenemos la edad del menor (10). El mayor tiene 14.",
-    "pista": "Resta la diferencia a la suma total para igualarlos."
+    "dificultad": 2,
+    "enunciado": "Carlos, Beto y Facu juntaron 32 figuritas. Carlos tiene el doble que Beto, y Facu tiene lo mismo que Beto. ¿Cuántas figuritas tiene Carlos?",
+    "respuesta": "16",
+    "explicacion": "Podemos pensar que Beto tiene 1 'parte', Facu tiene 1 'parte' y Carlos tiene 2 'partes'. En total son 4 partes que suman 32. Cada parte es 32/4 = 8. Entonces Carlos tiene 2 * 8 = 16.",
+    "pista": "Dibujá cajitas. Si B tiene 1 cajita, C tiene 1 y A tiene 2.",
+    "template": "logica_partes"
   },
   {
     "id": 44,
     "categoria": "logica",
-    "dificultad": 1,
-    "enunciado": "Las edades de Ana y Carlos suman 23 años. Si Ana es 7 años mayor que Carlos, ¿cuántos años tiene Ana?",
-    "respuesta": "15",
-    "explicacion": "Si a la suma (23) le restamos la diferencia (7) queda 16. Dividimos por 2 y obtenemos la edad del menor (8). El mayor tiene 15.",
-    "pista": "Resta la diferencia a la suma total para igualarlos."
+    "dificultad": 2,
+    "enunciado": "Gaby, Delfina y Ana juntaron 52 figuritas. Gaby tiene el doble que Delfina, y Ana tiene lo mismo que Delfina. ¿Cuántas figuritas tiene Gaby?",
+    "respuesta": "26",
+    "explicacion": "Podemos pensar que Delfina tiene 1 'parte', Ana tiene 1 'parte' y Gaby tiene 2 'partes'. En total son 4 partes que suman 52. Cada parte es 52/4 = 13. Entonces Gaby tiene 2 * 13 = 26.",
+    "pista": "Dibujá cajitas. Si B tiene 1 cajita, C tiene 1 y A tiene 2.",
+    "template": "logica_partes"
   },
   {
     "id": 45,
     "categoria": "logica",
-    "dificultad": 1,
-    "enunciado": "Las edades de Ana y Ema suman 20 años. Si Ana es 8 años mayor que Ema, ¿cuántos años tiene Ana?",
-    "respuesta": "14",
-    "explicacion": "Si a la suma (20) le restamos la diferencia (8) queda 12. Dividimos por 2 y obtenemos la edad del menor (6). El mayor tiene 14.",
-    "pista": "Resta la diferencia a la suma total para igualarlos."
+    "dificultad": 2,
+    "enunciado": "Beto, Delfina y Ana juntaron 20 figuritas. Beto tiene el doble que Delfina, y Ana tiene lo mismo que Delfina. ¿Cuántas figuritas tiene Beto?",
+    "respuesta": "10",
+    "explicacion": "Podemos pensar que Delfina tiene 1 'parte', Ana tiene 1 'parte' y Beto tiene 2 'partes'. En total son 4 partes que suman 20. Cada parte es 20/4 = 5. Entonces Beto tiene 2 * 5 = 10.",
+    "pista": "Dibujá cajitas. Si B tiene 1 cajita, C tiene 1 y A tiene 2.",
+    "template": "logica_partes"
   },
   {
     "id": 46,
     "categoria": "logica",
-    "dificultad": 1,
-    "enunciado": "Las edades de Ana y Carlos suman 41 años. Si Ana es 3 años mayor que Carlos, ¿cuántos años tiene Ana?",
-    "respuesta": "22",
-    "explicacion": "Si a la suma (41) le restamos la diferencia (3) queda 38. Dividimos por 2 y obtenemos la edad del menor (19). El mayor tiene 22.",
-    "pista": "Resta la diferencia a la suma total para igualarlos."
+    "dificultad": 2,
+    "enunciado": "Gaby, Ana y Carlos juntaron 32 figuritas. Gaby tiene el doble que Ana, y Carlos tiene lo mismo que Ana. ¿Cuántas figuritas tiene Gaby?",
+    "respuesta": "16",
+    "explicacion": "Podemos pensar que Ana tiene 1 'parte', Carlos tiene 1 'parte' y Gaby tiene 2 'partes'. En total son 4 partes que suman 32. Cada parte es 32/4 = 8. Entonces Gaby tiene 2 * 8 = 16.",
+    "pista": "Dibujá cajitas. Si B tiene 1 cajita, C tiene 1 y A tiene 2.",
+    "template": "logica_partes"
   },
   {
     "id": 47,
     "categoria": "logica",
-    "dificultad": 1,
-    "enunciado": "Las edades de Carlos y Delfina suman 24 años. Si Carlos es 4 años mayor que Delfina, ¿cuántos años tiene Carlos?",
+    "dificultad": 2,
+    "enunciado": "Facu, Carlos y Beto juntaron 28 figuritas. Facu tiene el doble que Carlos, y Beto tiene lo mismo que Carlos. ¿Cuántas figuritas tiene Facu?",
     "respuesta": "14",
-    "explicacion": "Si a la suma (24) le restamos la diferencia (4) queda 20. Dividimos por 2 y obtenemos la edad del menor (10). El mayor tiene 14.",
-    "pista": "Resta la diferencia a la suma total para igualarlos."
+    "explicacion": "Podemos pensar que Carlos tiene 1 'parte', Beto tiene 1 'parte' y Facu tiene 2 'partes'. En total son 4 partes que suman 28. Cada parte es 28/4 = 7. Entonces Facu tiene 2 * 7 = 14.",
+    "pista": "Dibujá cajitas. Si B tiene 1 cajita, C tiene 1 y A tiene 2.",
+    "template": "logica_partes"
   },
   {
     "id": 48,
     "categoria": "logica",
     "dificultad": 2,
-    "enunciado": "Delfina, Facu y Gaby juntaron 60 figuritas. Delfina tiene el doble que Facu, y Gaby tiene lo mismo que Facu. ¿Cuántas figuritas tiene Delfina?",
-    "respuesta": "30",
-    "explicacion": "Podemos pensar que Facu tiene 1 'parte', Gaby tiene 1 'parte' y Delfina tiene 2 'partes'. En total son 4 partes que suman 60. Cada parte es 60/4 = 15. Entonces Delfina tiene 2 * 15 = 30.",
-    "pista": "Dibuja cajitas. Si B tiene 1 cajita, C tiene 1 y A tiene 2."
+    "enunciado": "Ana, Ema y Delfina juntaron 20 figuritas. Ana tiene el doble que Ema, y Delfina tiene lo mismo que Ema. ¿Cuántas figuritas tiene Ana?",
+    "respuesta": "10",
+    "explicacion": "Podemos pensar que Ema tiene 1 'parte', Delfina tiene 1 'parte' y Ana tiene 2 'partes'. En total son 4 partes que suman 20. Cada parte es 20/4 = 5. Entonces Ana tiene 2 * 5 = 10.",
+    "pista": "Dibujá cajitas. Si B tiene 1 cajita, C tiene 1 y A tiene 2.",
+    "template": "logica_partes"
   },
   {
     "id": 49,
     "categoria": "logica",
     "dificultad": 2,
-    "enunciado": "Delfina, Ema y Carlos juntaron 48 figuritas. Delfina tiene el doble que Ema, y Carlos tiene lo mismo que Ema. ¿Cuántas figuritas tiene Delfina?",
-    "respuesta": "24",
-    "explicacion": "Podemos pensar que Ema tiene 1 'parte', Carlos tiene 1 'parte' y Delfina tiene 2 'partes'. En total son 4 partes que suman 48. Cada parte es 48/4 = 12. Entonces Delfina tiene 2 * 12 = 24.",
-    "pista": "Dibuja cajitas. Si B tiene 1 cajita, C tiene 1 y A tiene 2."
+    "enunciado": "Gaby, Beto y Carlos juntaron 60 figuritas. Gaby tiene el doble que Beto, y Carlos tiene lo mismo que Beto. ¿Cuántas figuritas tiene Gaby?",
+    "respuesta": "30",
+    "explicacion": "Podemos pensar que Beto tiene 1 'parte', Carlos tiene 1 'parte' y Gaby tiene 2 'partes'. En total son 4 partes que suman 60. Cada parte es 60/4 = 15. Entonces Gaby tiene 2 * 15 = 30.",
+    "pista": "Dibujá cajitas. Si B tiene 1 cajita, C tiene 1 y A tiene 2.",
+    "template": "logica_partes"
   },
   {
     "id": 50,
     "categoria": "logica",
     "dificultad": 2,
-    "enunciado": "Beto, Facu y Gaby juntaron 60 figuritas. Beto tiene el doble que Facu, y Gaby tiene lo mismo que Facu. ¿Cuántas figuritas tiene Beto?",
-    "respuesta": "30",
-    "explicacion": "Podemos pensar que Facu tiene 1 'parte', Gaby tiene 1 'parte' y Beto tiene 2 'partes'. En total son 4 partes que suman 60. Cada parte es 60/4 = 15. Entonces Beto tiene 2 * 15 = 30.",
-    "pista": "Dibuja cajitas. Si B tiene 1 cajita, C tiene 1 y A tiene 2."
+    "enunciado": "Delfina, Ema y Ana juntaron 32 figuritas. Delfina tiene el doble que Ema, y Ana tiene lo mismo que Ema. ¿Cuántas figuritas tiene Delfina?",
+    "respuesta": "16",
+    "explicacion": "Podemos pensar que Ema tiene 1 'parte', Ana tiene 1 'parte' y Delfina tiene 2 'partes'. En total son 4 partes que suman 32. Cada parte es 32/4 = 8. Entonces Delfina tiene 2 * 8 = 16.",
+    "pista": "Dibujá cajitas. Si B tiene 1 cajita, C tiene 1 y A tiene 2.",
+    "template": "logica_partes"
   },
   {
     "id": 51,
     "categoria": "logica",
     "dificultad": 2,
-    "enunciado": "Gaby, Facu y Ema juntaron 60 figuritas. Gaby tiene el doble que Facu, y Ema tiene lo mismo que Facu. ¿Cuántas figuritas tiene Gaby?",
-    "respuesta": "30",
-    "explicacion": "Podemos pensar que Facu tiene 1 'parte', Ema tiene 1 'parte' y Gaby tiene 2 'partes'. En total son 4 partes que suman 60. Cada parte es 60/4 = 15. Entonces Gaby tiene 2 * 15 = 30.",
-    "pista": "Dibuja cajitas. Si B tiene 1 cajita, C tiene 1 y A tiene 2."
+    "enunciado": "Ema, Beto y Carlos juntaron 32 figuritas. Ema tiene el doble que Beto, y Carlos tiene lo mismo que Beto. ¿Cuántas figuritas tiene Ema?",
+    "respuesta": "16",
+    "explicacion": "Podemos pensar que Beto tiene 1 'parte', Carlos tiene 1 'parte' y Ema tiene 2 'partes'. En total son 4 partes que suman 32. Cada parte es 32/4 = 8. Entonces Ema tiene 2 * 8 = 16.",
+    "pista": "Dibujá cajitas. Si B tiene 1 cajita, C tiene 1 y A tiene 2.",
+    "template": "logica_partes"
   },
   {
     "id": 52,
     "categoria": "logica",
     "dificultad": 2,
-    "enunciado": "Ana, Delfina y Beto juntaron 32 figuritas. Ana tiene el doble que Delfina, y Beto tiene lo mismo que Delfina. ¿Cuántas figuritas tiene Ana?",
+    "enunciado": "Facu, Carlos y Beto juntaron 32 figuritas. Facu tiene el doble que Carlos, y Beto tiene lo mismo que Carlos. ¿Cuántas figuritas tiene Facu?",
     "respuesta": "16",
-    "explicacion": "Podemos pensar que Delfina tiene 1 'parte', Beto tiene 1 'parte' y Ana tiene 2 'partes'. En total son 4 partes que suman 32. Cada parte es 32/4 = 8. Entonces Ana tiene 2 * 8 = 16.",
-    "pista": "Dibuja cajitas. Si B tiene 1 cajita, C tiene 1 y A tiene 2."
+    "explicacion": "Podemos pensar que Carlos tiene 1 'parte', Beto tiene 1 'parte' y Facu tiene 2 'partes'. En total son 4 partes que suman 32. Cada parte es 32/4 = 8. Entonces Facu tiene 2 * 8 = 16.",
+    "pista": "Dibujá cajitas. Si B tiene 1 cajita, C tiene 1 y A tiene 2.",
+    "template": "logica_partes"
   },
   {
     "id": 53,
     "categoria": "logica",
-    "dificultad": 2,
-    "enunciado": "Beto, Ema y Facu juntaron 20 figuritas. Beto tiene el doble que Ema, y Facu tiene lo mismo que Ema. ¿Cuántas figuritas tiene Beto?",
-    "respuesta": "10",
-    "explicacion": "Podemos pensar que Ema tiene 1 'parte', Facu tiene 1 'parte' y Beto tiene 2 'partes'. En total son 4 partes que suman 20. Cada parte es 20/4 = 5. Entonces Beto tiene 2 * 5 = 10.",
-    "pista": "Dibuja cajitas. Si B tiene 1 cajita, C tiene 1 y A tiene 2."
+    "dificultad": 3,
+    "enunciado": "En una granja hay patos y vacas. Si contamos las cabezas (o vehículos) hay 24, y si contamos las patas (o ruedas) hay 72. ¿Cuántos vacas hay?",
+    "respuesta": "12",
+    "explicacion": "Si todos fueran patos, habría 48 patas/ruedas. Pero hay 72, una diferencia de 24. Cada vacas aporta 2 extra. 24 / 2 = 12.",
+    "pista": "Imaginate que todos son patos. ¿Cuántas patas/ruedas faltarían para llegar al total?",
+    "template": "logica_patas"
   },
   {
     "id": 54,
     "categoria": "logica",
-    "dificultad": 2,
-    "enunciado": "Delfina, Ema y Facu juntaron 24 figuritas. Delfina tiene el doble que Ema, y Facu tiene lo mismo que Ema. ¿Cuántas figuritas tiene Delfina?",
-    "respuesta": "12",
-    "explicacion": "Podemos pensar que Ema tiene 1 'parte', Facu tiene 1 'parte' y Delfina tiene 2 'partes'. En total son 4 partes que suman 24. Cada parte es 24/4 = 6. Entonces Delfina tiene 2 * 6 = 12.",
-    "pista": "Dibuja cajitas. Si B tiene 1 cajita, C tiene 1 y A tiene 2."
+    "dificultad": 3,
+    "enunciado": "En una granja hay triciclos y bicicletas. Si contamos las cabezas (o vehículos) hay 17, y si contamos las patas (o ruedas) hay 45. ¿Cuántos bicicletas hay?",
+    "respuesta": "6",
+    "explicacion": "Si todos fueran triciclos, habría 51 patas/ruedas. Pero hay 45, una diferencia de -6. Cada bicicletas aporta -1 extra. -6 / -1 = 6.",
+    "pista": "Imaginate que todos son triciclos. ¿Cuántas patas/ruedas faltarían para llegar al total?",
+    "template": "logica_patas"
   },
   {
     "id": 55,
     "categoria": "logica",
-    "dificultad": 2,
-    "enunciado": "Facu, Ema y Gaby juntaron 24 figuritas. Facu tiene el doble que Ema, y Gaby tiene lo mismo que Ema. ¿Cuántas figuritas tiene Facu?",
-    "respuesta": "12",
-    "explicacion": "Podemos pensar que Ema tiene 1 'parte', Gaby tiene 1 'parte' y Facu tiene 2 'partes'. En total son 4 partes que suman 24. Cada parte es 24/4 = 6. Entonces Facu tiene 2 * 6 = 12.",
-    "pista": "Dibuja cajitas. Si B tiene 1 cajita, C tiene 1 y A tiene 2."
+    "dificultad": 3,
+    "enunciado": "En una granja hay gallinas y conejos. Si contamos las cabezas (o vehículos) hay 23, y si contamos las patas (o ruedas) hay 66. ¿Cuántos conejos hay?",
+    "respuesta": "10",
+    "explicacion": "Si todos fueran gallinas, habría 46 patas/ruedas. Pero hay 66, una diferencia de 20. Cada conejos aporta 2 extra. 20 / 2 = 10.",
+    "pista": "Imaginate que todos son gallinas. ¿Cuántas patas/ruedas faltarían para llegar al total?",
+    "template": "logica_patas"
   },
   {
     "id": 56,
     "categoria": "logica",
-    "dificultad": 2,
-    "enunciado": "Ana, Ema y Carlos juntaron 52 figuritas. Ana tiene el doble que Ema, y Carlos tiene lo mismo que Ema. ¿Cuántas figuritas tiene Ana?",
-    "respuesta": "26",
-    "explicacion": "Podemos pensar que Ema tiene 1 'parte', Carlos tiene 1 'parte' y Ana tiene 2 'partes'. En total son 4 partes que suman 52. Cada parte es 52/4 = 13. Entonces Ana tiene 2 * 13 = 26.",
-    "pista": "Dibuja cajitas. Si B tiene 1 cajita, C tiene 1 y A tiene 2."
+    "dificultad": 3,
+    "enunciado": "En una granja hay gallinas y conejos. Si contamos las cabezas (o vehículos) hay 19, y si contamos las patas (o ruedas) hay 54. ¿Cuántos conejos hay?",
+    "respuesta": "8",
+    "explicacion": "Si todos fueran gallinas, habría 38 patas/ruedas. Pero hay 54, una diferencia de 16. Cada conejos aporta 2 extra. 16 / 2 = 8.",
+    "pista": "Imaginate que todos son gallinas. ¿Cuántas patas/ruedas faltarían para llegar al total?",
+    "template": "logica_patas"
   },
   {
     "id": 57,
     "categoria": "logica",
-    "dificultad": 2,
-    "enunciado": "Delfina, Ana y Gaby juntaron 24 figuritas. Delfina tiene el doble que Ana, y Gaby tiene lo mismo que Ana. ¿Cuántas figuritas tiene Delfina?",
-    "respuesta": "12",
-    "explicacion": "Podemos pensar que Ana tiene 1 'parte', Gaby tiene 1 'parte' y Delfina tiene 2 'partes'. En total son 4 partes que suman 24. Cada parte es 24/4 = 6. Entonces Delfina tiene 2 * 6 = 12.",
-    "pista": "Dibuja cajitas. Si B tiene 1 cajita, C tiene 1 y A tiene 2."
+    "dificultad": 3,
+    "enunciado": "En una granja hay triciclos y bicicletas. Si contamos las cabezas (o vehículos) hay 14, y si contamos las patas (o ruedas) hay 36. ¿Cuántos bicicletas hay?",
+    "respuesta": "6",
+    "explicacion": "Si todos fueran triciclos, habría 42 patas/ruedas. Pero hay 36, una diferencia de -6. Cada bicicletas aporta -1 extra. -6 / -1 = 6.",
+    "pista": "Imaginate que todos son triciclos. ¿Cuántas patas/ruedas faltarían para llegar al total?",
+    "template": "logica_patas"
   },
   {
     "id": 58,
     "categoria": "logica",
     "dificultad": 3,
-    "enunciado": "En una granja hay gallinas y conejos. Si contamos las cabezas (o vehículos) hay 14, y si contamos las patas (o ruedas) hay 40. ¿Cuántos conejos hay?",
-    "respuesta": "6",
-    "explicacion": "Si todos fueran gallinas, habría 28 patas/ruedas. Pero hay 40, una diferencia de 12. Cada conejos aporta 2 extra. 12 / 2 = 6.",
-    "pista": "Imagina que todos son gallinas. ¿Cuántas patas/ruedas faltarían para llegar al total?"
+    "enunciado": "En una granja hay triciclos y bicicletas. Si contamos las cabezas (o vehículos) hay 21, y si contamos las patas (o ruedas) hay 49. ¿Cuántos bicicletas hay?",
+    "respuesta": "14",
+    "explicacion": "Si todos fueran triciclos, habría 63 patas/ruedas. Pero hay 49, una diferencia de -14. Cada bicicletas aporta -1 extra. -14 / -1 = 14.",
+    "pista": "Imaginate que todos son triciclos. ¿Cuántas patas/ruedas faltarían para llegar al total?",
+    "template": "logica_patas"
   },
   {
     "id": 59,
     "categoria": "logica",
     "dificultad": 3,
-    "enunciado": "En una granja hay patos y vacas. Si contamos las cabezas (o vehículos) hay 23, y si contamos las patas (o ruedas) hay 64. ¿Cuántos vacas hay?",
-    "respuesta": "9",
-    "explicacion": "Si todos fueran patos, habría 46 patas/ruedas. Pero hay 64, una diferencia de 18. Cada vacas aporta 2 extra. 18 / 2 = 9.",
-    "pista": "Imagina que todos son patos. ¿Cuántas patas/ruedas faltarían para llegar al total?"
+    "enunciado": "En una granja hay triciclos y bicicletas. Si contamos las cabezas (o vehículos) hay 23, y si contamos las patas (o ruedas) hay 54. ¿Cuántos bicicletas hay?",
+    "respuesta": "15",
+    "explicacion": "Si todos fueran triciclos, habría 69 patas/ruedas. Pero hay 54, una diferencia de -15. Cada bicicletas aporta -1 extra. -15 / -1 = 15.",
+    "pista": "Imaginate que todos son triciclos. ¿Cuántas patas/ruedas faltarían para llegar al total?",
+    "template": "logica_patas"
   },
   {
     "id": 60,
     "categoria": "logica",
     "dificultad": 3,
-    "enunciado": "En una granja hay triciclos y bicicletas. Si contamos las cabezas (o vehículos) hay 23, y si contamos las patas (o ruedas) hay 55. ¿Cuántos bicicletas hay?",
-    "respuesta": "14",
-    "explicacion": "Si todos fueran triciclos, habría 69 patas/ruedas. Pero hay 55, una diferencia de -14. Cada bicicletas aporta -1 extra. -14 / -1 = 14.",
-    "pista": "Imagina que todos son triciclos. ¿Cuántas patas/ruedas faltarían para llegar al total?"
+    "enunciado": "En una granja hay gallinas y conejos. Si contamos las cabezas (o vehículos) hay 20, y si contamos las patas (o ruedas) hay 58. ¿Cuántos conejos hay?",
+    "respuesta": "9",
+    "explicacion": "Si todos fueran gallinas, habría 40 patas/ruedas. Pero hay 58, una diferencia de 18. Cada conejos aporta 2 extra. 18 / 2 = 9.",
+    "pista": "Imaginate que todos son gallinas. ¿Cuántas patas/ruedas faltarían para llegar al total?",
+    "template": "logica_patas"
   },
   {
     "id": 61,
     "categoria": "logica",
     "dificultad": 3,
-    "enunciado": "En una granja hay patos y vacas. Si contamos las cabezas (o vehículos) hay 19, y si contamos las patas (o ruedas) hay 50. ¿Cuántos vacas hay?",
-    "respuesta": "6",
-    "explicacion": "Si todos fueran patos, habría 38 patas/ruedas. Pero hay 50, una diferencia de 12. Cada vacas aporta 2 extra. 12 / 2 = 6.",
-    "pista": "Imagina que todos son patos. ¿Cuántas patas/ruedas faltarían para llegar al total?"
+    "enunciado": "En una granja hay gallinas y conejos. Si contamos las cabezas (o vehículos) hay 12, y si contamos las patas (o ruedas) hay 34. ¿Cuántos conejos hay?",
+    "respuesta": "5",
+    "explicacion": "Si todos fueran gallinas, habría 24 patas/ruedas. Pero hay 34, una diferencia de 10. Cada conejos aporta 2 extra. 10 / 2 = 5.",
+    "pista": "Imaginate que todos son gallinas. ¿Cuántas patas/ruedas faltarían para llegar al total?",
+    "template": "logica_patas"
   },
   {
     "id": 62,
     "categoria": "logica",
     "dificultad": 3,
-    "enunciado": "En una granja hay triciclos y bicicletas. Si contamos las cabezas (o vehículos) hay 14, y si contamos las patas (o ruedas) hay 35. ¿Cuántos bicicletas hay?",
-    "respuesta": "7",
-    "explicacion": "Si todos fueran triciclos, habría 42 patas/ruedas. Pero hay 35, una diferencia de -7. Cada bicicletas aporta -1 extra. -7 / -1 = 7.",
-    "pista": "Imagina que todos son triciclos. ¿Cuántas patas/ruedas faltarían para llegar al total?"
+    "enunciado": "En una granja hay gallinas y conejos. Si contamos las cabezas (o vehículos) hay 13, y si contamos las patas (o ruedas) hay 38. ¿Cuántos conejos hay?",
+    "respuesta": "6",
+    "explicacion": "Si todos fueran gallinas, habría 26 patas/ruedas. Pero hay 38, una diferencia de 12. Cada conejos aporta 2 extra. 12 / 2 = 6.",
+    "pista": "Imaginate que todos son gallinas. ¿Cuántas patas/ruedas faltarían para llegar al total?",
+    "template": "logica_patas"
   },
   {
     "id": 63,
-    "categoria": "logica",
-    "dificultad": 3,
-    "enunciado": "En una granja hay patos y vacas. Si contamos las cabezas (o vehículos) hay 10, y si contamos las patas (o ruedas) hay 30. ¿Cuántos vacas hay?",
-    "respuesta": "5",
-    "explicacion": "Si todos fueran patos, habría 20 patas/ruedas. Pero hay 30, una diferencia de 10. Cada vacas aporta 2 extra. 10 / 2 = 5.",
-    "pista": "Imagina que todos son patos. ¿Cuántas patas/ruedas faltarían para llegar al total?"
-  },
-  {
-    "id": 64,
-    "categoria": "logica",
-    "dificultad": 3,
-    "enunciado": "En una granja hay patos y vacas. Si contamos las cabezas (o vehículos) hay 19, y si contamos las patas (o ruedas) hay 56. ¿Cuántos vacas hay?",
-    "respuesta": "9",
-    "explicacion": "Si todos fueran patos, habría 38 patas/ruedas. Pero hay 56, una diferencia de 18. Cada vacas aporta 2 extra. 18 / 2 = 9.",
-    "pista": "Imagina que todos son patos. ¿Cuántas patas/ruedas faltarían para llegar al total?"
-  },
-  {
-    "id": 65,
-    "categoria": "logica",
-    "dificultad": 3,
-    "enunciado": "En una granja hay gallinas y conejos. Si contamos las cabezas (o vehículos) hay 26, y si contamos las patas (o ruedas) hay 76. ¿Cuántos conejos hay?",
-    "respuesta": "12",
-    "explicacion": "Si todos fueran gallinas, habría 52 patas/ruedas. Pero hay 76, una diferencia de 24. Cada conejos aporta 2 extra. 24 / 2 = 12.",
-    "pista": "Imagina que todos son gallinas. ¿Cuántas patas/ruedas faltarían para llegar al total?"
-  },
-  {
-    "id": 66,
-    "categoria": "logica",
-    "dificultad": 3,
-    "enunciado": "En una granja hay triciclos y bicicletas. Si contamos las cabezas (o vehículos) hay 17, y si contamos las patas (o ruedas) hay 40. ¿Cuántos bicicletas hay?",
-    "respuesta": "11",
-    "explicacion": "Si todos fueran triciclos, habría 51 patas/ruedas. Pero hay 40, una diferencia de -11. Cada bicicletas aporta -1 extra. -11 / -1 = 11.",
-    "pista": "Imagina que todos son triciclos. ¿Cuántas patas/ruedas faltarían para llegar al total?"
-  },
-  {
-    "id": 67,
-    "categoria": "logica",
-    "dificultad": 3,
-    "enunciado": "En una granja hay triciclos y bicicletas. Si contamos las cabezas (o vehículos) hay 18, y si contamos las patas (o ruedas) hay 41. ¿Cuántos bicicletas hay?",
-    "respuesta": "13",
-    "explicacion": "Si todos fueran triciclos, habría 54 patas/ruedas. Pero hay 41, una diferencia de -13. Cada bicicletas aporta -1 extra. -13 / -1 = 13.",
-    "pista": "Imagina que todos son triciclos. ¿Cuántas patas/ruedas faltarían para llegar al total?"
-  },
-  {
-    "id": 68,
-    "categoria": "geometria",
-    "dificultad": 1,
-    "enunciado": "Se forma un rectángulo uniendo dos cuadrados iguales de lado 5 cm. ¿Cuál es el perímetro del rectángulo formado?",
-    "respuesta": "30",
-    "explicacion": "Al unir los dos cuadrados por un lado, esos dos lados quedan adentro. El perímetro está formado por 3 lados de un cuadrado y 3 del otro. Total: 6 lados de 5 cm = 30 cm.",
-    "pista": "Haz un dibujo. Cuenta cuántos 'lados' de los cuadrados originales quedan en el borde exterior.",
-    "figura": {
-      "tipo": "rect_dos_cuadrados",
-      "lado": 5
-    }
-  },
-  {
-    "id": 69,
-    "categoria": "geometria",
-    "dificultad": 1,
-    "enunciado": "Se forma un rectángulo uniendo dos cuadrados iguales de lado 8 cm. ¿Cuál es el perímetro del rectángulo formado?",
-    "respuesta": "48",
-    "explicacion": "Al unir los dos cuadrados por un lado, esos dos lados quedan adentro. El perímetro está formado por 3 lados de un cuadrado y 3 del otro. Total: 6 lados de 8 cm = 48 cm.",
-    "pista": "Haz un dibujo. Cuenta cuántos 'lados' de los cuadrados originales quedan en el borde exterior.",
-    "figura": {
-      "tipo": "rect_dos_cuadrados",
-      "lado": 8
-    }
-  },
-  {
-    "id": 70,
     "categoria": "geometria",
     "dificultad": 1,
     "enunciado": "Se forma un rectángulo uniendo dos cuadrados iguales de lado 7 cm. ¿Cuál es el perímetro del rectángulo formado?",
     "respuesta": "42",
     "explicacion": "Al unir los dos cuadrados por un lado, esos dos lados quedan adentro. El perímetro está formado por 3 lados de un cuadrado y 3 del otro. Total: 6 lados de 7 cm = 42 cm.",
-    "pista": "Haz un dibujo. Cuenta cuántos 'lados' de los cuadrados originales quedan en el borde exterior.",
+    "pista": "Hacé un dibujo. Contá cuántos 'lados' de los cuadrados originales quedan en el borde exterior.",
+    "template": "geo_dos_cuadrados",
     "figura": {
       "tipo": "rect_dos_cuadrados",
       "lado": 7
     }
   },
   {
-    "id": 71,
-    "categoria": "geometria",
-    "dificultad": 1,
-    "enunciado": "Se forma un rectángulo uniendo dos cuadrados iguales de lado 13 cm. ¿Cuál es el perímetro del rectángulo formado?",
-    "respuesta": "78",
-    "explicacion": "Al unir los dos cuadrados por un lado, esos dos lados quedan adentro. El perímetro está formado por 3 lados de un cuadrado y 3 del otro. Total: 6 lados de 13 cm = 78 cm.",
-    "pista": "Haz un dibujo. Cuenta cuántos 'lados' de los cuadrados originales quedan en el borde exterior.",
-    "figura": {
-      "tipo": "rect_dos_cuadrados",
-      "lado": 13
-    }
-  },
-  {
-    "id": 72,
-    "categoria": "geometria",
-    "dificultad": 1,
-    "enunciado": "Se forma un rectángulo uniendo dos cuadrados iguales de lado 9 cm. ¿Cuál es el perímetro del rectángulo formado?",
-    "respuesta": "54",
-    "explicacion": "Al unir los dos cuadrados por un lado, esos dos lados quedan adentro. El perímetro está formado por 3 lados de un cuadrado y 3 del otro. Total: 6 lados de 9 cm = 54 cm.",
-    "pista": "Haz un dibujo. Cuenta cuántos 'lados' de los cuadrados originales quedan en el borde exterior.",
-    "figura": {
-      "tipo": "rect_dos_cuadrados",
-      "lado": 9
-    }
-  },
-  {
-    "id": 73,
+    "id": 64,
     "categoria": "geometria",
     "dificultad": 1,
     "enunciado": "Se forma un rectángulo uniendo dos cuadrados iguales de lado 11 cm. ¿Cuál es el perímetro del rectángulo formado?",
     "respuesta": "66",
     "explicacion": "Al unir los dos cuadrados por un lado, esos dos lados quedan adentro. El perímetro está formado por 3 lados de un cuadrado y 3 del otro. Total: 6 lados de 11 cm = 66 cm.",
-    "pista": "Haz un dibujo. Cuenta cuántos 'lados' de los cuadrados originales quedan en el borde exterior.",
+    "pista": "Hacé un dibujo. Contá cuántos 'lados' de los cuadrados originales quedan en el borde exterior.",
+    "template": "geo_dos_cuadrados",
     "figura": {
       "tipo": "rect_dos_cuadrados",
       "lado": 11
     }
   },
   {
-    "id": 74,
-    "categoria": "geometria",
-    "dificultad": 1,
-    "enunciado": "Se forma un rectángulo uniendo dos cuadrados iguales de lado 4 cm. ¿Cuál es el perímetro del rectángulo formado?",
-    "respuesta": "24",
-    "explicacion": "Al unir los dos cuadrados por un lado, esos dos lados quedan adentro. El perímetro está formado por 3 lados de un cuadrado y 3 del otro. Total: 6 lados de 4 cm = 24 cm.",
-    "pista": "Haz un dibujo. Cuenta cuántos 'lados' de los cuadrados originales quedan en el borde exterior.",
-    "figura": {
-      "tipo": "rect_dos_cuadrados",
-      "lado": 4
-    }
-  },
-  {
-    "id": 75,
-    "categoria": "geometria",
-    "dificultad": 1,
-    "enunciado": "Se forma un rectángulo uniendo dos cuadrados iguales de lado 15 cm. ¿Cuál es el perímetro del rectángulo formado?",
-    "respuesta": "90",
-    "explicacion": "Al unir los dos cuadrados por un lado, esos dos lados quedan adentro. El perímetro está formado por 3 lados de un cuadrado y 3 del otro. Total: 6 lados de 15 cm = 90 cm.",
-    "pista": "Haz un dibujo. Cuenta cuántos 'lados' de los cuadrados originales quedan en el borde exterior.",
-    "figura": {
-      "tipo": "rect_dos_cuadrados",
-      "lado": 15
-    }
-  },
-  {
-    "id": 76,
-    "categoria": "geometria",
-    "dificultad": 1,
-    "enunciado": "Se forma un rectángulo uniendo dos cuadrados iguales de lado 10 cm. ¿Cuál es el perímetro del rectángulo formado?",
-    "respuesta": "60",
-    "explicacion": "Al unir los dos cuadrados por un lado, esos dos lados quedan adentro. El perímetro está formado por 3 lados de un cuadrado y 3 del otro. Total: 6 lados de 10 cm = 60 cm.",
-    "pista": "Haz un dibujo. Cuenta cuántos 'lados' de los cuadrados originales quedan en el borde exterior.",
-    "figura": {
-      "tipo": "rect_dos_cuadrados",
-      "lado": 10
-    }
-  },
-  {
-    "id": 77,
+    "id": 65,
     "categoria": "geometria",
     "dificultad": 1,
     "enunciado": "Se forma un rectángulo uniendo dos cuadrados iguales de lado 6 cm. ¿Cuál es el perímetro del rectángulo formado?",
     "respuesta": "36",
     "explicacion": "Al unir los dos cuadrados por un lado, esos dos lados quedan adentro. El perímetro está formado por 3 lados de un cuadrado y 3 del otro. Total: 6 lados de 6 cm = 36 cm.",
-    "pista": "Haz un dibujo. Cuenta cuántos 'lados' de los cuadrados originales quedan en el borde exterior.",
+    "pista": "Hacé un dibujo. Contá cuántos 'lados' de los cuadrados originales quedan en el borde exterior.",
+    "template": "geo_dos_cuadrados",
     "figura": {
       "tipo": "rect_dos_cuadrados",
       "lado": 6
     }
   },
   {
-    "id": 78,
+    "id": 66,
+    "categoria": "geometria",
+    "dificultad": 1,
+    "enunciado": "Se forma un rectángulo uniendo dos cuadrados iguales de lado 4 cm. ¿Cuál es el perímetro del rectángulo formado?",
+    "respuesta": "24",
+    "explicacion": "Al unir los dos cuadrados por un lado, esos dos lados quedan adentro. El perímetro está formado por 3 lados de un cuadrado y 3 del otro. Total: 6 lados de 4 cm = 24 cm.",
+    "pista": "Hacé un dibujo. Contá cuántos 'lados' de los cuadrados originales quedan en el borde exterior.",
+    "template": "geo_dos_cuadrados",
+    "figura": {
+      "tipo": "rect_dos_cuadrados",
+      "lado": 4
+    }
+  },
+  {
+    "id": 67,
+    "categoria": "geometria",
+    "dificultad": 1,
+    "enunciado": "Se forma un rectángulo uniendo dos cuadrados iguales de lado 12 cm. ¿Cuál es el perímetro del rectángulo formado?",
+    "respuesta": "72",
+    "explicacion": "Al unir los dos cuadrados por un lado, esos dos lados quedan adentro. El perímetro está formado por 3 lados de un cuadrado y 3 del otro. Total: 6 lados de 12 cm = 72 cm.",
+    "pista": "Hacé un dibujo. Contá cuántos 'lados' de los cuadrados originales quedan en el borde exterior.",
+    "template": "geo_dos_cuadrados",
+    "figura": {
+      "tipo": "rect_dos_cuadrados",
+      "lado": 12
+    }
+  },
+  {
+    "id": 68,
+    "categoria": "geometria",
+    "dificultad": 1,
+    "enunciado": "Se forma un rectángulo uniendo dos cuadrados iguales de lado 13 cm. ¿Cuál es el perímetro del rectángulo formado?",
+    "respuesta": "78",
+    "explicacion": "Al unir los dos cuadrados por un lado, esos dos lados quedan adentro. El perímetro está formado por 3 lados de un cuadrado y 3 del otro. Total: 6 lados de 13 cm = 78 cm.",
+    "pista": "Hacé un dibujo. Contá cuántos 'lados' de los cuadrados originales quedan en el borde exterior.",
+    "template": "geo_dos_cuadrados",
+    "figura": {
+      "tipo": "rect_dos_cuadrados",
+      "lado": 13
+    }
+  },
+  {
+    "id": 69,
+    "categoria": "geometria",
+    "dificultad": 1,
+    "enunciado": "Se forma un rectángulo uniendo dos cuadrados iguales de lado 15 cm. ¿Cuál es el perímetro del rectángulo formado?",
+    "respuesta": "90",
+    "explicacion": "Al unir los dos cuadrados por un lado, esos dos lados quedan adentro. El perímetro está formado por 3 lados de un cuadrado y 3 del otro. Total: 6 lados de 15 cm = 90 cm.",
+    "pista": "Hacé un dibujo. Contá cuántos 'lados' de los cuadrados originales quedan en el borde exterior.",
+    "template": "geo_dos_cuadrados",
+    "figura": {
+      "tipo": "rect_dos_cuadrados",
+      "lado": 15
+    }
+  },
+  {
+    "id": 70,
+    "categoria": "geometria",
+    "dificultad": 1,
+    "enunciado": "Se forma un rectángulo uniendo dos cuadrados iguales de lado 5 cm. ¿Cuál es el perímetro del rectángulo formado?",
+    "respuesta": "30",
+    "explicacion": "Al unir los dos cuadrados por un lado, esos dos lados quedan adentro. El perímetro está formado por 3 lados de un cuadrado y 3 del otro. Total: 6 lados de 5 cm = 30 cm.",
+    "pista": "Hacé un dibujo. Contá cuántos 'lados' de los cuadrados originales quedan en el borde exterior.",
+    "template": "geo_dos_cuadrados",
+    "figura": {
+      "tipo": "rect_dos_cuadrados",
+      "lado": 5
+    }
+  },
+  {
+    "id": 71,
+    "categoria": "geometria",
+    "dificultad": 1,
+    "enunciado": "Se forma un rectángulo uniendo dos cuadrados iguales de lado 10 cm. ¿Cuál es el perímetro del rectángulo formado?",
+    "respuesta": "60",
+    "explicacion": "Al unir los dos cuadrados por un lado, esos dos lados quedan adentro. El perímetro está formado por 3 lados de un cuadrado y 3 del otro. Total: 6 lados de 10 cm = 60 cm.",
+    "pista": "Hacé un dibujo. Contá cuántos 'lados' de los cuadrados originales quedan en el borde exterior.",
+    "template": "geo_dos_cuadrados",
+    "figura": {
+      "tipo": "rect_dos_cuadrados",
+      "lado": 10
+    }
+  },
+  {
+    "id": 72,
     "categoria": "geometria",
     "dificultad": 2,
-    "enunciado": "El área de un triángulo es 105 cm² y su base mide 14 cm. ¿Cuánto mide su altura?",
+    "enunciado": "El área de un triángulo es 150 cm² y su base mide 20 cm. ¿Cuánto mide su altura?",
     "respuesta": "15",
-    "explicacion": "El área de un triángulo es (base x altura) / 2. Entonces: 14 x altura / 2 = 105. Multiplicando por 2: 14 x altura = 210. La altura es 15 cm.",
-    "pista": "Recuerda la fórmula: Área = (base x altura) / 2.",
+    "explicacion": "El área de un triángulo es (base x altura) / 2. Entonces: 20 x altura / 2 = 150. Multiplicando por 2: 20 x altura = 300. La altura es 15 cm.",
+    "pista": "Acordate de la fórmula: Área = (base x altura) / 2.",
+    "template": "geo_triangulo_altura",
+    "figura": {
+      "tipo": "triangulo",
+      "base": 20,
+      "area": 150
+    }
+  },
+  {
+    "id": 73,
+    "categoria": "geometria",
+    "dificultad": 2,
+    "enunciado": "El área de un triángulo es 42 cm² y su base mide 14 cm. ¿Cuánto mide su altura?",
+    "respuesta": "6",
+    "explicacion": "El área de un triángulo es (base x altura) / 2. Entonces: 14 x altura / 2 = 42. Multiplicando por 2: 14 x altura = 84. La altura es 6 cm.",
+    "pista": "Acordate de la fórmula: Área = (base x altura) / 2.",
+    "template": "geo_triangulo_altura",
     "figura": {
       "tipo": "triangulo",
       "base": 14,
-      "area": 105
+      "area": 42
+    }
+  },
+  {
+    "id": 74,
+    "categoria": "geometria",
+    "dificultad": 2,
+    "enunciado": "El área de un triángulo es 72 cm² y su base mide 12 cm. ¿Cuánto mide su altura?",
+    "respuesta": "12",
+    "explicacion": "El área de un triángulo es (base x altura) / 2. Entonces: 12 x altura / 2 = 72. Multiplicando por 2: 12 x altura = 144. La altura es 12 cm.",
+    "pista": "Acordate de la fórmula: Área = (base x altura) / 2.",
+    "template": "geo_triangulo_altura",
+    "figura": {
+      "tipo": "triangulo",
+      "base": 12,
+      "area": 72
+    }
+  },
+  {
+    "id": 75,
+    "categoria": "geometria",
+    "dificultad": 2,
+    "enunciado": "El área de un triángulo es 88 cm² y su base mide 16 cm. ¿Cuánto mide su altura?",
+    "respuesta": "11",
+    "explicacion": "El área de un triángulo es (base x altura) / 2. Entonces: 16 x altura / 2 = 88. Multiplicando por 2: 16 x altura = 176. La altura es 11 cm.",
+    "pista": "Acordate de la fórmula: Área = (base x altura) / 2.",
+    "template": "geo_triangulo_altura",
+    "figura": {
+      "tipo": "triangulo",
+      "base": 16,
+      "area": 88
+    }
+  },
+  {
+    "id": 76,
+    "categoria": "geometria",
+    "dificultad": 2,
+    "enunciado": "El área de un triángulo es 90 cm² y su base mide 12 cm. ¿Cuánto mide su altura?",
+    "respuesta": "15",
+    "explicacion": "El área de un triángulo es (base x altura) / 2. Entonces: 12 x altura / 2 = 90. Multiplicando por 2: 12 x altura = 180. La altura es 15 cm.",
+    "pista": "Acordate de la fórmula: Área = (base x altura) / 2.",
+    "template": "geo_triangulo_altura",
+    "figura": {
+      "tipo": "triangulo",
+      "base": 12,
+      "area": 90
+    }
+  },
+  {
+    "id": 77,
+    "categoria": "geometria",
+    "dificultad": 2,
+    "enunciado": "El área de un triángulo es 75 cm² y su base mide 10 cm. ¿Cuánto mide su altura?",
+    "respuesta": "15",
+    "explicacion": "El área de un triángulo es (base x altura) / 2. Entonces: 10 x altura / 2 = 75. Multiplicando por 2: 10 x altura = 150. La altura es 15 cm.",
+    "pista": "Acordate de la fórmula: Área = (base x altura) / 2.",
+    "template": "geo_triangulo_altura",
+    "figura": {
+      "tipo": "triangulo",
+      "base": 10,
+      "area": 75
+    }
+  },
+  {
+    "id": 78,
+    "categoria": "geometria",
+    "dificultad": 2,
+    "enunciado": "El área de un triángulo es 72 cm² y su base mide 16 cm. ¿Cuánto mide su altura?",
+    "respuesta": "9",
+    "explicacion": "El área de un triángulo es (base x altura) / 2. Entonces: 16 x altura / 2 = 72. Multiplicando por 2: 16 x altura = 144. La altura es 9 cm.",
+    "pista": "Acordate de la fórmula: Área = (base x altura) / 2.",
+    "template": "geo_triangulo_altura",
+    "figura": {
+      "tipo": "triangulo",
+      "base": 16,
+      "area": 72
     }
   },
   {
     "id": 79,
     "categoria": "geometria",
     "dificultad": 2,
-    "enunciado": "El área de un triángulo es 35 cm² y su base mide 10 cm. ¿Cuánto mide su altura?",
-    "respuesta": "7",
-    "explicacion": "El área de un triángulo es (base x altura) / 2. Entonces: 10 x altura / 2 = 35. Multiplicando por 2: 10 x altura = 70. La altura es 7 cm.",
-    "pista": "Recuerda la fórmula: Área = (base x altura) / 2.",
+    "enunciado": "El área de un triángulo es 98 cm² y su base mide 14 cm. ¿Cuánto mide su altura?",
+    "respuesta": "14",
+    "explicacion": "El área de un triángulo es (base x altura) / 2. Entonces: 14 x altura / 2 = 98. Multiplicando por 2: 14 x altura = 196. La altura es 14 cm.",
+    "pista": "Acordate de la fórmula: Área = (base x altura) / 2.",
+    "template": "geo_triangulo_altura",
     "figura": {
       "tipo": "triangulo",
-      "base": 10,
-      "area": 35
+      "base": 14,
+      "area": 98
     }
   },
   {
     "id": 80,
     "categoria": "geometria",
     "dificultad": 2,
-    "enunciado": "El área de un triángulo es 36 cm² y su base mide 12 cm. ¿Cuánto mide su altura?",
-    "respuesta": "6",
-    "explicacion": "El área de un triángulo es (base x altura) / 2. Entonces: 12 x altura / 2 = 36. Multiplicando por 2: 12 x altura = 72. La altura es 6 cm.",
-    "pista": "Recuerda la fórmula: Área = (base x altura) / 2.",
+    "enunciado": "El área de un triángulo es 48 cm² y su base mide 12 cm. ¿Cuánto mide su altura?",
+    "respuesta": "8",
+    "explicacion": "El área de un triángulo es (base x altura) / 2. Entonces: 12 x altura / 2 = 48. Multiplicando por 2: 12 x altura = 96. La altura es 8 cm.",
+    "pista": "Acordate de la fórmula: Área = (base x altura) / 2.",
+    "template": "geo_triangulo_altura",
     "figura": {
       "tipo": "triangulo",
       "base": 12,
-      "area": 36
+      "area": 48
     }
   },
   {
     "id": 81,
     "categoria": "geometria",
     "dificultad": 2,
-    "enunciado": "El área de un triángulo es 80 cm² y su base mide 16 cm. ¿Cuánto mide su altura?",
-    "respuesta": "10",
-    "explicacion": "El área de un triángulo es (base x altura) / 2. Entonces: 16 x altura / 2 = 80. Multiplicando por 2: 16 x altura = 160. La altura es 10 cm.",
-    "pista": "Recuerda la fórmula: Área = (base x altura) / 2.",
+    "enunciado": "El área de un triángulo es 60 cm² y su base mide 10 cm. ¿Cuánto mide su altura?",
+    "respuesta": "12",
+    "explicacion": "El área de un triángulo es (base x altura) / 2. Entonces: 10 x altura / 2 = 60. Multiplicando por 2: 10 x altura = 120. La altura es 12 cm.",
+    "pista": "Acordate de la fórmula: Área = (base x altura) / 2.",
+    "template": "geo_triangulo_altura",
     "figura": {
       "tipo": "triangulo",
-      "base": 16,
-      "area": 80
+      "base": 10,
+      "area": 60
     }
   },
   {
     "id": 82,
     "categoria": "geometria",
-    "dificultad": 2,
-    "enunciado": "El área de un triángulo es 100 cm² y su base mide 20 cm. ¿Cuánto mide su altura?",
-    "respuesta": "10",
-    "explicacion": "El área de un triángulo es (base x altura) / 2. Entonces: 20 x altura / 2 = 100. Multiplicando por 2: 20 x altura = 200. La altura es 10 cm.",
-    "pista": "Recuerda la fórmula: Área = (base x altura) / 2.",
+    "dificultad": 3,
+    "enunciado": "Un cuadrado grande se divide en 4 cuadrados más pequeños e iguales. El perímetro de uno de los cuadrados pequeños es 108. ¿Cuál es el área del cuadrado grande?",
+    "respuesta": "2916",
+    "explicacion": "El perímetro del cuadrado pequeño es 108, entonces su lado es 27. El lado del cuadrado grande es el doble, es decir 54. Su área es (54) x (54) = 2916.",
+    "pista": "Si sabés el perímetro del cuadradito, podés saber cuánto mide su lado.",
+    "template": "geo_cuadrado_4",
     "figura": {
-      "tipo": "triangulo",
-      "base": 20,
-      "area": 100
+      "tipo": "cuadrado_4",
+      "perimetro_pequeno": 108
     }
   },
   {
     "id": 83,
     "categoria": "geometria",
-    "dificultad": 2,
-    "enunciado": "El área de un triángulo es 54 cm² y su base mide 12 cm. ¿Cuánto mide su altura?",
-    "respuesta": "9",
-    "explicacion": "El área de un triángulo es (base x altura) / 2. Entonces: 12 x altura / 2 = 54. Multiplicando por 2: 12 x altura = 108. La altura es 9 cm.",
-    "pista": "Recuerda la fórmula: Área = (base x altura) / 2.",
+    "dificultad": 3,
+    "enunciado": "Un cuadrado grande se divide en 4 cuadrados más pequeños e iguales. El perímetro de uno de los cuadrados pequeños es 44. ¿Cuál es el área del cuadrado grande?",
+    "respuesta": "484",
+    "explicacion": "El perímetro del cuadrado pequeño es 44, entonces su lado es 11. El lado del cuadrado grande es el doble, es decir 22. Su área es (22) x (22) = 484.",
+    "pista": "Si sabés el perímetro del cuadradito, podés saber cuánto mide su lado.",
+    "template": "geo_cuadrado_4",
     "figura": {
-      "tipo": "triangulo",
-      "base": 12,
-      "area": 54
+      "tipo": "cuadrado_4",
+      "perimetro_pequeno": 44
     }
   },
   {
     "id": 84,
     "categoria": "geometria",
-    "dificultad": 2,
-    "enunciado": "El área de un triángulo es 91 cm² y su base mide 14 cm. ¿Cuánto mide su altura?",
-    "respuesta": "13",
-    "explicacion": "El área de un triángulo es (base x altura) / 2. Entonces: 14 x altura / 2 = 91. Multiplicando por 2: 14 x altura = 182. La altura es 13 cm.",
-    "pista": "Recuerda la fórmula: Área = (base x altura) / 2.",
+    "dificultad": 3,
+    "enunciado": "Un cuadrado grande se divide en 4 cuadrados más pequeños e iguales. El perímetro de uno de los cuadrados pequeños es 96. ¿Cuál es el área del cuadrado grande?",
+    "respuesta": "2304",
+    "explicacion": "El perímetro del cuadrado pequeño es 96, entonces su lado es 24. El lado del cuadrado grande es el doble, es decir 48. Su área es (48) x (48) = 2304.",
+    "pista": "Si sabés el perímetro del cuadradito, podés saber cuánto mide su lado.",
+    "template": "geo_cuadrado_4",
     "figura": {
-      "tipo": "triangulo",
-      "base": 14,
-      "area": 91
+      "tipo": "cuadrado_4",
+      "perimetro_pequeno": 96
     }
   },
   {
     "id": 85,
     "categoria": "geometria",
-    "dificultad": 2,
-    "enunciado": "El área de un triángulo es 66 cm² y su base mide 12 cm. ¿Cuánto mide su altura?",
-    "respuesta": "11",
-    "explicacion": "El área de un triángulo es (base x altura) / 2. Entonces: 12 x altura / 2 = 66. Multiplicando por 2: 12 x altura = 132. La altura es 11 cm.",
-    "pista": "Recuerda la fórmula: Área = (base x altura) / 2.",
+    "dificultad": 3,
+    "enunciado": "Un cuadrado grande se divide en 4 cuadrados más pequeños e iguales. El perímetro de uno de los cuadrados pequeños es 88. ¿Cuál es el área del cuadrado grande?",
+    "respuesta": "1936",
+    "explicacion": "El perímetro del cuadrado pequeño es 88, entonces su lado es 22. El lado del cuadrado grande es el doble, es decir 44. Su área es (44) x (44) = 1936.",
+    "pista": "Si sabés el perímetro del cuadradito, podés saber cuánto mide su lado.",
+    "template": "geo_cuadrado_4",
     "figura": {
-      "tipo": "triangulo",
-      "base": 12,
-      "area": 66
+      "tipo": "cuadrado_4",
+      "perimetro_pequeno": 88
     }
   },
   {
     "id": 86,
     "categoria": "geometria",
-    "dificultad": 2,
-    "enunciado": "El área de un triángulo es 25 cm² y su base mide 10 cm. ¿Cuánto mide su altura?",
-    "respuesta": "5",
-    "explicacion": "El área de un triángulo es (base x altura) / 2. Entonces: 10 x altura / 2 = 25. Multiplicando por 2: 10 x altura = 50. La altura es 5 cm.",
-    "pista": "Recuerda la fórmula: Área = (base x altura) / 2.",
+    "dificultad": 3,
+    "enunciado": "Un cuadrado grande se divide en 4 cuadrados más pequeños e iguales. El perímetro de uno de los cuadrados pequeños es 52. ¿Cuál es el área del cuadrado grande?",
+    "respuesta": "676",
+    "explicacion": "El perímetro del cuadrado pequeño es 52, entonces su lado es 13. El lado del cuadrado grande es el doble, es decir 26. Su área es (26) x (26) = 676.",
+    "pista": "Si sabés el perímetro del cuadradito, podés saber cuánto mide su lado.",
+    "template": "geo_cuadrado_4",
     "figura": {
-      "tipo": "triangulo",
-      "base": 10,
-      "area": 25
+      "tipo": "cuadrado_4",
+      "perimetro_pequeno": 52
     }
   },
   {
     "id": 87,
     "categoria": "geometria",
-    "dificultad": 2,
-    "enunciado": "El área de un triángulo es 84 cm² y su base mide 14 cm. ¿Cuánto mide su altura?",
-    "respuesta": "12",
-    "explicacion": "El área de un triángulo es (base x altura) / 2. Entonces: 14 x altura / 2 = 84. Multiplicando por 2: 14 x altura = 168. La altura es 12 cm.",
-    "pista": "Recuerda la fórmula: Área = (base x altura) / 2.",
+    "dificultad": 3,
+    "enunciado": "Un cuadrado grande se divide en 4 cuadrados más pequeños e iguales. El perímetro de uno de los cuadrados pequeños es 92. ¿Cuál es el área del cuadrado grande?",
+    "respuesta": "2116",
+    "explicacion": "El perímetro del cuadrado pequeño es 92, entonces su lado es 23. El lado del cuadrado grande es el doble, es decir 46. Su área es (46) x (46) = 2116.",
+    "pista": "Si sabés el perímetro del cuadradito, podés saber cuánto mide su lado.",
+    "template": "geo_cuadrado_4",
     "figura": {
-      "tipo": "triangulo",
-      "base": 14,
-      "area": 84
+      "tipo": "cuadrado_4",
+      "perimetro_pequeno": 92
     }
   },
   {
     "id": 88,
     "categoria": "geometria",
     "dificultad": 3,
-    "enunciado": "Un cuadrado grande se divide en 4 cuadrados más pequeños e iguales. El perímetro de uno de los cuadrados pequeños es 56. ¿Cuál es el área del cuadrado grande?",
-    "respuesta": "784",
-    "explicacion": "El perímetro del cuadrado pequeño es 56, entonces su lado es 14. El lado del cuadrado grande es el doble, es decir 28. Su área es (28) x (28) = 784.",
-    "pista": "Si sabes el perímetro del cuadradito, puedes saber cuánto mide su lado.",
+    "enunciado": "Un cuadrado grande se divide en 4 cuadrados más pequeños e iguales. El perímetro de uno de los cuadrados pequeños es 100. ¿Cuál es el área del cuadrado grande?",
+    "respuesta": "2500",
+    "explicacion": "El perímetro del cuadrado pequeño es 100, entonces su lado es 25. El lado del cuadrado grande es el doble, es decir 50. Su área es (50) x (50) = 2500.",
+    "pista": "Si sabés el perímetro del cuadradito, podés saber cuánto mide su lado.",
+    "template": "geo_cuadrado_4",
     "figura": {
       "tipo": "cuadrado_4",
-      "perimetro_pequeno": 56
+      "perimetro_pequeno": 100
     }
   },
   {
@@ -892,7 +1000,8 @@
     "enunciado": "Un cuadrado grande se divide en 4 cuadrados más pequeños e iguales. El perímetro de uno de los cuadrados pequeños es 72. ¿Cuál es el área del cuadrado grande?",
     "respuesta": "1296",
     "explicacion": "El perímetro del cuadrado pequeño es 72, entonces su lado es 18. El lado del cuadrado grande es el doble, es decir 36. Su área es (36) x (36) = 1296.",
-    "pista": "Si sabes el perímetro del cuadradito, puedes saber cuánto mide su lado.",
+    "pista": "Si sabés el perímetro del cuadradito, podés saber cuánto mide su lado.",
+    "template": "geo_cuadrado_4",
     "figura": {
       "tipo": "cuadrado_4",
       "perimetro_pequeno": 72
@@ -902,196 +1011,195 @@
     "id": 90,
     "categoria": "geometria",
     "dificultad": 3,
-    "enunciado": "Un cuadrado grande se divide en 4 cuadrados más pequeños e iguales. El perímetro de uno de los cuadrados pequeños es 112. ¿Cuál es el área del cuadrado grande?",
-    "respuesta": "3136",
-    "explicacion": "El perímetro del cuadrado pequeño es 112, entonces su lado es 28. El lado del cuadrado grande es el doble, es decir 56. Su área es (56) x (56) = 3136.",
-    "pista": "Si sabes el perímetro del cuadradito, puedes saber cuánto mide su lado.",
-    "figura": {
-      "tipo": "cuadrado_4",
-      "perimetro_pequeno": 112
-    }
-  },
-  {
-    "id": 91,
-    "categoria": "geometria",
-    "dificultad": 3,
-    "enunciado": "Un cuadrado grande se divide en 4 cuadrados más pequeños e iguales. El perímetro de uno de los cuadrados pequeños es 92. ¿Cuál es el área del cuadrado grande?",
-    "respuesta": "2116",
-    "explicacion": "El perímetro del cuadrado pequeño es 92, entonces su lado es 23. El lado del cuadrado grande es el doble, es decir 46. Su área es (46) x (46) = 2116.",
-    "pista": "Si sabes el perímetro del cuadradito, puedes saber cuánto mide su lado.",
-    "figura": {
-      "tipo": "cuadrado_4",
-      "perimetro_pequeno": 92
-    }
-  },
-  {
-    "id": 92,
-    "categoria": "geometria",
-    "dificultad": 3,
-    "enunciado": "Un cuadrado grande se divide en 4 cuadrados más pequeños e iguales. El perímetro de uno de los cuadrados pequeños es 60. ¿Cuál es el área del cuadrado grande?",
-    "respuesta": "900",
-    "explicacion": "El perímetro del cuadrado pequeño es 60, entonces su lado es 15. El lado del cuadrado grande es el doble, es decir 30. Su área es (30) x (30) = 900.",
-    "pista": "Si sabes el perímetro del cuadradito, puedes saber cuánto mide su lado.",
-    "figura": {
-      "tipo": "cuadrado_4",
-      "perimetro_pequeno": 60
-    }
-  },
-  {
-    "id": 93,
-    "categoria": "geometria",
-    "dificultad": 3,
-    "enunciado": "Un cuadrado grande se divide en 4 cuadrados más pequeños e iguales. El perímetro de uno de los cuadrados pequeños es 52. ¿Cuál es el área del cuadrado grande?",
-    "respuesta": "676",
-    "explicacion": "El perímetro del cuadrado pequeño es 52, entonces su lado es 13. El lado del cuadrado grande es el doble, es decir 26. Su área es (26) x (26) = 676.",
-    "pista": "Si sabes el perímetro del cuadradito, puedes saber cuánto mide su lado.",
-    "figura": {
-      "tipo": "cuadrado_4",
-      "perimetro_pequeno": 52
-    }
-  },
-  {
-    "id": 94,
-    "categoria": "geometria",
-    "dificultad": 3,
     "enunciado": "Un cuadrado grande se divide en 4 cuadrados más pequeños e iguales. El perímetro de uno de los cuadrados pequeños es 84. ¿Cuál es el área del cuadrado grande?",
     "respuesta": "1764",
     "explicacion": "El perímetro del cuadrado pequeño es 84, entonces su lado es 21. El lado del cuadrado grande es el doble, es decir 42. Su área es (42) x (42) = 1764.",
-    "pista": "Si sabes el perímetro del cuadradito, puedes saber cuánto mide su lado.",
+    "pista": "Si sabés el perímetro del cuadradito, podés saber cuánto mide su lado.",
+    "template": "geo_cuadrado_4",
     "figura": {
       "tipo": "cuadrado_4",
       "perimetro_pequeno": 84
     }
   },
   {
-    "id": 95,
-    "categoria": "geometria",
-    "dificultad": 3,
-    "enunciado": "Un cuadrado grande se divide en 4 cuadrados más pequeños e iguales. El perímetro de uno de los cuadrados pequeños es 44. ¿Cuál es el área del cuadrado grande?",
-    "respuesta": "484",
-    "explicacion": "El perímetro del cuadrado pequeño es 44, entonces su lado es 11. El lado del cuadrado grande es el doble, es decir 22. Su área es (22) x (22) = 484.",
-    "pista": "Si sabes el perímetro del cuadradito, puedes saber cuánto mide su lado.",
-    "figura": {
-      "tipo": "cuadrado_4",
-      "perimetro_pequeno": 44
-    }
-  },
-  {
-    "id": 96,
+    "id": 91,
     "categoria": "conteo",
     "dificultad": 1,
-    "enunciado": "Para vestirse, un chico tiene 3 remeras, 4 pantalones y 2 pares de zapatillas. ¿De cuántas formas distintas puede vestirse usando una prenda de cada tipo?",
+    "enunciado": "Para vestirse, un chico tiene 3 remeras, 2 pantalones y 4 pares de zapatillas. ¿De cuántas formas distintas puede vestirse usando una prenda de cada tipo?",
     "respuesta": "24",
-    "explicacion": "Por el principio de multiplicación: 3 opciones de remera x 4 opciones de pantalón x 2 opciones de zapatillas = 24 formas distintas.",
-    "pista": "Multiplica las opciones de cada prenda."
+    "explicacion": "Por el principio de multiplicación: 3 opciones de remera x 2 opciones de pantalón x 4 opciones de zapatillas = 24 formas distintas.",
+    "pista": "Multiplicá las opciones de cada prenda.",
+    "template": "conteo_vestimenta"
   },
   {
-    "id": 97,
+    "id": 92,
     "categoria": "conteo",
     "dificultad": 1,
-    "enunciado": "Para vestirse, un chico tiene 4 remeras, 2 pantalones y 2 pares de zapatillas. ¿De cuántas formas distintas puede vestirse usando una prenda de cada tipo?",
-    "respuesta": "16",
-    "explicacion": "Por el principio de multiplicación: 4 opciones de remera x 2 opciones de pantalón x 2 opciones de zapatillas = 16 formas distintas.",
-    "pista": "Multiplica las opciones de cada prenda."
+    "enunciado": "Para vestirse, un chico tiene 4 remeras, 4 pantalones y 4 pares de zapatillas. ¿De cuántas formas distintas puede vestirse usando una prenda de cada tipo?",
+    "respuesta": "64",
+    "explicacion": "Por el principio de multiplicación: 4 opciones de remera x 4 opciones de pantalón x 4 opciones de zapatillas = 64 formas distintas.",
+    "pista": "Multiplicá las opciones de cada prenda.",
+    "template": "conteo_vestimenta"
   },
   {
-    "id": 98,
+    "id": 93,
     "categoria": "conteo",
     "dificultad": 1,
-    "enunciado": "Para vestirse, un chico tiene 3 remeras, 3 pantalones y 3 pares de zapatillas. ¿De cuántas formas distintas puede vestirse usando una prenda de cada tipo?",
-    "respuesta": "27",
-    "explicacion": "Por el principio de multiplicación: 3 opciones de remera x 3 opciones de pantalón x 3 opciones de zapatillas = 27 formas distintas.",
-    "pista": "Multiplica las opciones de cada prenda."
+    "enunciado": "Para vestirse, un chico tiene 4 remeras, 4 pantalones y 2 pares de zapatillas. ¿De cuántas formas distintas puede vestirse usando una prenda de cada tipo?",
+    "respuesta": "32",
+    "explicacion": "Por el principio de multiplicación: 4 opciones de remera x 4 opciones de pantalón x 2 opciones de zapatillas = 32 formas distintas.",
+    "pista": "Multiplicá las opciones de cada prenda.",
+    "template": "conteo_vestimenta"
   },
   {
-    "id": 99,
-    "categoria": "conteo",
-    "dificultad": 1,
-    "enunciado": "Para vestirse, un chico tiene 4 remeras, 4 pantalones y 3 pares de zapatillas. ¿De cuántas formas distintas puede vestirse usando una prenda de cada tipo?",
-    "respuesta": "48",
-    "explicacion": "Por el principio de multiplicación: 4 opciones de remera x 4 opciones de pantalón x 3 opciones de zapatillas = 48 formas distintas.",
-    "pista": "Multiplica las opciones de cada prenda."
-  },
-  {
-    "id": 100,
-    "categoria": "conteo",
-    "dificultad": 1,
-    "enunciado": "Para vestirse, un chico tiene 3 remeras, 2 pantalones y 2 pares de zapatillas. ¿De cuántas formas distintas puede vestirse usando una prenda de cada tipo?",
-    "respuesta": "12",
-    "explicacion": "Por el principio de multiplicación: 3 opciones de remera x 2 opciones de pantalón x 2 opciones de zapatillas = 12 formas distintas.",
-    "pista": "Multiplica las opciones de cada prenda."
-  },
-  {
-    "id": 101,
-    "categoria": "conteo",
-    "dificultad": 1,
-    "enunciado": "Para vestirse, un chico tiene 5 remeras, 3 pantalones y 3 pares de zapatillas. ¿De cuántas formas distintas puede vestirse usando una prenda de cada tipo?",
-    "respuesta": "45",
-    "explicacion": "Por el principio de multiplicación: 5 opciones de remera x 3 opciones de pantalón x 3 opciones de zapatillas = 45 formas distintas.",
-    "pista": "Multiplica las opciones de cada prenda."
-  },
-  {
-    "id": 102,
+    "id": 94,
     "categoria": "conteo",
     "dificultad": 1,
     "enunciado": "Para vestirse, un chico tiene 4 remeras, 2 pantalones y 4 pares de zapatillas. ¿De cuántas formas distintas puede vestirse usando una prenda de cada tipo?",
     "respuesta": "32",
     "explicacion": "Por el principio de multiplicación: 4 opciones de remera x 2 opciones de pantalón x 4 opciones de zapatillas = 32 formas distintas.",
-    "pista": "Multiplica las opciones de cada prenda."
+    "pista": "Multiplicá las opciones de cada prenda.",
+    "template": "conteo_vestimenta"
   },
   {
-    "id": 103,
+    "id": 95,
+    "categoria": "conteo",
+    "dificultad": 1,
+    "enunciado": "Para vestirse, un chico tiene 3 remeras, 4 pantalones y 2 pares de zapatillas. ¿De cuántas formas distintas puede vestirse usando una prenda de cada tipo?",
+    "respuesta": "24",
+    "explicacion": "Por el principio de multiplicación: 3 opciones de remera x 4 opciones de pantalón x 2 opciones de zapatillas = 24 formas distintas.",
+    "pista": "Multiplicá las opciones de cada prenda.",
+    "template": "conteo_vestimenta"
+  },
+  {
+    "id": 96,
     "categoria": "conteo",
     "dificultad": 1,
     "enunciado": "Para vestirse, un chico tiene 4 remeras, 3 pantalones y 3 pares de zapatillas. ¿De cuántas formas distintas puede vestirse usando una prenda de cada tipo?",
     "respuesta": "36",
     "explicacion": "Por el principio de multiplicación: 4 opciones de remera x 3 opciones de pantalón x 3 opciones de zapatillas = 36 formas distintas.",
-    "pista": "Multiplica las opciones de cada prenda."
+    "pista": "Multiplicá las opciones de cada prenda.",
+    "template": "conteo_vestimenta"
   },
   {
-    "id": 104,
+    "id": 97,
+    "categoria": "conteo",
+    "dificultad": 1,
+    "enunciado": "Para vestirse, un chico tiene 4 remeras, 4 pantalones y 3 pares de zapatillas. ¿De cuántas formas distintas puede vestirse usando una prenda de cada tipo?",
+    "respuesta": "48",
+    "explicacion": "Por el principio de multiplicación: 4 opciones de remera x 4 opciones de pantalón x 3 opciones de zapatillas = 48 formas distintas.",
+    "pista": "Multiplicá las opciones de cada prenda.",
+    "template": "conteo_vestimenta"
+  },
+  {
+    "id": 98,
+    "categoria": "conteo",
+    "dificultad": 1,
+    "enunciado": "Para vestirse, un chico tiene 4 remeras, 2 pantalones y 2 pares de zapatillas. ¿De cuántas formas distintas puede vestirse usando una prenda de cada tipo?",
+    "respuesta": "16",
+    "explicacion": "Por el principio de multiplicación: 4 opciones de remera x 2 opciones de pantalón x 2 opciones de zapatillas = 16 formas distintas.",
+    "pista": "Multiplicá las opciones de cada prenda.",
+    "template": "conteo_vestimenta"
+  },
+  {
+    "id": 99,
     "categoria": "conteo",
     "dificultad": 1,
     "enunciado": "Para vestirse, un chico tiene 3 remeras, 3 pantalones y 2 pares de zapatillas. ¿De cuántas formas distintas puede vestirse usando una prenda de cada tipo?",
     "respuesta": "18",
     "explicacion": "Por el principio de multiplicación: 3 opciones de remera x 3 opciones de pantalón x 2 opciones de zapatillas = 18 formas distintas.",
-    "pista": "Multiplica las opciones de cada prenda."
+    "pista": "Multiplicá las opciones de cada prenda.",
+    "template": "conteo_vestimenta"
+  },
+  {
+    "id": 100,
+    "categoria": "conteo",
+    "dificultad": 1,
+    "enunciado": "Para vestirse, un chico tiene 5 remeras, 4 pantalones y 2 pares de zapatillas. ¿De cuántas formas distintas puede vestirse usando una prenda de cada tipo?",
+    "respuesta": "40",
+    "explicacion": "Por el principio de multiplicación: 5 opciones de remera x 4 opciones de pantalón x 2 opciones de zapatillas = 40 formas distintas.",
+    "pista": "Multiplicá las opciones de cada prenda.",
+    "template": "conteo_vestimenta"
+  },
+  {
+    "id": 101,
+    "categoria": "conteo",
+    "dificultad": 1,
+    "enunciado": "Para vestirse, un chico tiene 5 remeras, 2 pantalones y 3 pares de zapatillas. ¿De cuántas formas distintas puede vestirse usando una prenda de cada tipo?",
+    "respuesta": "30",
+    "explicacion": "Por el principio de multiplicación: 5 opciones de remera x 2 opciones de pantalón x 3 opciones de zapatillas = 30 formas distintas.",
+    "pista": "Multiplicá las opciones de cada prenda.",
+    "template": "conteo_vestimenta"
+  },
+  {
+    "id": 102,
+    "categoria": "conteo",
+    "dificultad": 1,
+    "enunciado": "Para vestirse, un chico tiene 3 remeras, 3 pantalones y 4 pares de zapatillas. ¿De cuántas formas distintas puede vestirse usando una prenda de cada tipo?",
+    "respuesta": "36",
+    "explicacion": "Por el principio de multiplicación: 3 opciones de remera x 3 opciones de pantalón x 4 opciones de zapatillas = 36 formas distintas.",
+    "pista": "Multiplicá las opciones de cada prenda.",
+    "template": "conteo_vestimenta"
+  },
+  {
+    "id": 103,
+    "categoria": "conteo",
+    "dificultad": 1,
+    "enunciado": "Para vestirse, un chico tiene 5 remeras, 2 pantalones y 4 pares de zapatillas. ¿De cuántas formas distintas puede vestirse usando una prenda de cada tipo?",
+    "respuesta": "40",
+    "explicacion": "Por el principio de multiplicación: 5 opciones de remera x 2 opciones de pantalón x 4 opciones de zapatillas = 40 formas distintas.",
+    "pista": "Multiplicá las opciones de cada prenda.",
+    "template": "conteo_vestimenta"
+  },
+  {
+    "id": 104,
+    "categoria": "conteo",
+    "dificultad": 1,
+    "enunciado": "Para vestirse, un chico tiene 3 remeras, 3 pantalones y 3 pares de zapatillas. ¿De cuántas formas distintas puede vestirse usando una prenda de cada tipo?",
+    "respuesta": "27",
+    "explicacion": "Por el principio de multiplicación: 3 opciones de remera x 3 opciones de pantalón x 3 opciones de zapatillas = 27 formas distintas.",
+    "pista": "Multiplicá las opciones de cada prenda.",
+    "template": "conteo_vestimenta"
   },
   {
     "id": 105,
     "categoria": "conteo",
     "dificultad": 2,
-    "enunciado": "En un torneo participan 8 equipos. Si todos deben jugar contra todos exactamente una vez, ¿cuántos partidos se jugarán en total?",
-    "respuesta": "28",
-    "explicacion": "Cada uno de los 8 equipos juega con los 7 restantes. Eso da 56 partidos. Pero así estamos contando cada partido dos veces (A vs B y B vs A). Dividimos por 2: 28.",
-    "pista": "Imagina que son puntos en un papel unidos por líneas. ¿Cuántas líneas hay?"
+    "enunciado": "En un torneo participan 7 equipos. Si todos deben jugar contra todos exactamente una vez, ¿cuántos partidos se jugarán en total?",
+    "respuesta": "21",
+    "explicacion": "Cada uno de los 7 equipos juega con los 6 restantes. Eso da 42 partidos. Pero así estamos contando cada partido dos veces (A vs B y B vs A). Dividimos por 2: 21.",
+    "pista": "Imaginate que son puntos en un papel unidos por líneas. ¿Cuántas líneas hay?",
+    "template": "conteo_torneo"
   },
   {
     "id": 106,
     "categoria": "conteo",
     "dificultad": 2,
-    "enunciado": "En un torneo participan 5 equipos. Si todos deben jugar contra todos exactamente una vez, ¿cuántos partidos se jugarán en total?",
-    "respuesta": "10",
-    "explicacion": "Cada uno de los 5 equipos juega con los 4 restantes. Eso da 20 partidos. Pero así estamos contando cada partido dos veces (A vs B y B vs A). Dividimos por 2: 10.",
-    "pista": "Imagina que son puntos en un papel unidos por líneas. ¿Cuántas líneas hay?"
+    "enunciado": "En un torneo participan 9 equipos. Si todos deben jugar contra todos exactamente una vez, ¿cuántos partidos se jugarán en total?",
+    "respuesta": "36",
+    "explicacion": "Cada uno de los 9 equipos juega con los 8 restantes. Eso da 72 partidos. Pero así estamos contando cada partido dos veces (A vs B y B vs A). Dividimos por 2: 36.",
+    "pista": "Imaginate que son puntos en un papel unidos por líneas. ¿Cuántas líneas hay?",
+    "template": "conteo_torneo"
   },
   {
     "id": 107,
     "categoria": "conteo",
     "dificultad": 2,
-    "enunciado": "En un torneo participan 7 equipos. Si todos deben jugar contra todos exactamente una vez, ¿cuántos partidos se jugarán en total?",
-    "respuesta": "21",
-    "explicacion": "Cada uno de los 7 equipos juega con los 6 restantes. Eso da 42 partidos. Pero así estamos contando cada partido dos veces (A vs B y B vs A). Dividimos por 2: 21.",
-    "pista": "Imagina que son puntos en un papel unidos por líneas. ¿Cuántas líneas hay?"
+    "enunciado": "En un torneo participan 10 equipos. Si todos deben jugar contra todos exactamente una vez, ¿cuántos partidos se jugarán en total?",
+    "respuesta": "45",
+    "explicacion": "Cada uno de los 10 equipos juega con los 9 restantes. Eso da 90 partidos. Pero así estamos contando cada partido dos veces (A vs B y B vs A). Dividimos por 2: 45.",
+    "pista": "Imaginate que son puntos en un papel unidos por líneas. ¿Cuántas líneas hay?",
+    "template": "conteo_torneo"
   },
   {
     "id": 108,
     "categoria": "conteo",
     "dificultad": 2,
-    "enunciado": "En un torneo participan 10 equipos. Si todos deben jugar contra todos exactamente una vez, ¿cuántos partidos se jugarán en total?",
-    "respuesta": "45",
-    "explicacion": "Cada uno de los 10 equipos juega con los 9 restantes. Eso da 90 partidos. Pero así estamos contando cada partido dos veces (A vs B y B vs A). Dividimos por 2: 45.",
-    "pista": "Imagina que son puntos en un papel unidos por líneas. ¿Cuántas líneas hay?"
+    "enunciado": "En un torneo participan 8 equipos. Si todos deben jugar contra todos exactamente una vez, ¿cuántos partidos se jugarán en total?",
+    "respuesta": "28",
+    "explicacion": "Cada uno de los 8 equipos juega con los 7 restantes. Eso da 56 partidos. Pero así estamos contando cada partido dos veces (A vs B y B vs A). Dividimos por 2: 28.",
+    "pista": "Imaginate que son puntos en un papel unidos por líneas. ¿Cuántas líneas hay?",
+    "template": "conteo_torneo"
   },
   {
     "id": 109,
@@ -1100,43 +1208,48 @@
     "enunciado": "En un torneo participan 4 equipos. Si todos deben jugar contra todos exactamente una vez, ¿cuántos partidos se jugarán en total?",
     "respuesta": "6",
     "explicacion": "Cada uno de los 4 equipos juega con los 3 restantes. Eso da 12 partidos. Pero así estamos contando cada partido dos veces (A vs B y B vs A). Dividimos por 2: 6.",
-    "pista": "Imagina que son puntos en un papel unidos por líneas. ¿Cuántas líneas hay?"
+    "pista": "Imaginate que son puntos en un papel unidos por líneas. ¿Cuántas líneas hay?",
+    "template": "conteo_torneo"
   },
   {
     "id": 110,
     "categoria": "conteo",
-    "dificultad": 3,
-    "enunciado": "¿Cuántos números de 3 cifras distintas se pueden formar usando solamente los dígitos 5, 6, 7?",
-    "respuesta": "6",
-    "explicacion": "Para la 1ª cifra hay 3 opciones; en cada posición siguiente queda una opción menos porque no se repiten. 3 x 2 x 1 = 6.",
-    "pista": "Pensá cuántas opciones quedan para cada posición, descontando los dígitos ya usados."
+    "dificultad": 2,
+    "enunciado": "En un torneo participan 6 equipos. Si todos deben jugar contra todos exactamente una vez, ¿cuántos partidos se jugarán en total?",
+    "respuesta": "15",
+    "explicacion": "Cada uno de los 6 equipos juega con los 5 restantes. Eso da 30 partidos. Pero así estamos contando cada partido dos veces (A vs B y B vs A). Dividimos por 2: 15.",
+    "pista": "Imaginate que son puntos en un papel unidos por líneas. ¿Cuántas líneas hay?",
+    "template": "conteo_torneo"
   },
   {
     "id": 111,
     "categoria": "conteo",
     "dificultad": 3,
-    "enunciado": "¿Cuántos números de 3 cifras distintas se pueden formar usando solamente los dígitos 1, 2, 3?",
+    "enunciado": "¿Cuántos números de 3 cifras distintas se pueden formar usando solamente los dígitos 5, 6, 7?",
     "respuesta": "6",
     "explicacion": "Para la 1ª cifra hay 3 opciones; en cada posición siguiente queda una opción menos porque no se repiten. 3 x 2 x 1 = 6.",
-    "pista": "Pensá cuántas opciones quedan para cada posición, descontando los dígitos ya usados."
+    "pista": "Pensá cuántas opciones quedan para cada posición, descontando los dígitos ya usados.",
+    "template": "conteo_cifras"
   },
   {
     "id": 112,
     "categoria": "conteo",
     "dificultad": 3,
-    "enunciado": "¿Cuántos números de 2 cifras distintas se pueden formar usando solamente los dígitos 5, 6, 7?",
+    "enunciado": "¿Cuántos números de 2 cifras distintas se pueden formar usando solamente los dígitos 1, 2, 3?",
     "respuesta": "6",
     "explicacion": "Para la 1ª cifra hay 3 opciones; en cada posición siguiente queda una opción menos porque no se repiten. 3 x 2 = 6.",
-    "pista": "Pensá cuántas opciones quedan para cada posición, descontando los dígitos ya usados."
+    "pista": "Pensá cuántas opciones quedan para cada posición, descontando los dígitos ya usados.",
+    "template": "conteo_cifras"
   },
   {
     "id": 113,
     "categoria": "conteo",
     "dificultad": 3,
-    "enunciado": "¿Cuántos números de 2 cifras distintas se pueden formar usando solamente los dígitos 1, 3, 5, 7?",
-    "respuesta": "12",
-    "explicacion": "Para la 1ª cifra hay 4 opciones; en cada posición siguiente queda una opción menos porque no se repiten. 4 x 3 = 12.",
-    "pista": "Pensá cuántas opciones quedan para cada posición, descontando los dígitos ya usados."
+    "enunciado": "¿Cuántos números de 3 cifras distintas se pueden formar usando solamente los dígitos 2, 4, 6?",
+    "respuesta": "6",
+    "explicacion": "Para la 1ª cifra hay 3 opciones; en cada posición siguiente queda una opción menos porque no se repiten. 3 x 2 x 1 = 6.",
+    "pista": "Pensá cuántas opciones quedan para cada posición, descontando los dígitos ya usados.",
+    "template": "conteo_cifras"
   },
   {
     "id": 114,
@@ -1145,151 +1258,168 @@
     "enunciado": "¿Cuántos números de 2 cifras distintas se pueden formar usando solamente los dígitos 2, 3, 4, 5?",
     "respuesta": "12",
     "explicacion": "Para la 1ª cifra hay 4 opciones; en cada posición siguiente queda una opción menos porque no se repiten. 4 x 3 = 12.",
-    "pista": "Pensá cuántas opciones quedan para cada posición, descontando los dígitos ya usados."
+    "pista": "Pensá cuántas opciones quedan para cada posición, descontando los dígitos ya usados.",
+    "template": "conteo_cifras"
   },
   {
     "id": 115,
     "categoria": "conteo",
     "dificultad": 3,
-    "enunciado": "¿Cuántos números de 2 cifras distintas se pueden formar usando solamente los dígitos 2, 4, 6?",
-    "respuesta": "6",
-    "explicacion": "Para la 1ª cifra hay 3 opciones; en cada posición siguiente queda una opción menos porque no se repiten. 3 x 2 = 6.",
-    "pista": "Pensá cuántas opciones quedan para cada posición, descontando los dígitos ya usados."
+    "enunciado": "¿Cuántos números de 3 cifras distintas se pueden formar usando solamente los dígitos 1, 2, 3, 4?",
+    "respuesta": "24",
+    "explicacion": "Para la 1ª cifra hay 4 opciones; en cada posición siguiente queda una opción menos porque no se repiten. 4 x 3 x 2 = 24.",
+    "pista": "Pensá cuántas opciones quedan para cada posición, descontando los dígitos ya usados.",
+    "template": "conteo_cifras"
   },
   {
     "id": 116,
     "categoria": "conteo",
     "dificultad": 3,
-    "enunciado": "¿Cuántos números de 2 cifras distintas se pueden formar usando solamente los dígitos 1, 2, 3?",
+    "enunciado": "¿Cuántos números de 2 cifras distintas se pueden formar usando solamente los dígitos 2, 4, 6?",
     "respuesta": "6",
     "explicacion": "Para la 1ª cifra hay 3 opciones; en cada posición siguiente queda una opción menos porque no se repiten. 3 x 2 = 6.",
-    "pista": "Pensá cuántas opciones quedan para cada posición, descontando los dígitos ya usados."
+    "pista": "Pensá cuántas opciones quedan para cada posición, descontando los dígitos ya usados.",
+    "template": "conteo_cifras"
   },
   {
     "id": 117,
     "categoria": "conteo",
     "dificultad": 3,
-    "enunciado": "¿Cuántos números de 3 cifras distintas se pueden formar usando solamente los dígitos 1, 3, 5, 7?",
-    "respuesta": "24",
-    "explicacion": "Para la 1ª cifra hay 4 opciones; en cada posición siguiente queda una opción menos porque no se repiten. 4 x 3 x 2 = 24.",
-    "pista": "Pensá cuántas opciones quedan para cada posición, descontando los dígitos ya usados."
+    "enunciado": "¿Cuántos números de 2 cifras distintas se pueden formar usando solamente los dígitos 1, 2, 3, 4?",
+    "respuesta": "12",
+    "explicacion": "Para la 1ª cifra hay 4 opciones; en cada posición siguiente queda una opción menos porque no se repiten. 4 x 3 = 12.",
+    "pista": "Pensá cuántas opciones quedan para cada posición, descontando los dígitos ya usados.",
+    "template": "conteo_cifras"
   },
   {
     "id": 118,
-    "categoria": "divisibilidad",
-    "dificultad": 1,
-    "enunciado": "Dos luces parpadean: una cada 3 segundos y otra cada 4 segundos. Si parpadearon juntas recién, ¿en cuántos segundos volverán a parpadear juntas?",
-    "respuesta": "12",
-    "explicacion": "Buscamos el mínimo común múltiplo (MCM) entre 3 y 4. Los múltiplos de 3 son 3, 6, 9... El primer número común es 12.",
-    "pista": "Busca el Mínimo Común Múltiplo."
+    "categoria": "conteo",
+    "dificultad": 3,
+    "enunciado": "¿Cuántos números de 3 cifras distintas se pueden formar usando solamente los dígitos 2, 3, 4, 5?",
+    "respuesta": "24",
+    "explicacion": "Para la 1ª cifra hay 4 opciones; en cada posición siguiente queda una opción menos porque no se repiten. 4 x 3 x 2 = 24.",
+    "pista": "Pensá cuántas opciones quedan para cada posición, descontando los dígitos ya usados.",
+    "template": "conteo_cifras"
   },
   {
     "id": 119,
     "categoria": "divisibilidad",
     "dificultad": 1,
-    "enunciado": "Dos luces parpadean: una cada 3 segundos y otra cada 5 segundos. Si parpadearon juntas recién, ¿en cuántos segundos volverán a parpadear juntas?",
-    "respuesta": "15",
-    "explicacion": "Buscamos el mínimo común múltiplo (MCM) entre 3 y 5. Los múltiplos de 3 son 3, 6, 9... El primer número común es 15.",
-    "pista": "Busca el Mínimo Común Múltiplo."
+    "enunciado": "Dos luces parpadean: una cada 2 segundos y otra cada 3 segundos. Si parpadearon juntas recién, ¿en cuántos segundos volverán a parpadear juntas?",
+    "respuesta": "6",
+    "explicacion": "Buscamos el mínimo común múltiplo (MCM) entre 2 y 3. Los múltiplos de 2 son 2, 4, 6... El primer número común es 6.",
+    "pista": "Buscá el mínimo común múltiplo (MCM).",
+    "template": "div_mcm2"
   },
   {
     "id": 120,
     "categoria": "divisibilidad",
     "dificultad": 1,
-    "enunciado": "Dos luces parpadean: una cada 5 segundos y otra cada 7 segundos. Si parpadearon juntas recién, ¿en cuántos segundos volverán a parpadear juntas?",
-    "respuesta": "35",
-    "explicacion": "Buscamos el mínimo común múltiplo (MCM) entre 5 y 7. Los múltiplos de 5 son 5, 10, 15... El primer número común es 35.",
-    "pista": "Busca el Mínimo Común Múltiplo."
+    "enunciado": "Dos luces parpadean: una cada 4 segundos y otra cada 3 segundos. Si parpadearon juntas recién, ¿en cuántos segundos volverán a parpadear juntas?",
+    "respuesta": "12",
+    "explicacion": "Buscamos el mínimo común múltiplo (MCM) entre 4 y 3. Los múltiplos de 4 son 4, 8, 12... El primer número común es 12.",
+    "pista": "Buscá el mínimo común múltiplo (MCM).",
+    "template": "div_mcm2"
   },
   {
     "id": 121,
     "categoria": "divisibilidad",
     "dificultad": 1,
-    "enunciado": "Dos luces parpadean: una cada 2 segundos y otra cada 4 segundos. Si parpadearon juntas recién, ¿en cuántos segundos volverán a parpadear juntas?",
-    "respuesta": "8",
-    "explicacion": "Buscamos el mínimo común múltiplo (MCM) entre 2 y 4. Los múltiplos de 2 son 2, 4, 6... El primer número común es 8.",
-    "pista": "Busca el Mínimo Común Múltiplo."
+    "enunciado": "Dos luces parpadean: una cada 4 segundos y otra cada 7 segundos. Si parpadearon juntas recién, ¿en cuántos segundos volverán a parpadear juntas?",
+    "respuesta": "28",
+    "explicacion": "Buscamos el mínimo común múltiplo (MCM) entre 4 y 7. Los múltiplos de 4 son 4, 8, 12... El primer número común es 28.",
+    "pista": "Buscá el mínimo común múltiplo (MCM).",
+    "template": "div_mcm2"
   },
   {
     "id": 122,
     "categoria": "divisibilidad",
     "dificultad": 1,
-    "enunciado": "Dos luces parpadean: una cada 5 segundos y otra cada 3 segundos. Si parpadearon juntas recién, ¿en cuántos segundos volverán a parpadear juntas?",
-    "respuesta": "15",
-    "explicacion": "Buscamos el mínimo común múltiplo (MCM) entre 5 y 3. Los múltiplos de 5 son 5, 10, 15... El primer número común es 15.",
-    "pista": "Busca el Mínimo Común Múltiplo."
+    "enunciado": "Dos luces parpadean: una cada 3 segundos y otra cada 7 segundos. Si parpadearon juntas recién, ¿en cuántos segundos volverán a parpadear juntas?",
+    "respuesta": "21",
+    "explicacion": "Buscamos el mínimo común múltiplo (MCM) entre 3 y 7. Los múltiplos de 3 son 3, 6, 9... El primer número común es 21.",
+    "pista": "Buscá el mínimo común múltiplo (MCM).",
+    "template": "div_mcm2"
   },
   {
     "id": 123,
     "categoria": "divisibilidad",
     "dificultad": 1,
-    "enunciado": "Dos luces parpadean: una cada 4 segundos y otra cada 5 segundos. Si parpadearon juntas recién, ¿en cuántos segundos volverán a parpadear juntas?",
-    "respuesta": "20",
-    "explicacion": "Buscamos el mínimo común múltiplo (MCM) entre 4 y 5. Los múltiplos de 4 son 4, 8, 12... El primer número común es 20.",
-    "pista": "Busca el Mínimo Común Múltiplo."
+    "enunciado": "Dos luces parpadean: una cada 5 segundos y otra cada 7 segundos. Si parpadearon juntas recién, ¿en cuántos segundos volverán a parpadear juntas?",
+    "respuesta": "35",
+    "explicacion": "Buscamos el mínimo común múltiplo (MCM) entre 5 y 7. Los múltiplos de 5 son 5, 10, 15... El primer número común es 35.",
+    "pista": "Buscá el mínimo común múltiplo (MCM).",
+    "template": "div_mcm2"
   },
   {
     "id": 124,
     "categoria": "divisibilidad",
     "dificultad": 1,
-    "enunciado": "Dos luces parpadean: una cada 3 segundos y otra cada 7 segundos. Si parpadearon juntas recién, ¿en cuántos segundos volverán a parpadear juntas?",
-    "respuesta": "21",
-    "explicacion": "Buscamos el mínimo común múltiplo (MCM) entre 3 y 7. Los múltiplos de 3 son 3, 6, 9... El primer número común es 21.",
-    "pista": "Busca el Mínimo Común Múltiplo."
+    "enunciado": "Dos luces parpadean: una cada 2 segundos y otra cada 5 segundos. Si parpadearon juntas recién, ¿en cuántos segundos volverán a parpadear juntas?",
+    "respuesta": "10",
+    "explicacion": "Buscamos el mínimo común múltiplo (MCM) entre 2 y 5. Los múltiplos de 2 son 2, 4, 6... El primer número común es 10.",
+    "pista": "Buscá el mínimo común múltiplo (MCM).",
+    "template": "div_mcm2"
   },
   {
     "id": 125,
     "categoria": "divisibilidad",
     "dificultad": 1,
-    "enunciado": "Dos luces parpadean: una cada 2 segundos y otra cada 7 segundos. Si parpadearon juntas recién, ¿en cuántos segundos volverán a parpadear juntas?",
-    "respuesta": "14",
-    "explicacion": "Buscamos el mínimo común múltiplo (MCM) entre 2 y 7. Los múltiplos de 2 son 2, 4, 6... El primer número común es 14.",
-    "pista": "Busca el Mínimo Común Múltiplo."
+    "enunciado": "Dos luces parpadean: una cada 3 segundos y otra cada 4 segundos. Si parpadearon juntas recién, ¿en cuántos segundos volverán a parpadear juntas?",
+    "respuesta": "12",
+    "explicacion": "Buscamos el mínimo común múltiplo (MCM) entre 3 y 4. Los múltiplos de 3 son 3, 6, 9... El primer número común es 12.",
+    "pista": "Buscá el mínimo común múltiplo (MCM).",
+    "template": "div_mcm2"
   },
   {
     "id": 126,
     "categoria": "divisibilidad",
     "dificultad": 1,
-    "enunciado": "Dos luces parpadean: una cada 2 segundos y otra cada 3 segundos. Si parpadearon juntas recién, ¿en cuántos segundos volverán a parpadear juntas?",
-    "respuesta": "6",
-    "explicacion": "Buscamos el mínimo común múltiplo (MCM) entre 2 y 3. Los múltiplos de 2 son 2, 4, 6... El primer número común es 6.",
-    "pista": "Busca el Mínimo Común Múltiplo."
+    "enunciado": "Dos luces parpadean: una cada 3 segundos y otra cada 5 segundos. Si parpadearon juntas recién, ¿en cuántos segundos volverán a parpadear juntas?",
+    "respuesta": "15",
+    "explicacion": "Buscamos el mínimo común múltiplo (MCM) entre 3 y 5. Los múltiplos de 3 son 3, 6, 9... El primer número común es 15.",
+    "pista": "Buscá el mínimo común múltiplo (MCM).",
+    "template": "div_mcm2"
   },
   {
     "id": 127,
     "categoria": "divisibilidad",
-    "dificultad": 2,
-    "enunciado": "Si dividimos a un número entre 2, el resto es 1. ¿Cuál es el número más pequeño de dos cifras que cumple esto?",
-    "respuesta": "11",
-    "explicacion": "Los números que al dividir por 2 dan resto 1 son de la forma 2*k + 1. Probamos valores de k para encontrar el primero de dos cifras.",
-    "pista": "Escribe los múltiplos y súmales el resto."
+    "dificultad": 1,
+    "enunciado": "Dos luces parpadean: una cada 2 segundos y otra cada 7 segundos. Si parpadearon juntas recién, ¿en cuántos segundos volverán a parpadear juntas?",
+    "respuesta": "14",
+    "explicacion": "Buscamos el mínimo común múltiplo (MCM) entre 2 y 7. Los múltiplos de 2 son 2, 4, 6... El primer número común es 14.",
+    "pista": "Buscá el mínimo común múltiplo (MCM).",
+    "template": "div_mcm2"
   },
   {
     "id": 128,
     "categoria": "divisibilidad",
     "dificultad": 2,
-    "enunciado": "Si dividimos a un número entre 6, el resto es 4. ¿Cuál es el número más pequeño de dos cifras que cumple esto?",
-    "respuesta": "10",
-    "explicacion": "Los números que al dividir por 6 dan resto 4 son de la forma 6*k + 4. Probamos valores de k para encontrar el primero de dos cifras.",
-    "pista": "Escribe los múltiplos y súmales el resto."
+    "enunciado": "Si dividimos a un número entre 2, el resto es 1. ¿Cuál es el número más pequeño de dos cifras que cumple esto?",
+    "respuesta": "11",
+    "explicacion": "Los números que al dividir por 2 dan resto 1 son de la forma 2*k + 1. Probamos valores de k para encontrar el primero de dos cifras.",
+    "pista": "Escribí los múltiplos y sumales el resto.",
+    "template": "div_resto"
   },
   {
     "id": 129,
     "categoria": "divisibilidad",
     "dificultad": 2,
-    "enunciado": "Si dividimos a un número entre 5, el resto es 1. ¿Cuál es el número más pequeño de dos cifras que cumple esto?",
+    "enunciado": "Si dividimos a un número entre 4, el resto es 3. ¿Cuál es el número más pequeño de dos cifras que cumple esto?",
     "respuesta": "11",
-    "explicacion": "Los números que al dividir por 5 dan resto 1 son de la forma 5*k + 1. Probamos valores de k para encontrar el primero de dos cifras.",
-    "pista": "Escribe los múltiplos y súmales el resto."
+    "explicacion": "Los números que al dividir por 4 dan resto 3 son de la forma 4*k + 3. Probamos valores de k para encontrar el primero de dos cifras.",
+    "pista": "Escribí los múltiplos y sumales el resto.",
+    "template": "div_resto"
   },
   {
     "id": 130,
     "categoria": "divisibilidad",
     "dificultad": 2,
-    "enunciado": "Si dividimos a un número entre 3, el resto es 2. ¿Cuál es el número más pequeño de dos cifras que cumple esto?",
-    "respuesta": "11",
-    "explicacion": "Los números que al dividir por 3 dan resto 2 son de la forma 3*k + 2. Probamos valores de k para encontrar el primero de dos cifras.",
-    "pista": "Escribe los múltiplos y súmales el resto."
+    "enunciado": "Si dividimos a un número entre 5, el resto es 3. ¿Cuál es el número más pequeño de dos cifras que cumple esto?",
+    "respuesta": "13",
+    "explicacion": "Los números que al dividir por 5 dan resto 3 son de la forma 5*k + 3. Probamos valores de k para encontrar el primero de dos cifras.",
+    "pista": "Escribí los múltiplos y sumales el resto.",
+    "template": "div_resto"
   },
   {
     "id": 131,
@@ -1298,331 +1428,428 @@
     "enunciado": "Si dividimos a un número entre 6, el resto es 3. ¿Cuál es el número más pequeño de dos cifras que cumple esto?",
     "respuesta": "15",
     "explicacion": "Los números que al dividir por 6 dan resto 3 son de la forma 6*k + 3. Probamos valores de k para encontrar el primero de dos cifras.",
-    "pista": "Escribe los múltiplos y súmales el resto."
+    "pista": "Escribí los múltiplos y sumales el resto.",
+    "template": "div_resto"
   },
   {
     "id": 132,
     "categoria": "divisibilidad",
     "dificultad": 2,
-    "enunciado": "Si dividimos a un número entre 5, el resto es 3. ¿Cuál es el número más pequeño de dos cifras que cumple esto?",
-    "respuesta": "13",
-    "explicacion": "Los números que al dividir por 5 dan resto 3 son de la forma 5*k + 3. Probamos valores de k para encontrar el primero de dos cifras.",
-    "pista": "Escribe los múltiplos y súmales el resto."
+    "enunciado": "Si dividimos a un número entre 3, el resto es 2. ¿Cuál es el número más pequeño de dos cifras que cumple esto?",
+    "respuesta": "11",
+    "explicacion": "Los números que al dividir por 3 dan resto 2 son de la forma 3*k + 2. Probamos valores de k para encontrar el primero de dos cifras.",
+    "pista": "Escribí los múltiplos y sumales el resto.",
+    "template": "div_resto"
   },
   {
     "id": 133,
     "categoria": "divisibilidad",
     "dificultad": 2,
-    "enunciado": "Si dividimos a un número entre 6, el resto es 5. ¿Cuál es el número más pequeño de dos cifras que cumple esto?",
-    "respuesta": "11",
-    "explicacion": "Los números que al dividir por 6 dan resto 5 son de la forma 6*k + 5. Probamos valores de k para encontrar el primero de dos cifras.",
-    "pista": "Escribe los múltiplos y súmales el resto."
+    "enunciado": "Si dividimos a un número entre 4, el resto es 2. ¿Cuál es el número más pequeño de dos cifras que cumple esto?",
+    "respuesta": "10",
+    "explicacion": "Los números que al dividir por 4 dan resto 2 son de la forma 4*k + 2. Probamos valores de k para encontrar el primero de dos cifras.",
+    "pista": "Escribí los múltiplos y sumales el resto.",
+    "template": "div_resto"
   },
   {
     "id": 134,
-    "categoria": "divisibilidad",
-    "dificultad": 2,
-    "enunciado": "Si dividimos a un número entre 3, el resto es 1. ¿Cuál es el número más pequeño de dos cifras que cumple esto?",
-    "respuesta": "10",
-    "explicacion": "Los números que al dividir por 3 dan resto 1 son de la forma 3*k + 1. Probamos valores de k para encontrar el primero de dos cifras.",
-    "pista": "Escribe los múltiplos y súmales el resto."
-  },
-  {
-    "id": 135,
-    "categoria": "divisibilidad",
-    "dificultad": 3,
-    "enunciado": "¿Cuál es el menor número (distinto de cero) que es múltiplo de 4, 5 y 10 al mismo tiempo?",
-    "respuesta": "20",
-    "explicacion": "Buscamos el Mínimo Común Múltiplo (MCM) de 4, 5 y 10. Tomando los factores necesarios para que sea divisible por todos, el MCM es 20.",
-    "pista": "Buscá el primer número que aparezca en las tablas de todos ellos a la vez."
-  },
-  {
-    "id": 136,
-    "categoria": "divisibilidad",
-    "dificultad": 3,
-    "enunciado": "¿Cuál es el menor número (distinto de cero) que es múltiplo de 3, 5 y 6 al mismo tiempo?",
-    "respuesta": "30",
-    "explicacion": "Buscamos el Mínimo Común Múltiplo (MCM) de 3, 5 y 6. Tomando los factores necesarios para que sea divisible por todos, el MCM es 30.",
-    "pista": "Buscá el primer número que aparezca en las tablas de todos ellos a la vez."
-  },
-  {
-    "id": 137,
     "categoria": "divisibilidad",
     "dificultad": 3,
     "enunciado": "¿Cuál es el menor número (distinto de cero) que es múltiplo de 2, 3 y 5 al mismo tiempo?",
     "respuesta": "30",
     "explicacion": "Buscamos el Mínimo Común Múltiplo (MCM) de 2, 3 y 5. Tomando los factores necesarios para que sea divisible por todos, el MCM es 30.",
-    "pista": "Buscá el primer número que aparezca en las tablas de todos ellos a la vez."
+    "pista": "Buscá el primer número que aparezca en las tablas de todos ellos a la vez.",
+    "template": "div_mcm3"
   },
   {
-    "id": 138,
-    "categoria": "divisibilidad",
-    "dificultad": 3,
-    "enunciado": "¿Cuál es el menor número (distinto de cero) que es múltiplo de 3, 4 y 6 al mismo tiempo?",
-    "respuesta": "12",
-    "explicacion": "Buscamos el Mínimo Común Múltiplo (MCM) de 3, 4 y 6. Tomando los factores necesarios para que sea divisible por todos, el MCM es 12.",
-    "pista": "Buscá el primer número que aparezca en las tablas de todos ellos a la vez."
-  },
-  {
-    "id": 139,
+    "id": 135,
     "categoria": "divisibilidad",
     "dificultad": 3,
     "enunciado": "¿Cuál es el menor número (distinto de cero) que es múltiplo de 2, 3 y 4 al mismo tiempo?",
     "respuesta": "12",
     "explicacion": "Buscamos el Mínimo Común Múltiplo (MCM) de 2, 3 y 4. Tomando los factores necesarios para que sea divisible por todos, el MCM es 12.",
-    "pista": "Buscá el primer número que aparezca en las tablas de todos ellos a la vez."
+    "pista": "Buscá el primer número que aparezca en las tablas de todos ellos a la vez.",
+    "template": "div_mcm3"
+  },
+  {
+    "id": 136,
+    "categoria": "divisibilidad",
+    "dificultad": 3,
+    "enunciado": "¿Cuál es el menor número (distinto de cero) que es múltiplo de 3, 4 y 6 al mismo tiempo?",
+    "respuesta": "12",
+    "explicacion": "Buscamos el Mínimo Común Múltiplo (MCM) de 3, 4 y 6. Tomando los factores necesarios para que sea divisible por todos, el MCM es 12.",
+    "pista": "Buscá el primer número que aparezca en las tablas de todos ellos a la vez.",
+    "template": "div_mcm3"
+  },
+  {
+    "id": 137,
+    "categoria": "divisibilidad",
+    "dificultad": 3,
+    "enunciado": "¿Cuál es el menor número (distinto de cero) que es múltiplo de 4, 6 y 9 al mismo tiempo?",
+    "respuesta": "36",
+    "explicacion": "Buscamos el Mínimo Común Múltiplo (MCM) de 4, 6 y 9. Tomando los factores necesarios para que sea divisible por todos, el MCM es 36.",
+    "pista": "Buscá el primer número que aparezca en las tablas de todos ellos a la vez.",
+    "template": "div_mcm3"
+  },
+  {
+    "id": 138,
+    "categoria": "divisibilidad",
+    "dificultad": 3,
+    "enunciado": "¿Cuál es el menor número (distinto de cero) que es múltiplo de 2, 5 y 6 al mismo tiempo?",
+    "respuesta": "30",
+    "explicacion": "Buscamos el Mínimo Común Múltiplo (MCM) de 2, 5 y 6. Tomando los factores necesarios para que sea divisible por todos, el MCM es 30.",
+    "pista": "Buscá el primer número que aparezca en las tablas de todos ellos a la vez.",
+    "template": "div_mcm3"
+  },
+  {
+    "id": 139,
+    "categoria": "error",
+    "dificultad": 2,
+    "enunciado": "Resolución: 'El perímetro de un cuadrado de área 16 cm² es 8 cm, porque 16÷2=8'. ¿Qué operación permite encontrar el lado?",
+    "respuesta": "Sacar la raíz cuadrada de 16",
+    "explicacion": "Si el área es 16 cm², el lado es √16 = 4 cm (no 16÷2). El perímetro correcto es 4×4 = 16 cm.",
+    "pista": "¿Qué operación deshace 'lado × lado'?",
+    "template": "error_manual",
+    "opciones": [
+      "Sacar la raíz cuadrada de 16",
+      "Dividir 16 por 2",
+      "Dividir 16 por 4",
+      "Restar 8 a 16"
+    ]
   },
   {
     "id": 140,
     "categoria": "error",
     "dificultad": 2,
-    "enunciado": "Resolución: 'El perímetro de un cuadrado de área 16 cm² es 8 cm, porque 16÷2=8'. Escribí la operación correcta para encontrar el lado.",
-    "respuesta": "raiz cuadrada",
-    "explicacion": "Si el área es 16 cm², el lado es √16 = 4 cm (no 16÷2). El perímetro correcto es 4×4 = 16 cm.",
-    "pista": "¿Cómo se calcula el lado de un cuadrado si conocés el área?"
+    "enunciado": "Resolución: 'El área de un triángulo de base 8 cm y altura 5 cm es 40 cm², porque 8×5=40'. ¿Qué operación faltó?",
+    "respuesta": "Dividir por 2",
+    "explicacion": "El área de un triángulo es (base × altura) / 2 = (8 × 5) / 2 = 20 cm². Hay que dividir por 2.",
+    "pista": "¿Cuál es la fórmula del área de un triángulo?",
+    "template": "error_manual",
+    "opciones": [
+      "Dividir por 2",
+      "Multiplicar por 2",
+      "Sumar la base y la altura",
+      "Restar la altura"
+    ]
   },
   {
     "id": 141,
     "categoria": "error",
     "dificultad": 2,
-    "enunciado": "Resolución: 'El área de un triángulo de base 8 cm y altura 5 cm es 40 cm², porque 8×5=40'. ¿Qué operación faltó?",
-    "respuesta": "dividir por 2",
-    "explicacion": "El área de un triángulo es (base × altura) / 2 = (8 × 5) / 2 = 20 cm². Hay que dividir por 2.",
-    "pista": "¿Cuál es la fórmula del área de un triángulo?"
+    "enunciado": "Resolución: '1/2 + 1/3 = 2/5, porque sumo los numeradores y los denominadores'. ¿Qué se necesita para sumar fracciones?",
+    "respuesta": "Buscar un denominador común",
+    "explicacion": "Para sumar fracciones se necesita un denominador común. 1/2 + 1/3 = 3/6 + 2/6 = 5/6.",
+    "pista": "¿Podés sumar fracciones con distinto denominador directamente?",
+    "template": "error_manual",
+    "opciones": [
+      "Buscar un denominador común",
+      "Sumar numeradores y denominadores",
+      "Multiplicar las dos fracciones",
+      "Restar los denominadores"
+    ]
   },
   {
     "id": 142,
     "categoria": "error",
     "dificultad": 2,
-    "enunciado": "Resolución: '1/2 + 1/3 = 2/5, porque sumo los numeradores y los denominadores'. ¿Qué se necesita para sumar fracciones?",
-    "respuesta": "denominador comun",
-    "explicacion": "Para sumar fracciones se necesita un denominador común. 1/2 + 1/3 = 3/6 + 2/6 = 5/6.",
-    "pista": "¿Podés sumar fracciones con distinto denominador directamente?"
+    "enunciado": "Resolución: '2 + 3 × 4 = 20, porque primero sumo 2+3=5 y luego 5×4=20'. ¿Qué operación tiene prioridad?",
+    "respuesta": "La multiplicación",
+    "explicacion": "La multiplicación va antes que la suma. Primero 3×4=12, luego 2+12=14. No 20.",
+    "pista": "¿Qué operación tiene mayor prioridad según el orden de operaciones?",
+    "template": "error_manual",
+    "opciones": [
+      "La multiplicación",
+      "La suma",
+      "La que aparece primero",
+      "Las dos valen igual"
+    ]
   },
   {
     "id": 143,
     "categoria": "error",
     "dificultad": 2,
-    "enunciado": "Resolución: '2 + 3 × 4 = 20, porque primero sumo 2+3=5 y luego 5×4=20'. ¿Qué operación tiene prioridad?",
-    "respuesta": "multiplicacion",
-    "explicacion": "La multiplicación va antes que la suma. Primero 3×4=12, luego 2+12=14. No 20.",
-    "pista": "¿Qué operación tiene mayor prioridad según el orden de operaciones?"
+    "enunciado": "Resolución: 'El 10% de 200 es 2, porque divido 200÷100=2'. ¿Por cuánto hay que dividir para calcular el 10%?",
+    "respuesta": "Por 10",
+    "explicacion": "El 10% es la décima parte: 200÷10 = 20. Dividir por 100 da el 1%, no el 10%.",
+    "pista": "El 10% significa '10 de cada 100', es decir, 1 de cada 10.",
+    "template": "error_manual",
+    "opciones": [
+      "Por 10",
+      "Por 100",
+      "Por 20",
+      "Por 5"
+    ]
   },
   {
     "id": 144,
     "categoria": "error",
     "dificultad": 2,
-    "enunciado": "Resolución: 'El 10% de 200 es 2, porque divido 200÷100=2'. ¿Por cuánto hay que dividir para calcular el 10%?",
-    "respuesta": "10",
-    "explicacion": "El 10% es la décima parte: 200÷10 = 20. Dividir por 100 da el 1%, no el 10%.",
-    "pista": "El 10% significa '10 de cada 100', es decir, 1 de cada 10."
+    "enunciado": "Resolución: 'El área de un cuadrado de lado 5 cm es 20 cm², porque 4×5=20'. ¿Qué calculó en realidad?",
+    "respuesta": "El perímetro",
+    "explicacion": "4×5=20 es el perímetro, no el área. El área es lado×lado = 5×5 = 25 cm².",
+    "pista": "¿Cuál es la diferencia entre área y perímetro?",
+    "template": "error_manual",
+    "opciones": [
+      "El perímetro",
+      "El área",
+      "La diagonal",
+      "El doble del lado"
+    ]
   },
   {
     "id": 145,
     "categoria": "error",
     "dificultad": 2,
-    "enunciado": "Resolución: 'El área de un cuadrado de lado 5 cm es 20 cm², porque 4×5=20'. ¿Qué calculó en realidad?",
-    "respuesta": "perimetro",
-    "explicacion": "4×5=20 es el perímetro, no el área. El área es lado×lado = 5×5 = 25 cm².",
-    "pista": "¿Cuál es la diferencia entre área y perímetro?"
+    "enunciado": "Resolución: '1/2 × 1/3 = 1/5, porque multiplico los numeradores y sumo los denominadores'. ¿Qué se hace con los denominadores al multiplicar fracciones?",
+    "respuesta": "Se multiplican entre sí",
+    "explicacion": "Al multiplicar fracciones se multiplican numeradores y denominadores. 1/2 × 1/3 = (1×1)/(2×3) = 1/6.",
+    "pista": "¿Cómo se multiplican dos fracciones?",
+    "template": "error_manual",
+    "opciones": [
+      "Se multiplican entre sí",
+      "Se suman entre sí",
+      "Se restan",
+      "Se deja el más grande"
+    ]
   },
   {
     "id": 146,
     "categoria": "error",
     "dificultad": 2,
-    "enunciado": "Resolución: '1/2 × 1/3 = 1/5, porque multiplico los numeradores y sumo los denominadores'. ¿Qué se hace con los denominadores al multiplicar fracciones?",
-    "respuesta": "multiplicar",
-    "explicacion": "Al multiplicar fracciones se multiplican numeradores y denominadores. 1/2 × 1/3 = (1×1)/(2×3) = 1/6.",
-    "pista": "¿Cómo se multiplican dos fracciones?"
+    "enunciado": "Resolución: 'Hay 3 camisetas y 2 pantalones, así que hay 5 combinaciones posibles porque 3+2=5'. ¿Cuál es la operación correcta?",
+    "respuesta": "Multiplicar 3 × 2",
+    "explicacion": "Por el principio de multiplicación: 3 × 2 = 6 combinaciones. Cada camiseta se combina con cada pantalón.",
+    "pista": "¿Cuántas combinaciones tiene cada camiseta con los pantalones?",
+    "template": "error_manual",
+    "opciones": [
+      "Multiplicar 3 × 2",
+      "Sumar 3 + 2",
+      "Restar 3 − 2",
+      "Elevar 3 al cuadrado"
+    ]
   },
   {
     "id": 147,
     "categoria": "error",
     "dificultad": 2,
-    "enunciado": "Resolución: 'Hay 3 camisetas y 2 pantalones, así que hay 5 combinaciones posibles porque 3+2=5'. ¿Cuál es la operación correcta?",
-    "respuesta": "multiplicar",
-    "explicacion": "Por el principio de multiplicación: 3 × 2 = 6 combinaciones. Cada camiseta se combina con cada pantalón.",
-    "pista": "¿Cuántas combinaciones tiene cada camiseta con los pantalones?"
+    "enunciado": "Resolución: 'La suma de los ángulos de un triángulo es 360° como la de cualquier figura'. ¿Cuántos grados suman los ángulos interiores de un triángulo?",
+    "respuesta": "180°",
+    "explicacion": "Los ángulos interiores de un triángulo suman 180°. Los 360° corresponden a los cuadriláteros.",
+    "pista": "Cortá las tres puntas de un triángulo de papel y juntalas: forman un ángulo llano.",
+    "template": "error_manual",
+    "opciones": [
+      "180°",
+      "360°",
+      "90°",
+      "270°"
+    ]
   },
   {
     "id": 148,
     "categoria": "error",
     "dificultad": 2,
-    "enunciado": "Resolución: 'La suma de los ángulos de un triángulo es 360° como la de cualquier figura'. ¿Cuántos grados suman los ángulos de un triángulo?",
-    "respuesta": "180",
-    "explicacion": "Los ángulos interiores de un triángulo suman 180°. Los 360° corresponden a los cuadriláteros.",
-    "pista": "¿Cuánto suman los ángulos de un triángulo?"
-  },
-  {
-    "id": 149,
-    "categoria": "error",
-    "dificultad": 2,
     "enunciado": "Resolución: 'El MCM de 4 y 6 es 24, porque 4×6=24'. ¿Cuál es el Mínimo Común Múltiplo correcto?",
     "respuesta": "12",
     "explicacion": "El MCM de 4 y 6 es 12. Múltiplos de 4: 4,8,12... y de 6: 6,12... El primero en común es 12.",
-    "pista": "Busca el primer número que sea múltiplo de ambos."
+    "pista": "Buscá el primer número que sea múltiplo de ambos.",
+    "template": "error_manual",
+    "opciones": [
+      "12",
+      "24",
+      "6",
+      "48"
+    ]
+  },
+  {
+    "id": 149,
+    "categoria": "olimpico",
+    "dificultad": 3,
+    "enunciado": "Para numerar las páginas de un libro de 107 páginas, ¿cuántos dígitos se utilizan en total?",
+    "respuesta": "213",
+    "explicacion": "De la página 1 a la 9 se usan 9 dígitos. De la 10 a la 99 se usan 180 dígitos. Y si hay más de 99, las páginas de 3 cifras usan 3 dígitos cada una.",
+    "pista": "Separá por cantidad de cifras: de 1 cifra, de 2 cifras, etc.",
+    "template": "olimpico_paginas"
   },
   {
     "id": 150,
     "categoria": "olimpico",
     "dificultad": 3,
-    "enunciado": "Para numerar las páginas de un libro de 115 páginas, ¿cuántos dígitos se utilizan en total?",
-    "respuesta": "237",
-    "explicacion": "De la página 1 a la 9 se usan 9 dígitos. De la 10 a la 99 se usan 180 dígitos. Y si hay más de 99, las páginas de 3 cifras usan 3 dígitos cada una.",
-    "pista": "Separa por cantidad de cifras: de 1 cifra, de 2 cifras, etc."
+    "enunciado": "Para numerar las páginas de un libro de 93 páginas, ¿cuántos dígitos se utilizan en total?",
+    "respuesta": "177",
+    "explicacion": "De la página 1 a la 9 se usan 9 dígitos. De la 10 a la 93 se usan 168 dígitos. Y si hay más de 99, las páginas de 3 cifras usan 3 dígitos cada una.",
+    "pista": "Separá por cantidad de cifras: de 1 cifra, de 2 cifras, etc.",
+    "template": "olimpico_paginas"
   },
   {
     "id": 151,
     "categoria": "olimpico",
     "dificultad": 3,
-    "enunciado": "Para numerar las páginas de un libro de 143 páginas, ¿cuántos dígitos se utilizan en total?",
-    "respuesta": "321",
-    "explicacion": "De la página 1 a la 9 se usan 9 dígitos. De la 10 a la 99 se usan 180 dígitos. Y si hay más de 99, las páginas de 3 cifras usan 3 dígitos cada una.",
-    "pista": "Separa por cantidad de cifras: de 1 cifra, de 2 cifras, etc."
+    "enunciado": "Para numerar las páginas de un libro de 74 páginas, ¿cuántos dígitos se utilizan en total?",
+    "respuesta": "139",
+    "explicacion": "De la página 1 a la 9 se usan 9 dígitos. De la 10 a la 74 se usan 130 dígitos. Y si hay más de 99, las páginas de 3 cifras usan 3 dígitos cada una.",
+    "pista": "Separá por cantidad de cifras: de 1 cifra, de 2 cifras, etc.",
+    "template": "olimpico_paginas"
   },
   {
     "id": 152,
     "categoria": "olimpico",
     "dificultad": 3,
-    "enunciado": "Para numerar las páginas de un libro de 118 páginas, ¿cuántos dígitos se utilizan en total?",
-    "respuesta": "246",
+    "enunciado": "Para numerar las páginas de un libro de 128 páginas, ¿cuántos dígitos se utilizan en total?",
+    "respuesta": "276",
     "explicacion": "De la página 1 a la 9 se usan 9 dígitos. De la 10 a la 99 se usan 180 dígitos. Y si hay más de 99, las páginas de 3 cifras usan 3 dígitos cada una.",
-    "pista": "Separa por cantidad de cifras: de 1 cifra, de 2 cifras, etc."
+    "pista": "Separá por cantidad de cifras: de 1 cifra, de 2 cifras, etc.",
+    "template": "olimpico_paginas"
   },
   {
     "id": 153,
     "categoria": "olimpico",
     "dificultad": 3,
-    "enunciado": "Para numerar las páginas de un libro de 147 páginas, ¿cuántos dígitos se utilizan en total?",
-    "respuesta": "333",
-    "explicacion": "De la página 1 a la 9 se usan 9 dígitos. De la 10 a la 99 se usan 180 dígitos. Y si hay más de 99, las páginas de 3 cifras usan 3 dígitos cada una.",
-    "pista": "Separa por cantidad de cifras: de 1 cifra, de 2 cifras, etc."
+    "enunciado": "Para numerar las páginas de un libro de 78 páginas, ¿cuántos dígitos se utilizan en total?",
+    "respuesta": "147",
+    "explicacion": "De la página 1 a la 9 se usan 9 dígitos. De la 10 a la 78 se usan 138 dígitos. Y si hay más de 99, las páginas de 3 cifras usan 3 dígitos cada una.",
+    "pista": "Separá por cantidad de cifras: de 1 cifra, de 2 cifras, etc.",
+    "template": "olimpico_paginas"
   },
   {
     "id": 154,
     "categoria": "olimpico",
     "dificultad": 3,
-    "enunciado": "Para numerar las páginas de un libro de 139 páginas, ¿cuántos dígitos se utilizan en total?",
-    "respuesta": "309",
+    "enunciado": "Para numerar las páginas de un libro de 124 páginas, ¿cuántos dígitos se utilizan en total?",
+    "respuesta": "264",
     "explicacion": "De la página 1 a la 9 se usan 9 dígitos. De la 10 a la 99 se usan 180 dígitos. Y si hay más de 99, las páginas de 3 cifras usan 3 dígitos cada una.",
-    "pista": "Separa por cantidad de cifras: de 1 cifra, de 2 cifras, etc."
+    "pista": "Separá por cantidad de cifras: de 1 cifra, de 2 cifras, etc.",
+    "template": "olimpico_paginas"
   },
   {
     "id": 155,
     "categoria": "olimpico",
     "dificultad": 3,
-    "enunciado": "Para numerar las páginas de un libro de 95 páginas, ¿cuántos dígitos se utilizan en total?",
-    "respuesta": "181",
-    "explicacion": "De la página 1 a la 9 se usan 9 dígitos. De la 10 a la 95 se usan 172 dígitos. Y si hay más de 99, las páginas de 3 cifras usan 3 dígitos cada una.",
-    "pista": "Separa por cantidad de cifras: de 1 cifra, de 2 cifras, etc."
+    "enunciado": "Para numerar las páginas de un libro de 75 páginas, ¿cuántos dígitos se utilizan en total?",
+    "respuesta": "141",
+    "explicacion": "De la página 1 a la 9 se usan 9 dígitos. De la 10 a la 75 se usan 132 dígitos. Y si hay más de 99, las páginas de 3 cifras usan 3 dígitos cada una.",
+    "pista": "Separá por cantidad de cifras: de 1 cifra, de 2 cifras, etc.",
+    "template": "olimpico_paginas"
   },
   {
     "id": 156,
     "categoria": "olimpico",
     "dificultad": 3,
-    "enunciado": "Para numerar las páginas de un libro de 75 páginas, ¿cuántos dígitos se utilizan en total?",
-    "respuesta": "141",
-    "explicacion": "De la página 1 a la 9 se usan 9 dígitos. De la 10 a la 75 se usan 132 dígitos. Y si hay más de 99, las páginas de 3 cifras usan 3 dígitos cada una.",
-    "pista": "Separa por cantidad de cifras: de 1 cifra, de 2 cifras, etc."
+    "enunciado": "Para numerar las páginas de un libro de 113 páginas, ¿cuántos dígitos se utilizan en total?",
+    "respuesta": "231",
+    "explicacion": "De la página 1 a la 9 se usan 9 dígitos. De la 10 a la 99 se usan 180 dígitos. Y si hay más de 99, las páginas de 3 cifras usan 3 dígitos cada una.",
+    "pista": "Separá por cantidad de cifras: de 1 cifra, de 2 cifras, etc.",
+    "template": "olimpico_paginas"
   },
   {
     "id": 157,
     "categoria": "olimpico",
     "dificultad": 3,
-    "enunciado": "Para numerar las páginas de un libro de 68 páginas, ¿cuántos dígitos se utilizan en total?",
-    "respuesta": "127",
-    "explicacion": "De la página 1 a la 9 se usan 9 dígitos. De la 10 a la 68 se usan 118 dígitos. Y si hay más de 99, las páginas de 3 cifras usan 3 dígitos cada una.",
-    "pista": "Separa por cantidad de cifras: de 1 cifra, de 2 cifras, etc."
+    "enunciado": "Para numerar las páginas de un libro de 83 páginas, ¿cuántos dígitos se utilizan en total?",
+    "respuesta": "157",
+    "explicacion": "De la página 1 a la 9 se usan 9 dígitos. De la 10 a la 83 se usan 148 dígitos. Y si hay más de 99, las páginas de 3 cifras usan 3 dígitos cada una.",
+    "pista": "Separá por cantidad de cifras: de 1 cifra, de 2 cifras, etc.",
+    "template": "olimpico_paginas"
   },
   {
     "id": 158,
     "categoria": "olimpico",
     "dificultad": 3,
-    "enunciado": "Para numerar las páginas de un libro de 102 páginas, ¿cuántos dígitos se utilizan en total?",
-    "respuesta": "198",
-    "explicacion": "De la página 1 a la 9 se usan 9 dígitos. De la 10 a la 99 se usan 180 dígitos. Y si hay más de 99, las páginas de 3 cifras usan 3 dígitos cada una.",
-    "pista": "Separa por cantidad de cifras: de 1 cifra, de 2 cifras, etc."
+    "enunciado": "Para numerar las páginas de un libro de 84 páginas, ¿cuántos dígitos se utilizan en total?",
+    "respuesta": "159",
+    "explicacion": "De la página 1 a la 9 se usan 9 dígitos. De la 10 a la 84 se usan 150 dígitos. Y si hay más de 99, las páginas de 3 cifras usan 3 dígitos cada una.",
+    "pista": "Separá por cantidad de cifras: de 1 cifra, de 2 cifras, etc.",
+    "template": "olimpico_paginas"
   },
   {
     "id": 159,
     "categoria": "olimpico",
     "dificultad": 3,
-    "enunciado": "Para numerar las páginas de un libro de 148 páginas, ¿cuántos dígitos se utilizan en total?",
-    "respuesta": "336",
-    "explicacion": "De la página 1 a la 9 se usan 9 dígitos. De la 10 a la 99 se usan 180 dígitos. Y si hay más de 99, las páginas de 3 cifras usan 3 dígitos cada una.",
-    "pista": "Separa por cantidad de cifras: de 1 cifra, de 2 cifras, etc."
+    "enunciado": "Para numerar las páginas de un libro de 53 páginas, ¿cuántos dígitos se utilizan en total?",
+    "respuesta": "97",
+    "explicacion": "De la página 1 a la 9 se usan 9 dígitos. De la 10 a la 53 se usan 88 dígitos. Y si hay más de 99, las páginas de 3 cifras usan 3 dígitos cada una.",
+    "pista": "Separá por cantidad de cifras: de 1 cifra, de 2 cifras, etc.",
+    "template": "olimpico_paginas"
   },
   {
     "id": 160,
     "categoria": "olimpico",
     "dificultad": 3,
-    "enunciado": "Para numerar las páginas de un libro de 84 páginas, ¿cuántos dígitos se utilizan en total?",
-    "respuesta": "159",
-    "explicacion": "De la página 1 a la 9 se usan 9 dígitos. De la 10 a la 84 se usan 150 dígitos. Y si hay más de 99, las páginas de 3 cifras usan 3 dígitos cada una.",
-    "pista": "Separa por cantidad de cifras: de 1 cifra, de 2 cifras, etc."
+    "enunciado": "Para numerar las páginas de un libro de 106 páginas, ¿cuántos dígitos se utilizan en total?",
+    "respuesta": "210",
+    "explicacion": "De la página 1 a la 9 se usan 9 dígitos. De la 10 a la 99 se usan 180 dígitos. Y si hay más de 99, las páginas de 3 cifras usan 3 dígitos cada una.",
+    "pista": "Separá por cantidad de cifras: de 1 cifra, de 2 cifras, etc.",
+    "template": "olimpico_paginas"
   },
   {
     "id": 161,
     "categoria": "olimpico",
     "dificultad": 3,
-    "enunciado": "Para numerar las páginas de un libro de 85 páginas, ¿cuántos dígitos se utilizan en total?",
-    "respuesta": "161",
-    "explicacion": "De la página 1 a la 9 se usan 9 dígitos. De la 10 a la 85 se usan 152 dígitos. Y si hay más de 99, las páginas de 3 cifras usan 3 dígitos cada una.",
-    "pista": "Separa por cantidad de cifras: de 1 cifra, de 2 cifras, etc."
+    "enunciado": "Para numerar las páginas de un libro de 142 páginas, ¿cuántos dígitos se utilizan en total?",
+    "respuesta": "318",
+    "explicacion": "De la página 1 a la 9 se usan 9 dígitos. De la 10 a la 99 se usan 180 dígitos. Y si hay más de 99, las páginas de 3 cifras usan 3 dígitos cada una.",
+    "pista": "Separá por cantidad de cifras: de 1 cifra, de 2 cifras, etc.",
+    "template": "olimpico_paginas"
   },
   {
     "id": 162,
     "categoria": "olimpico",
     "dificultad": 3,
-    "enunciado": "Para numerar las páginas de un libro de 52 páginas, ¿cuántos dígitos se utilizan en total?",
-    "respuesta": "95",
-    "explicacion": "De la página 1 a la 9 se usan 9 dígitos. De la 10 a la 52 se usan 86 dígitos. Y si hay más de 99, las páginas de 3 cifras usan 3 dígitos cada una.",
-    "pista": "Separa por cantidad de cifras: de 1 cifra, de 2 cifras, etc."
+    "enunciado": "Para numerar las páginas de un libro de 149 páginas, ¿cuántos dígitos se utilizan en total?",
+    "respuesta": "339",
+    "explicacion": "De la página 1 a la 9 se usan 9 dígitos. De la 10 a la 99 se usan 180 dígitos. Y si hay más de 99, las páginas de 3 cifras usan 3 dígitos cada una.",
+    "pista": "Separá por cantidad de cifras: de 1 cifra, de 2 cifras, etc.",
+    "template": "olimpico_paginas"
   },
   {
     "id": 163,
     "categoria": "olimpico",
     "dificultad": 3,
-    "enunciado": "Para numerar las páginas de un libro de 112 páginas, ¿cuántos dígitos se utilizan en total?",
-    "respuesta": "228",
-    "explicacion": "De la página 1 a la 9 se usan 9 dígitos. De la 10 a la 99 se usan 180 dígitos. Y si hay más de 99, las páginas de 3 cifras usan 3 dígitos cada una.",
-    "pista": "Separa por cantidad de cifras: de 1 cifra, de 2 cifras, etc."
+    "enunciado": "Para numerar las páginas de un libro de 60 páginas, ¿cuántos dígitos se utilizan en total?",
+    "respuesta": "111",
+    "explicacion": "De la página 1 a la 9 se usan 9 dígitos. De la 10 a la 60 se usan 102 dígitos. Y si hay más de 99, las páginas de 3 cifras usan 3 dígitos cada una.",
+    "pista": "Separá por cantidad de cifras: de 1 cifra, de 2 cifras, etc.",
+    "template": "olimpico_paginas"
   },
   {
     "id": 164,
     "categoria": "olimpico",
     "dificultad": 3,
-    "enunciado": "En una caja hay bolitas rojas, azules y verdes. Hay 5 rojas más que azules, y 3 verdes menos que rojas. En total hay 34 bolitas. ¿Cuántas bolitas azules hay?",
-    "respuesta": "9",
-    "explicacion": "Si A son las azules: R = A+5 y V = R-3 = A+2. Total: A + (A+5) + (A+2) = 3A+7 = 34. Entonces 3A = 27, A = 9.",
-    "pista": "Usa una letra para las bolitas azules y expresa el resto en función de ellas."
+    "enunciado": "En una caja hay bolitas rojas, azules y verdes. Hay 5 rojas más que azules, y 3 verdes menos que rojas. En total hay 40 bolitas. ¿Cuántas bolitas azules hay?",
+    "respuesta": "11",
+    "explicacion": "Si A son las azules: R = A+5 y V = R-3 = A+2. Total: A + (A+5) + (A+2) = 3A+7 = 40. Entonces 3A = 33, A = 11.",
+    "pista": "Usá una letra para las bolitas azules y expresá el resto en función de ellas.",
+    "template": "olimpico_bolitas"
   },
   {
     "id": 165,
     "categoria": "olimpico",
     "dificultad": 3,
-    "enunciado": "En una caja hay bolitas rojas, azules y verdes. Hay 5 rojas más que azules, y 3 verdes menos que rojas. En total hay 43 bolitas. ¿Cuántas bolitas azules hay?",
-    "respuesta": "12",
-    "explicacion": "Si A son las azules: R = A+5 y V = R-3 = A+2. Total: A + (A+5) + (A+2) = 3A+7 = 43. Entonces 3A = 36, A = 12.",
-    "pista": "Usa una letra para las bolitas azules y expresa el resto en función de ellas."
+    "enunciado": "En una caja hay bolitas rojas, azules y verdes. Hay 5 rojas más que azules, y 3 verdes menos que rojas. En total hay 31 bolitas. ¿Cuántas bolitas azules hay?",
+    "respuesta": "8",
+    "explicacion": "Si A son las azules: R = A+5 y V = R-3 = A+2. Total: A + (A+5) + (A+2) = 3A+7 = 31. Entonces 3A = 24, A = 8.",
+    "pista": "Usá una letra para las bolitas azules y expresá el resto en función de ellas.",
+    "template": "olimpico_bolitas"
   },
   {
     "id": 166,
     "categoria": "olimpico",
     "dificultad": 3,
-    "enunciado": "En una caja hay bolitas rojas, azules y verdes. Hay 5 rojas más que azules, y 3 verdes menos que rojas. En total hay 22 bolitas. ¿Cuántas bolitas azules hay?",
-    "respuesta": "5",
-    "explicacion": "Si A son las azules: R = A+5 y V = R-3 = A+2. Total: A + (A+5) + (A+2) = 3A+7 = 22. Entonces 3A = 15, A = 5.",
-    "pista": "Usa una letra para las bolitas azules y expresa el resto en función de ellas."
+    "enunciado": "En una caja hay bolitas rojas, azules y verdes. Hay 5 rojas más que azules, y 3 verdes menos que rojas. En total hay 34 bolitas. ¿Cuántas bolitas azules hay?",
+    "respuesta": "9",
+    "explicacion": "Si A son las azules: R = A+5 y V = R-3 = A+2. Total: A + (A+5) + (A+2) = 3A+7 = 34. Entonces 3A = 27, A = 9.",
+    "pista": "Usá una letra para las bolitas azules y expresá el resto en función de ellas.",
+    "template": "olimpico_bolitas"
   },
   {
     "id": 167,
     "categoria": "olimpico",
     "dificultad": 3,
-    "enunciado": "En una caja hay bolitas rojas, azules y verdes. Hay 5 rojas más que azules, y 3 verdes menos que rojas. En total hay 28 bolitas. ¿Cuántas bolitas azules hay?",
-    "respuesta": "7",
-    "explicacion": "Si A son las azules: R = A+5 y V = R-3 = A+2. Total: A + (A+5) + (A+2) = 3A+7 = 28. Entonces 3A = 21, A = 7.",
-    "pista": "Usa una letra para las bolitas azules y expresa el resto en función de ellas."
+    "enunciado": "En una caja hay bolitas rojas, azules y verdes. Hay 5 rojas más que azules, y 3 verdes menos que rojas. En total hay 25 bolitas. ¿Cuántas bolitas azules hay?",
+    "respuesta": "6",
+    "explicacion": "Si A son las azules: R = A+5 y V = R-3 = A+2. Total: A + (A+5) + (A+2) = 3A+7 = 25. Entonces 3A = 18, A = 6.",
+    "pista": "Usá una letra para las bolitas azules y expresá el resto en función de ellas.",
+    "template": "olimpico_bolitas"
   },
   {
     "id": 168,
@@ -1631,24 +1858,284 @@
     "enunciado": "En una caja hay bolitas rojas, azules y verdes. Hay 5 rojas más que azules, y 3 verdes menos que rojas. En total hay 19 bolitas. ¿Cuántas bolitas azules hay?",
     "respuesta": "4",
     "explicacion": "Si A son las azules: R = A+5 y V = R-3 = A+2. Total: A + (A+5) + (A+2) = 3A+7 = 19. Entonces 3A = 12, A = 4.",
-    "pista": "Usa una letra para las bolitas azules y expresa el resto en función de ellas."
+    "pista": "Usá una letra para las bolitas azules y expresá el resto en función de ellas.",
+    "template": "olimpico_bolitas"
   },
   {
     "id": 169,
     "categoria": "olimpico",
     "dificultad": 3,
-    "enunciado": "En una caja hay bolitas rojas, azules y verdes. Hay 5 rojas más que azules, y 3 verdes menos que rojas. En total hay 40 bolitas. ¿Cuántas bolitas azules hay?",
-    "respuesta": "11",
-    "explicacion": "Si A son las azules: R = A+5 y V = R-3 = A+2. Total: A + (A+5) + (A+2) = 3A+7 = 40. Entonces 3A = 33, A = 11.",
-    "pista": "Usa una letra para las bolitas azules y expresa el resto en función de ellas."
+    "enunciado": "En una caja hay bolitas rojas, azules y verdes. Hay 5 rojas más que azules, y 3 verdes menos que rojas. En total hay 22 bolitas. ¿Cuántas bolitas azules hay?",
+    "respuesta": "5",
+    "explicacion": "Si A son las azules: R = A+5 y V = R-3 = A+2. Total: A + (A+5) + (A+2) = 3A+7 = 22. Entonces 3A = 15, A = 5.",
+    "pista": "Usá una letra para las bolitas azules y expresá el resto en función de ellas.",
+    "template": "olimpico_bolitas"
   },
   {
     "id": 170,
     "categoria": "olimpico",
     "dificultad": 3,
-    "enunciado": "En una caja hay bolitas rojas, azules y verdes. Hay 5 rojas más que azules, y 3 verdes menos que rojas. En total hay 37 bolitas. ¿Cuántas bolitas azules hay?",
-    "respuesta": "10",
-    "explicacion": "Si A son las azules: R = A+5 y V = R-3 = A+2. Total: A + (A+5) + (A+2) = 3A+7 = 37. Entonces 3A = 30, A = 10.",
-    "pista": "Usa una letra para las bolitas azules y expresa el resto en función de ellas."
+    "enunciado": "En una caja hay bolitas rojas, azules y verdes. Hay 5 rojas más que azules, y 3 verdes menos que rojas. En total hay 43 bolitas. ¿Cuántas bolitas azules hay?",
+    "respuesta": "12",
+    "explicacion": "Si A son las azules: R = A+5 y V = R-3 = A+2. Total: A + (A+5) + (A+2) = 3A+7 = 43. Entonces 3A = 36, A = 12.",
+    "pista": "Usá una letra para las bolitas azules y expresá el resto en función de ellas.",
+    "template": "olimpico_bolitas"
+  },
+  {
+    "id": 171,
+    "categoria": "olimpico",
+    "dificultad": 3,
+    "enunciado": "En una caja hay bolitas rojas, azules y verdes. Hay 5 rojas más que azules, y 3 verdes menos que rojas. En total hay 16 bolitas. ¿Cuántas bolitas azules hay?",
+    "respuesta": "3",
+    "explicacion": "Si A son las azules: R = A+5 y V = R-3 = A+2. Total: A + (A+5) + (A+2) = 3A+7 = 16. Entonces 3A = 9, A = 3.",
+    "pista": "Usá una letra para las bolitas azules y expresá el resto en función de ellas.",
+    "template": "olimpico_bolitas"
+  },
+  {
+    "id": 172,
+    "categoria": "patrones",
+    "dificultad": 2,
+    "enunciado": "En una fiesta se arman mesas en hilera. Una mesa sola permite sentar 6 personas, y cada mesa que se agrega a la hilera suma 4 lugares más. ¿Cuántas personas se pueden sentar con 7 mesas en hilera?",
+    "respuesta": "30",
+    "explicacion": "La primera mesa sienta 6 personas. Las otras 6 mesas agregan 4 lugares cada una: 6 + 6×4 = 6 + 24 = 30 personas.",
+    "pista": "Probá con 2 y 3 mesas, anotá cuántos lugares hay y buscá el patrón.",
+    "template": "manual"
+  },
+  {
+    "id": 173,
+    "categoria": "patrones",
+    "dificultad": 2,
+    "enunciado": "Lucía escribe una lista que empieza con 1, 1 y donde cada número siguiente se obtiene sumando los dos anteriores: 1, 1, 2, 3, 5, 8, ... ¿Cuál es el décimo número de la lista?",
+    "respuesta": "55",
+    "explicacion": "Siguiendo la regla: 1, 1, 2, 3, 5, 8, 13, 21, 34, 55. El décimo es 55.",
+    "pista": "Escribí la lista completa hasta el décimo lugar, sumando siempre los dos últimos.",
+    "template": "manual"
+  },
+  {
+    "id": 174,
+    "categoria": "patrones",
+    "dificultad": 3,
+    "enunciado": "Un mago tiene un cofre con monedas. Cada noche duplica las monedas del cofre y, después de duplicar, saca 2 para pagar a su ayudante. Si el lunes a la mañana hay 5 monedas, ¿cuántas hay el jueves a la mañana?",
+    "respuesta": "26",
+    "explicacion": "Pasan 3 noches. Lunes: 5. Martes: 5×2−2 = 8. Miércoles: 8×2−2 = 14. Jueves: 14×2−2 = 26 monedas.",
+    "pista": "Andá día por día: primero duplicá, después restá 2.",
+    "template": "manual"
+  },
+  {
+    "id": 175,
+    "categoria": "patrones",
+    "dificultad": 3,
+    "enunciado": "Se arma una guarda con palitos de helado: el primer cuadrado usa 4 palitos, y cada cuadrado siguiente, pegado al anterior, usa solo 3 palitos más. ¿Cuántos palitos hacen falta para una guarda de 12 cuadrados?",
+    "respuesta": "37",
+    "explicacion": "El primer cuadrado usa 4 palitos y los 11 siguientes usan 3 cada uno (comparten un lado con el anterior): 4 + 11×3 = 37 palitos.",
+    "pista": "Dibujá los primeros 3 cuadrados pegados y contá los palitos: 4, 7, 10...",
+    "template": "manual"
+  },
+  {
+    "id": 176,
+    "categoria": "logica",
+    "dificultad": 2,
+    "enunciado": "Ana, Bruno y Carla corren una carrera. Ana no llegó última, Carla llegó justo detrás de Ana y Bruno no ganó. ¿Quién ganó la carrera?",
+    "respuesta": "Ana",
+    "explicacion": "Como Carla llegó justo detrás de Ana, van pegadas en ese orden. Si Bruno no ganó, la única opción es Ana 1ª, Carla 2ª y Bruno 3º. Ganó Ana.",
+    "pista": "Probá los órdenes posibles y tachá los que rompen alguna de las tres condiciones.",
+    "template": "manual"
+  },
+  {
+    "id": 177,
+    "categoria": "logica",
+    "dificultad": 2,
+    "enunciado": "En un canasto hay 30 frutas entre manzanas y naranjas. Hay 8 manzanas más que naranjas. ¿Cuántas naranjas hay?",
+    "respuesta": "11",
+    "explicacion": "Si sacamos las 8 manzanas 'de más', quedan 22 frutas repartidas en partes iguales: 11 naranjas y 11 manzanas. Hay 11 naranjas (y 19 manzanas: 11+19 = 30).",
+    "pista": "Sacá la diferencia del total y repartí lo que queda en partes iguales.",
+    "template": "manual"
+  },
+  {
+    "id": 178,
+    "categoria": "logica",
+    "dificultad": 3,
+    "enunciado": "Tres amigas juntan caramelos. Sofía tiene el triple que Valen, y Mora tiene 4 caramelos más que Valen. Entre las tres tienen 54 caramelos. ¿Cuántos caramelos tiene Sofía?",
+    "respuesta": "30",
+    "explicacion": "Si Valen tiene V: Sofía tiene 3V y Mora tiene V+4. Entonces V + 3V + V + 4 = 54, es decir 5V = 50, V = 10. Sofía tiene 3×10 = 30 caramelos.",
+    "pista": "Usá 'cajitas': Valen 1 caja, Sofía 3 cajas, Mora 1 caja y 4 sueltos.",
+    "template": "manual"
+  },
+  {
+    "id": 179,
+    "categoria": "logica",
+    "dificultad": 3,
+    "enunciado": "Un caracol sube por un poste de 16 metros. De día sube 5 metros, pero de noche resbala 3. Si empieza un lunes a la mañana desde el piso, ¿qué día llega a la punta?",
+    "respuesta": "domingo",
+    "explicacion": "Cada día completo avanza 5−3 = 2 metros. Al terminar el sábado de noche está a 12 metros. El domingo sube 5 y llega a 17: ¡alcanza la punta el domingo, y ya no resbala!",
+    "pista": "Ojo con el final: el día que llega arriba, ya no resbala a la noche.",
+    "template": "manual"
+  },
+  {
+    "id": 180,
+    "categoria": "geometria",
+    "dificultad": 2,
+    "enunciado": "Un rectángulo tiene 36 cm de perímetro y su base mide el doble que su altura. ¿Cuántos centímetros mide la base?",
+    "respuesta": "12",
+    "explicacion": "Base + altura = 36÷2 = 18 cm. Como la base es el doble, son 3 partes iguales: 18÷3 = 6. La altura mide 6 cm y la base 2×6 = 12 cm.",
+    "pista": "La base y la altura juntas suman la mitad del perímetro.",
+    "template": "manual"
+  },
+  {
+    "id": 181,
+    "categoria": "geometria",
+    "dificultad": 2,
+    "enunciado": "Con baldosas cuadradas de 20 cm de lado se quiere cubrir por completo un patio rectangular de 2 metros por 3 metros, sin cortar ninguna baldosa. ¿Cuántas baldosas se necesitan?",
+    "respuesta": "150",
+    "explicacion": "2 m = 200 cm y 3 m = 300 cm. Entran 200÷20 = 10 baldosas a lo ancho y 300÷20 = 15 a lo largo: 10 × 15 = 150 baldosas.",
+    "pista": "Pasá todo a centímetros y fijate cuántas baldosas entran por lado.",
+    "template": "manual"
+  },
+  {
+    "id": 182,
+    "categoria": "geometria",
+    "dificultad": 3,
+    "enunciado": "A una hoja cuadrada de 12 cm de lado se le recorta, en cada esquina, un cuadradito de 2 cm de lado. ¿Cuál es el perímetro de la figura que queda?",
+    "respuesta": "48",
+    "explicacion": "¡Sorpresa! El perímetro no cambia: en cada esquina se quitan dos pedacitos de 2 cm del borde, pero aparecen dos lados nuevos de 2 cm hacia adentro. Sigue siendo 4×12 = 48 cm.",
+    "pista": "Dibujalo y seguí el borde con el dedo: por cada pedacito que sacás, aparece otro igual.",
+    "template": "manual"
+  },
+  {
+    "id": 183,
+    "categoria": "geometria",
+    "dificultad": 3,
+    "enunciado": "Un cuadrado tiene el mismo perímetro que un rectángulo de 14 cm de base y 6 cm de altura. ¿Cuál es el área del cuadrado?",
+    "respuesta": "100",
+    "explicacion": "El perímetro del rectángulo es 2×(14+6) = 40 cm. El lado del cuadrado es 40÷4 = 10 cm, y su área es 10×10 = 100 cm².",
+    "pista": "Primero el perímetro del rectángulo, después el lado del cuadrado.",
+    "template": "manual"
+  },
+  {
+    "id": 184,
+    "categoria": "conteo",
+    "dificultad": 2,
+    "enunciado": "¿Cuántos números de dos cifras tienen sus dos cifras iguales?",
+    "respuesta": "9",
+    "explicacion": "Son 11, 22, 33, 44, 55, 66, 77, 88 y 99: uno por cada dígito del 1 al 9. Hay 9 (el 00 no es un número de dos cifras).",
+    "pista": "Escribilos todos: empiezan en 11.",
+    "template": "manual"
+  },
+  {
+    "id": 185,
+    "categoria": "conteo",
+    "dificultad": 2,
+    "enunciado": "Para armar un helado se elige un envase (vasito o cucurucho) y dos gustos distintos entre chocolate, frutilla, vainilla y limón (no importa el orden de los gustos). ¿Cuántos helados diferentes se pueden armar?",
+    "respuesta": "12",
+    "explicacion": "Las parejas de gustos distintos son 6: Ch-F, Ch-V, Ch-L, F-V, F-L, V-L. Con 2 envases posibles: 6 × 2 = 12 helados.",
+    "pista": "Primero anotá todas las parejas de gustos, con cuidado de no repetir Ch-F y F-Ch.",
+    "template": "manual"
+  },
+  {
+    "id": 186,
+    "categoria": "conteo",
+    "dificultad": 3,
+    "enunciado": "Fede, Gime y Hugo se sientan en 3 butacas juntas del cine. Fede no quiere sentarse en el medio. ¿De cuántas maneras distintas pueden ubicarse?",
+    "respuesta": "4",
+    "explicacion": "En total hay 6 maneras de sentarse (3×2×1). Con Fede en el medio hay 2 (Gime y Hugo se intercambian). Quedan 6 − 2 = 4 maneras.",
+    "pista": "Contá todas las formas posibles y restá las que tienen a Fede en el medio.",
+    "template": "manual"
+  },
+  {
+    "id": 187,
+    "categoria": "conteo",
+    "dificultad": 3,
+    "enunciado": "¿Cuántos números entre 1 y 100 tienen al menos un dígito 7?",
+    "respuesta": "19",
+    "explicacion": "Con 7 en las unidades: 7, 17, 27, ..., 97 (son 10). Con 7 en las decenas: 70 a 79 (son 10). El 77 está en las dos listas, así que son 10 + 10 − 1 = 19.",
+    "pista": "Armá dos listas (7 en las unidades y 7 en las decenas) y ojo con contar el 77 dos veces.",
+    "template": "manual"
+  },
+  {
+    "id": 188,
+    "categoria": "divisibilidad",
+    "dificultad": 2,
+    "enunciado": "Caro tiene entre 30 y 40 figuritas. Si las agrupa de a 5 no le sobra ninguna, y si las agrupa de a 4 le sobran 3. ¿Cuántas figuritas tiene?",
+    "respuesta": "35",
+    "explicacion": "Entre 30 y 40, los múltiplos de 5 son 30, 35 y 40. Al dividir por 4: 30 deja resto 2, 35 deja resto 3 ✓ y 40 deja resto 0. Tiene 35 figuritas.",
+    "pista": "Empezá por los múltiplos de 5 entre 30 y 40: son solo tres candidatos.",
+    "template": "manual"
+  },
+  {
+    "id": 189,
+    "categoria": "divisibilidad",
+    "dificultad": 2,
+    "enunciado": "¿Cuál es el menor número de tres cifras que es divisible por 2, por 3 y por 5 a la vez?",
+    "respuesta": "120",
+    "explicacion": "Ser divisible por 2, 3 y 5 a la vez es ser múltiplo de 30. Los múltiplos de 30 son 30, 60, 90, 120... El primero de tres cifras es 120.",
+    "pista": "¿De qué número tiene que ser múltiplo? Buscá el primero que llegue a tres cifras.",
+    "template": "manual"
+  },
+  {
+    "id": 190,
+    "categoria": "divisibilidad",
+    "dificultad": 3,
+    "enunciado": "Tres colectivos salen juntos de la terminal a las 8:00. Uno sale cada 12 minutos, otro cada 15 y otro cada 20. ¿A qué hora vuelven a salir los tres juntos?",
+    "respuesta": "9:00",
+    "explicacion": "Hay que buscar el MCM de 12, 15 y 20, que es 60. Los tres coinciden cada 60 minutos: vuelven a salir juntos a las 9:00.",
+    "pista": "Buscá cada cuántos minutos coinciden los tres (MCM) y sumalo a las 8:00.",
+    "template": "manual",
+    "respuestas_aceptadas": [
+      "9",
+      "09:00",
+      "a las 9",
+      "las 9",
+      "9 hs"
+    ]
+  },
+  {
+    "id": 191,
+    "categoria": "divisibilidad",
+    "dificultad": 3,
+    "enunciado": "Un número de dos cifras es múltiplo de 9, y su cifra de las decenas es el doble que la de las unidades. ¿Qué número es?",
+    "respuesta": "63",
+    "explicacion": "Los números con la decena doble que la unidad son 21, 42, 63 y 84. El único múltiplo de 9 (sus cifras suman 9) es 63.",
+    "pista": "Anotá los números cuya decena es el doble de la unidad: son poquitos.",
+    "template": "manual"
+  },
+  {
+    "id": 192,
+    "categoria": "olimpico",
+    "dificultad": 3,
+    "enunciado": "En un quiosco, 2 alfajores y 3 caramelos cuestan $1050. Un alfajor cuesta el doble que un caramelo. ¿Cuánto cuesta un alfajor?",
+    "respuesta": "300",
+    "explicacion": "Como cada alfajor vale 2 caramelos, 2 alfajores + 3 caramelos equivalen a 7 caramelos. Entonces un caramelo cuesta 1050÷7 = $150, y el alfajor 2×150 = $300.",
+    "pista": "Convertí los alfajores en caramelos: ¿a cuántos caramelos equivale todo?",
+    "template": "manual"
+  },
+  {
+    "id": 193,
+    "categoria": "olimpico",
+    "dificultad": 3,
+    "enunciado": "Martina escribe todos los números del 1 al 50. ¿Cuántas veces escribe el dígito 4?",
+    "respuesta": "15",
+    "explicacion": "En las unidades aparece en 4, 14, 24, 34 y 44 (5 veces). En las decenas, en 40 a 49 (10 veces). En total: 5 + 10 = 15 veces (el 44 lo tiene dos veces y se cuenta en ambas).",
+    "pista": "Contá por separado: el 4 en las unidades y el 4 en las decenas.",
+    "template": "manual"
+  },
+  {
+    "id": 194,
+    "categoria": "olimpico",
+    "dificultad": 3,
+    "enunciado": "En el campamento hay carpas de 2 personas y carpas de 3 personas. En total hay 13 carpas y duermen 31 personas, sin lugares vacíos. ¿Cuántas carpas de 3 personas hay?",
+    "respuesta": "5",
+    "explicacion": "Si las 13 carpas fueran de 2, dormirían 26 personas. Sobran 31−26 = 5 personas, y cada carpa de 3 aloja exactamente 1 persona más: hay 5 carpas de 3 (y 8 de 2: 5×3 + 8×2 = 31 ✓).",
+    "pista": "Imaginá que todas las carpas son de 2: ¿cuántas personas quedan sin lugar?",
+    "template": "manual"
+  },
+  {
+    "id": 195,
+    "categoria": "olimpico",
+    "dificultad": 3,
+    "enunciado": "Un libro se abre al azar y la suma de los números de las dos páginas enfrentadas es 145. ¿Qué número tiene la página de la derecha?",
+    "respuesta": "73",
+    "explicacion": "Las páginas enfrentadas son consecutivas: n + (n+1) = 145, así que n = 72. Son la 72 y la 73. En los libros, la página de la derecha lleva el número impar: es la 73.",
+    "pista": "Las dos páginas son números consecutivos que suman 145.",
+    "template": "manual"
   }
 ]
